@@ -43,6 +43,20 @@ export default function Portfolio() {
 
   const projects = [
     {
+      title: "Grants.gov MCP",
+      subtitle: "MCP for fetching grants data from grants.gov",
+      description: "I recently built an MCP which lets Anthropic's Claude fetch grants data from grants.gov. Some key features: Search for grants by keyword, Paginate the search results, Display detailed info on each grant, including funding details, deadlines, and eligibility",
+      github: "https://github.com/Tar-ive/grants-mcp",
+      live: "https://x.com/saksham_adh/status/1870666381571600401",
+      image: "media/GfXxmS3XYAAW1Ls.jpeg",
+      video: "media/mcp-grants1.mp4",
+      date: "Latest Project",
+      tags: ["Claude", "MCP", "grants.gov"],
+      aspectRatio: "16/9",
+      imageAspectRatio: "16/9",
+      videoAspectRatio: "9/16"
+    },
+    {
       title: "Research Assistant",
       subtitle: "AI-powered research assistant",
       description: "Currently in development - An AI-powered research assistant application.",
