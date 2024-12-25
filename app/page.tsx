@@ -253,7 +253,7 @@ export default function Portfolio() {
               </Link>
             </div>
             <p className="text-base leading-relaxed">
-              Nepal-born, Texas-based, eternally curious. I'm Saksham, 20, and I spend my days tinkering with AI, making data tell stories, and building whatever sounds fun. Usually found building AI apps, meditating or building full stack and data science projects
+              Nepal-born, Texas-based, eternally curious. I'm Saksham, 20, and I spend my days tinkering with AI, making data tell stories, and building whatever sounds fun. Usually found building AI apps, meditating, reading books and hanging out with my girlfriend❤️. 
             </p>
             <ul className="space-y-2">
               {achievements.map((achievement, index) => (
