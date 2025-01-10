@@ -31,17 +31,31 @@ export default function Portfolio() {
   const [expandedImage, setExpandedImage] = useState<string | null>(null)
 
   const achievements = [
-    "Currently building <a href='https://x.com/obvius_site' class='text-blue-600 hover:underline'>Obvius </a> and a <a href='https://txst-research.streamlit.app/' class='text-blue-600 hover:underline'>Research Assistant </a> for my university",
+    "Currently building <a href='https://x.com/obvius_site' class='text-blue-600 hover:underline'>Obvius </a> and a <a href='https://findandfund.vercel.app/' class='text-blue-600 hover:underline'>Find&Fund </a> which is looking for funding itself. ",
     "Developed <a href='https://where-do-i-park-tarive22.replit.app/' class='text-blue-600 hover:underline'>Where Do I Park?</a> - a real-time parking availability app, <a href='https://github.com/Tar-ive/exa-mcp-server' class='text-blue-600 hover:underline'>EXA Advanced MCP for Claude</a>, part of the Echoz team, <a href='https://bobcat-bounty-app-1-tarive22.replit.app/' class='text-blue-600 hover:underline'>Bobcat Bounty</a> website, <a href='https://txst-ai.vercel.app/' class='text-blue-600 hover:underline'>TXST AI Academic Advisor</a>",
     "Won multiple hackathons and competitions",
     "AI4ALL Ignite Accelerator Fellow",
     "Student Ambassador @ Extern",
     "Resident Assistant and Student at Texas State University",
+    "Cracking Machine Learning Interviews as I speak",
     "Vice President at ACM AI @ TXST",
     "Involved in a Nepalese startup: <a href='https://internepal.com.np/' class='text-blue-600 hover:underline'>Intern Nepal</a>"
   ]
 
   const projects = [
+    {
+      title: "Find&Fund",
+      subtitle: "Finding the right funding for the right research",
+      description: "I am currently working to build a website which pairs the right researchers with the right funding oppurtunities. Also building a recommendation system to recommend grants personalized to the researcher. ",
+      github: "https://github.com/Tar-ive/find-fund",
+      live: "https://findandfund.vercel.app/",
+      image: "media/find&fund.jpeg",
+      date: "Currently Building",
+      tags: ["EXA", "OpenAlex", "grants.gov", "Two-Tower Recommendation"],
+      aspectRatio: "16/9",
+      imageAspectRatio: "16/9",
+      videoAspectRatio: "9/16"
+    },
     {
       title: "Grants.gov MCP",
       subtitle: "MCP for fetching grants data from grants.gov",
@@ -253,7 +267,7 @@ export default function Portfolio() {
               </Link>
             </div>
             <p className="text-base leading-relaxed">
-              Nepal-born, Texas-based, eternally curious. I'm Saksham, 20, and I spend my days tinkering with AI, making data tell stories, and building whatever sounds fun. Usually found building AI apps, meditating, reading books and hanging out with my girlfriend❤️. 
+              Nepal-born, Texas-based, eternally curious. I'm Saksham, 20, and I spend my days tinkering with AI, making data tell stories, and building whatever sounds fun. Usually found building AI and ML apps, meditating, reading books and hanging out with my <a href='https://quamos.dev/' class='text-pink-600 hover:underline'>girlfriend❤️ </a> and friends. 
             </p>
             <ul className="space-y-2">
               {achievements.map((achievement, index) => (
@@ -266,7 +280,7 @@ export default function Portfolio() {
           </div>
           <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-200">
             <Image
-              src="media/pp.jpg"
+              src="media/profile_p.jpeg"
               alt="Profile"
               fill
               className="object-cover"
