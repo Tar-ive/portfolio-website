@@ -5,6 +5,7 @@ import { AlertCircle } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import { Suspense } from "react"
 import { mdxComponents } from "@/components/mdx-component"
+import { getCloudinaryUrl } from '@/lib/cloudinary'
 
 export const revalidate = 3600 // Revalidate every hour
 

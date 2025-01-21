@@ -2,6 +2,8 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import type { Components } from "react-markdown"
 import { cn } from "@/lib/utils"
+import { getCloudinaryUrl } from '@/lib/cloudinary'
+import { mediaMap } from '@/lib/media'
 
 const CodeSandbox = dynamic(() => import("./code-sandbox"), {
   ssr: false,
@@ -10,16 +12,22 @@ const CodeSandbox = dynamic(() => import("./code-sandbox"), {
 
 export const mdxComponents: Components = {
   // Handle images
-  img: (props) => (
-    <Image
-      src={props.src || ""}
-      alt={props.alt || ""}
-      width={800}
-      height={400}
-      className="rounded-lg shadow-md"
-      unoptimized={props.src?.startsWith("http")}
-    />
-  ),
+  img: (props) => {
+    // Get the filename without extension
+    const filename = props.src?.split('/').pop()?.split('.')[0]
+    // Convert filename to camelCase to match mediaMap keys
+    const mediaKey = filename?.replace(/-./g, x => x[1].toUpperCase()) as keyof typeof mediaMap
+    
+    return (
+      <Image
+        src={getCloudinaryUrl(mediaMap[mediaKey] || '')}
+        alt={props.alt || ""}
+        width={800}
+        height={400}
+        className="rounded-lg shadow-md"
+      />
+    )
+  },
 
   // Style code blocks
   pre: ({ children, ...props }) => (
