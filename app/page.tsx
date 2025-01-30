@@ -343,7 +343,7 @@ export default function Portfolio() {
             </ul>
           </div>
           <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-200">
-            <Image src="/images/profile-pic.jpg" alt="Profile" fill className="object-cover" />
+            <Image src="media/profile_p.jpeg" alt="Profile" fill className="object-cover" />
           </div>
         </div>
       </div>
