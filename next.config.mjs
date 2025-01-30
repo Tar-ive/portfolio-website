@@ -14,13 +14,24 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      }
+    ],
+    domains: ['localhost'],
+    unoptimized: false, // Changed from true to false to enable optimization
+    dangerouslyAllowSVG: true, // Add this if you're using SVG images
+    contentDispositionType: 'attachment',
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-  },
+  }
 }
 
 mergeConfig(nextConfig, userConfig)

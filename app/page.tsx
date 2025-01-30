@@ -96,8 +96,8 @@ export default function Portfolio() {
         "I am currently working to build a website which pairs the right researchers with the right funding oppurtunities. Also building a recommendation system to recommend grants personalized to the researcher. ",
       github: "https://github.com/Tar-ive/find-fund",
       live: "https://findandfund.vercel.app/",
-      image: "media/find&fund.jpeg",
-      video: "media/find&fund.mp4",
+      image: "/media/find&fund.jpeg",
+      video: "/media/find&fund.mp4",
       date: "Currently Building",
       tags: ["EXA", "OpenAlex", "grants.gov", "Two-Tower Recommendation"],
       aspectRatio: "16/9",
@@ -111,8 +111,8 @@ export default function Portfolio() {
         "I recently built an MCP which lets Anthropic's Claude fetch grants data from grants.gov. Some key features: Search for grants by keyword, Paginate the search results, Display detailed info on each grant, including funding details, deadlines, and eligibility",
       github: "https://github.com/Tar-ive/grants-mcp",
       live: "https://x.com/saksham_adh/status/1870666381571600401",
-      image: "media/grantsmcp.jpeg",
-      video: "media/mcp-grants1.mp4",
+      image: "/media/grantsmcp.jpeg",
+      video: "/media/mcp-grants1.mp4",
       date: "Latest Project",
       tags: ["Claude", "MCP", "grants.gov"],
       aspectRatio: "16/9",
@@ -343,7 +343,7 @@ export default function Portfolio() {
             </ul>
           </div>
           <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-200">
-            <Image src="media/profile_p.jpeg" alt="Profile" fill className="object-cover" />
+            <Image src="/media/profile_p.jpeg" alt="Profile" fill className="object-cover" />
           </div>
         </div>
       </div>
