@@ -78,6 +78,3 @@ pids/
 # Report files
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Media
-public/media/*
-!public/media/.gitkeep
