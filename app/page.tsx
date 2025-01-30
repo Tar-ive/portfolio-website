@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Globe, MapPin, Play } from 'lucide-react'
+import { Github, Globe, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
@@ -11,8 +11,8 @@ import { Separator } from "@/components/ui/separator"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import { useState } from "react"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { getCloudinaryUrl, getCloudinaryVideoUrl } from '@/lib/cloudinary'
-import { mediaMap } from '@/lib/media'
+//import { getCloudinaryUrl, getCloudinaryVideoUrl } from "@/lib/cloudinary"
+//import { mediaMap } from "@/lib/media"
 
 const XLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 512 462.799" className={className}>
@@ -32,48 +32,46 @@ const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
   </div>
 )
 
-const getMediaId = (project: string): keyof typeof mediaMap => {
-  const mapping: Record<string, keyof typeof mediaMap> = {
-    "Find&Fund": "findAndFund",
-    "Grants.gov MCP": "findAndFund",
-    "Research Assistant": "researchAi",
-    "Obvius": "obvius",
-    "Enhanced Exa MCP Server": "exaMcp",
-    "Bobcat Bounty Inventory System": "bobcatBounty",
-    "TXST AI Academic Advisor": "aiAdvisor",
-    "Where Do I Park?": "whereDoIPark",
-    "Echoz": "echoz",
-    "Business Ecosystem Simulator": "businessSimulator",
-    "Blackjack Q-Learning App": "blackjack",
-    "President's Economic Impact": "president",
-    "Credit Risk Prediction System": "creditDefault",
-    "Interactive SQL Query Application": "sqlQuery"
-  }
-  
-  // Log when we can't find a direct mapping
-  if (!mapping[project]) {
-    console.log(`No direct mapping found for project: ${project}`)
-  }
-  
-  return mapping[project] || project.toLowerCase().replace(/\s+/g, '') as keyof typeof mediaMap
-}
+//const getMediaId = (project: string): keyof typeof mediaMap => {
+//  const mapping: Record<string, keyof typeof mediaMap> = {
+//    "Find&Fund": "findAndFund",
+//    "Grants.gov MCP": "findAndFund",
+//    "Research Assistant": "researchAi",
+//    Obvius: "obvius",
+//    "Enhanced Exa MCP Server": "exaMcp",
+//    "Bobcat Bounty Inventory System": "bobcatBounty",
+//    "TXST AI Academic Advisor": "aiAdvisor",
+//    "Where Do I Park?": "whereDoIPark",
+//    Echoz: "echoz",
+//    "Business Ecosystem Simulator": "businessSimulator",
+//    "Blackjack Q-Learning App": "blackjack",
+//    "President's Economic Impact": "president",
+//    "Credit Risk Prediction System": "creditDefault",
+//    "Interactive SQL Query Application": "sqlQuery",
+//  }
 
-const getVideoId = (project: string): keyof typeof mediaMap => {
-  const mapping: Record<string, keyof typeof mediaMap> = {
-    "Find&Fund": "findAndFundVideo",
-    "Bobcat Bounty Inventory System": "bobcatBountyVideo",
-    "Research Assistant": "researchAiVideo",
-    "Obvius": "obviusVideo",
-    "Grants.gov MCP": "mcpGrantsVideo"
-  }
-  
-  // Log when we can't find a direct mapping
-  if (!mapping[project]) {
-    console.log(`No direct video mapping found for project: ${project}`)
-  }
-  
-  return mapping[project] || `${project.toLowerCase().replace(/\s+/g, '')}Video` as keyof typeof mediaMap
-}
+//  if (!mapping[project]) {
+//    console.log(`No direct mapping found for project: ${project}`)
+//  }
+
+//  return mapping[project] || (project.toLowerCase().replace(/\s+/g, "") as keyof typeof mediaMap)
+//}
+
+//const getVideoId = (project: string): keyof typeof mediaMap => {
+//  const mapping: Record<string, keyof typeof mediaMap> = {
+//    "Find&Fund": "findAndFundVideo",
+//    "Bobcat Bounty Inventory System": "bobcatBountyVideo",
+//    "Research Assistant": "researchAiVideo",
+//    Obvius: "obviusVideo",
+//    "Grants.gov MCP": "mcpGrantsVideo",
+//  }
+
+//  if (!mapping[project]) {
+//    console.log(`No direct video mapping found for project: ${project}`)
+//  }
+
+//  return mapping[project] || (`${project.toLowerCase().replace(/\s+/g, "")}Video` as keyof typeof mediaMap)
+//}
 
 export default function Portfolio() {
   const [expandedImage, setExpandedImage] = useState<string | null>(null)
@@ -98,8 +96,8 @@ export default function Portfolio() {
         "I am currently working to build a website which pairs the right researchers with the right funding oppurtunities. Also building a recommendation system to recommend grants personalized to the researcher. ",
       github: "https://github.com/Tar-ive/find-fund",
       live: "https://findandfund.vercel.app/",
-      image: "xohk1wqs8saddcmvb4g8",
-      video: "findAndFundVideo",
+      image: "media/find&fund.jpeg",
+      video: "media/find&fund.mp4",
       date: "Currently Building",
       tags: ["EXA", "OpenAlex", "grants.gov", "Two-Tower Recommendation"],
       aspectRatio: "16/9",
@@ -113,8 +111,8 @@ export default function Portfolio() {
         "I recently built an MCP which lets Anthropic's Claude fetch grants data from grants.gov. Some key features: Search for grants by keyword, Paginate the search results, Display detailed info on each grant, including funding details, deadlines, and eligibility",
       github: "https://github.com/Tar-ive/grants-mcp",
       live: "https://x.com/saksham_adh/status/1870666381571600401",
-      image: "/media/GfXxmS3XYAAW1Ls.jpeg",
-      video: "/media/mcp-grants1.mp4",
+      image: "media/grantsmcp.jpeg",
+      video: "media/mcp-grants1.mp4",
       date: "Latest Project",
       tags: ["Claude", "MCP", "grants.gov"],
       aspectRatio: "16/9",
@@ -345,12 +343,7 @@ export default function Portfolio() {
             </ul>
           </div>
           <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-200">
-            <Image
-              src={getCloudinaryUrl(mediaMap.profilePic)}
-              alt="Profile"
-              fill
-              className="object-cover"
-            />
+            <Image src="/images/profile-pic.jpg" alt="Profile" fill className="object-cover" />
           </div>
         </div>
       </div>
@@ -379,37 +372,18 @@ export default function Portfolio() {
                       className="relative w-full rounded-lg overflow-hidden bg-black"
                       style={{ aspectRatio: "16/9" }}
                     >
-                      <VideoPreview 
-                        src={(() => {
-                          const videoId = getVideoId(project.title);
-                          console.log(`Video project: ${project.title}, Video ID: ${videoId}, Mapped ID: ${mediaMap[videoId]}`);
-                          return getCloudinaryVideoUrl(mediaMap[videoId]);
-                        })()}
-                        poster={(() => {
-                          const mediaId = getMediaId(project.title);
-                          console.log(`Video poster: ${project.title}, Media ID: ${mediaId}, Mapped ID: ${mediaMap[mediaId]}`);
-                          return getCloudinaryUrl(mediaMap[mediaId]);
-                        })()}
-                        aspectRatio="16/9"
-                      />
+                      <VideoPreview src={project.video} poster={project.image} aspectRatio="16/9" />
                     </div>
                   ) : (
                     <div
                       className="relative w-full rounded-lg overflow-hidden bg-gray-100 cursor-pointer"
                       style={{ aspectRatio: "16/9" }}
-                      onClick={() => {
-                        const mediaId = getMediaId(project.title);
-                        console.log(`Image project: ${project.title}, Media ID: ${mediaId}, Mapped ID: ${mediaMap[mediaId]}`);
-                        setExpandedImage(getCloudinaryUrl(mediaMap[mediaId]));
-                      }}
+                      onClick={() => setExpandedImage(project.image)}
                     >
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="relative w-full h-full">
                           <Image
-                            src={(() => {
-                              const mediaId = getMediaId(project.title);
-                              return getCloudinaryUrl(mediaMap[mediaId]);
-                            })()}
+                            src={project.image || "/placeholder.svg"}
                             alt={project.title}
                             fill
                             className="object-contain hover:scale-105 transition-transform"
@@ -626,3 +600,4 @@ export default function Portfolio() {
     </div>
   )
 }
+
