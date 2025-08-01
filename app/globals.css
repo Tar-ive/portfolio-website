@@ -92,3 +92,116 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Syntax highlighting styles */
+@layer components {
+  .syntax-highlighted {
+    @apply rounded-lg border overflow-x-auto;
+  }
+  
+  .syntax-highlighted pre {
+    @apply m-0 p-4 bg-muted font-mono text-sm leading-relaxed;
+  }
+  
+  .syntax-highlighted code {
+    @apply bg-transparent p-0;
+  }
+  
+  /* Line numbers support */
+  .line-numbers .line {
+    @apply relative pl-12;
+  }
+  
+  .line-numbers .line::before {
+    @apply absolute left-0 top-0 w-8 text-right text-muted-foreground select-none;
+    content: attr(data-line);
+  }
+  
+  /* Anchor links for headings */
+  .anchor-link {
+    @apply no-underline;
+  }
+  
+  .anchor-link:hover {
+    @apply underline;
+  }
+  
+  /* Prose styles for MDX content */
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply scroll-m-20;
+  }
+  
+  .prose h1 {
+    @apply text-4xl font-extrabold tracking-tight lg:text-5xl mb-6;
+  }
+  
+  .prose h2 {
+    @apply border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-semibold tracking-tight mb-3;
+  }
+  
+  .prose h4 {
+    @apply text-xl font-semibold tracking-tight mb-2;
+  }
+  
+  .prose p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+  
+  .prose blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+  
+  .prose ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+  
+  .prose ol {
+    @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+  }
+  
+  .prose li {
+    @apply mt-2;
+  }
+  
+  .prose table {
+    @apply w-full border-collapse border border-border;
+  }
+  
+  .prose th,
+  .prose td {
+    @apply border border-border px-4 py-2 text-left;
+  }
+  
+  .prose th {
+    @apply bg-muted font-semibold;
+  }
+  
+  .prose img {
+    @apply rounded-lg border;
+  }
+  
+  .prose code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  
+  .prose pre {
+    @apply mb-4 mt-6 overflow-x-auto rounded-lg border bg-muted px-4 py-4;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+}
