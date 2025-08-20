@@ -5,6 +5,7 @@ import { AlertCircle } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import { Suspense } from "react"
 import { mdxComponents } from "@/components/mdx-component"
+import { NotionRenderer } from "@/components/notion"
 
 export const revalidate = 3600 // Revalidate every hour
 
@@ -32,7 +33,13 @@ async function BlogPostContent({ slug }: { slug: string }) {
         <div className="text-gray-600 dark:text-gray-400 mb-8">
           {new Date(post.date).toLocaleDateString()} | By {post.author}
         </div>
-        <ReactMarkdown components={mdxComponents}>{post.content}</ReactMarkdown>
+        
+        {/* Use NotionRenderer for better block rendering if blocks are available */}
+        {post.blocks && post.blocks.length > 0 ? (
+          <NotionRenderer blocks={post.blocks} />
+        ) : (
+          <ReactMarkdown components={mdxComponents}>{post.content}</ReactMarkdown>
+        )}
       </article>
     )
   } catch (error) {

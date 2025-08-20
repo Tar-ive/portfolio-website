@@ -1,8 +1,5 @@
 import "@/styles/globals.css"
-import { Inter } from "next/font/google"
 import { Nav } from "@/components/nav"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Saksham Adhikari - Portfolio & Blog",
@@ -16,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light">
-      <body className={`${inter.className} min-h-screen bg-white`}>
+      <body className="min-h-screen bg-white font-sans">
         <Nav />
         <main>{children}</main>
       </body>
