@@ -4,6 +4,7 @@ import { AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { getBlogPosts } from "@/lib/notion"
 import { Suspense } from "react"
+import { BlogPostCard } from "@/components/blog-post-card"
 
 export const revalidate = 3600 // Revalidate every hour
 
@@ -49,20 +50,9 @@ async function BlogPosts() {
     }
 
     return (
-      <div className="grid gap-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
         {posts.map((post) => (
-          <Link key={post.id} href={`/blog/${post.slug}`}>
-            <Card className="hover:bg-muted/50 transition-colors">
-              <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <CardDescription>{new Date(post.date).toLocaleDateString()}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{post.description}</p>
-                <p className="text-sm text-muted-foreground mt-2">Author: {post.author}</p>
-              </CardContent>
-            </Card>
-          </Link>
+          <BlogPostCard key={post.id} post={post} />
         ))}
       </div>
     )
