@@ -4,27 +4,29 @@ import { cache } from "react"
 import fetch from "node-fetch-native"
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 
-if (!process.env.NOTION_TOKEN) {
-  throw new Error("NOTION_TOKEN is required. Please add it to your environment variables.")
-}
+// Environment configuration check
+const isNotionConfigured = !!(process.env.NOTION_TOKEN && process.env.BLOG_INDEX_ID)
 
-if (!process.env.BLOG_INDEX_ID) {
-  throw new Error("BLOG_INDEX_ID is required. Please add it to your environment variables.")
-}
+let notion: Client | null = null
+let n2m: NotionToMarkdown | null = null
 
-let notion: Client
-let n2m: NotionToMarkdown
-
-try {
-  notion = new Client({
-    auth: process.env.NOTION_TOKEN,
-    logLevel: LogLevel.DEBUG,
-    fetch: fetch as any, // Type assertion needed for compatibility
-  })
-  n2m = new NotionToMarkdown({ notionClient: notion })
-} catch (error) {
-  console.error("Failed to initialize Notion client:", error)
-  throw new Error("Failed to initialize Notion client. Please check your NOTION_TOKEN.")
+// Only initialize Notion client if environment variables are available
+if (isNotionConfigured) {
+  try {
+    notion = new Client({
+      auth: process.env.NOTION_TOKEN,
+      logLevel: LogLevel.DEBUG,
+      fetch: fetch as any, // Type assertion needed for compatibility
+    })
+    n2m = new NotionToMarkdown({ notionClient: notion })
+    console.log("Notion client initialized successfully")
+  } catch (error) {
+    console.error("Failed to initialize Notion client:", error)
+    notion = null
+    n2m = null
+  }
+} else {
+  console.warn("Notion environment variables not configured. Blog functionality will use fallback behavior.")
 }
 
 function createSlug(text: string): string {
@@ -51,14 +53,18 @@ interface NotionPage {
 export const getBlogPosts = cache(async () => {
   console.log("Starting getBlogPosts...")
 
-  if (!process.env.NOTION_TOKEN || !process.env.BLOG_INDEX_ID) {
-    throw new Error("Missing required environment variables: NOTION_TOKEN or BLOG_INDEX_ID")
+  // Return empty array with helpful message if Notion is not configured
+  if (!isNotionConfigured || !notion || !n2m) {
+    console.warn("Notion not configured. Returning empty blog posts array.")
+    throw new Error(
+      "Blog functionality is not configured. Please set NOTION_TOKEN and BLOG_INDEX_ID environment variables to enable blog posts."
+    )
   }
 
   try {
     console.log("Querying Notion database...")
-    const response = await notion.databases.query({
-      database_id: process.env.BLOG_INDEX_ID,
+    const response = await notion!.databases.query({
+      database_id: process.env.BLOG_INDEX_ID!,
       filter: {
         property: "published",
         checkbox: {
@@ -81,7 +87,7 @@ export const getBlogPosts = cache(async () => {
         .map(async (page) => {
           try {
             console.log(`Processing page: ${page.id}`)
-            const pageContent = await notion.blocks.children.list({
+            const pageContent = await notion!.blocks.children.list({
               block_id: page.id,
             })
 
@@ -95,12 +101,12 @@ export const getBlogPosts = cache(async () => {
             const published = page.properties.published?.checkbox || false
 
             console.log(`Converting blocks to markdown for page: ${page.id}`)
-            const mdBlocks = await n2m.blocksToMarkdown(pageContent.results)
-            const { parent: content } = n2m.toMarkdownString(mdBlocks)
+            const mdBlocks = await n2m!.blocksToMarkdown(pageContent.results)
+            const { parent: content } = n2m!.toMarkdownString(mdBlocks)
 
             console.log(`Processed post: ${title} with slug: ${slug}`)
             console.log(`Content preview: ${content.substring(0, 100)}...`)
-            console.log(`Full content object:`, JSON.stringify(n2m.toMarkdownString(mdBlocks), null, 2))
+            console.log(`Full content object:`, JSON.stringify(n2m!.toMarkdownString(mdBlocks), null, 2))
 
             return {
               id: page.id,
@@ -111,7 +117,7 @@ export const getBlogPosts = cache(async () => {
               author,
               published,
               content,
-              fullContentObject: n2m.toMarkdownString(mdBlocks), // Including full content object for debugging
+              fullContentObject: n2m!.toMarkdownString(mdBlocks), // Including full content object for debugging
             }
           } catch (error) {
             console.error(`Error processing page ${page.id}:`, error)
