@@ -6,6 +6,20 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Linkedin, Github, Download, GraduationCap, Briefcase, Award, BookOpen, Trophy } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+// Import PDF viewer component
+const PDFViewer = dynamic(() => import('@/components/mdx/pdf-viewer'), {
+  ssr: false,
+  loading: () => (
+    <div className="my-6 p-8 border rounded-lg bg-muted/50">
+      <div className="flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        <span className="ml-2">Loading PDF viewer...</span>
+      </div>
+    </div>
+  ),
+});
 
 export default function AboutPage() {
   return (
@@ -40,32 +54,47 @@ export default function AboutPage() {
 
       <Separator className="mb-8" />
 
+      {/* Quick Summary */}
       <Card className="mb-8">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <GraduationCap className="h-5 w-5" />
-            Education
+            Professional Summary
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div>
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="font-semibold">Texas State University (TXST)</h3>
-                  <p className="text-sm text-muted-foreground">Bachelor of Science in Computer Information Systems</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-medium">2023 - Current</p>
-                  <p className="text-sm text-muted-foreground">San Marcos, TX</p>
-                </div>
-              </div>
-              <Badge variant="secondary" className="text-sm">GPA 4.0/4.0</Badge>
+              <h3 className="font-semibold">Current Position</h3>
+              <p className="text-sm text-muted-foreground">TPU Cloud Student Researcher at Google</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Education</h3>
+              <p className="text-sm text-muted-foreground">Computer Information Systems, Texas State University (4.0 GPA)</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Research Focus</h3>
+              <p className="text-sm text-muted-foreground">AI/ML optimization, protein science, healthcare NLP</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
+      {/* PDF Resume Viewer */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Resume / CV</h2>
+        <PDFViewer
+          src="/media/saksham.pdf"
+          title="Saksham Adhikari - Resume"
+          height={800}
+          embedded={true}
+          downloadable={true}
+          showToolbar={true}
+          viewMode="inline"
+        />
+      </div>
+
+      {/* Download Options */}
       <div className="flex gap-4 justify-center">
         <Button asChild>
           <Link href="/media/saksham_resume_2025.pdf" download>
