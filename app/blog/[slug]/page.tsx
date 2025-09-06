@@ -13,16 +13,34 @@ export const revalidate = 3600 // Revalidate every hour
 export async function generateStaticParams() {
   try {
     console.log('generateStaticParams: Attempting to fetch blog posts for static generation')
-    const posts = await getBlogPostsWithFallback(() => getBlogPosts())
+    
+    // Use shorter timeout for build-time generation
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      setTimeout(() => reject(new Error('Build-time fetch timeout')), 15000) // 15 second timeout
+    })
+    
+    const posts = await Promise.race([
+      getBlogPostsWithFallback(() => getBlogPosts()),
+      timeoutPromise
+    ])
+    
     console.log(`generateStaticParams: Found ${posts.length} posts`)
     
     return posts.map((post) => ({
       slug: post.slug,
     }))
   } catch (error) {
-    console.error('generateStaticParams: Failed to fetch posts, generating empty params:', error)
-    // Return empty array to allow fallback behavior
-    return []
+    console.error('generateStaticParams: Failed to fetch posts, using predefined fallback slugs:', error)
+    
+    // Return common blog slugs that we know exist to pre-generate
+    // These will be generated statically, others will use dynamic fallbacks
+    return [
+      { slug: 'lean-from-google-deepmind' },
+      { slug: 'graphs-and-ai-' },
+      { slug: 'bst-and-ai' },
+      { slug: 'sql-notes' },
+      { slug: 'tiktok-search' },
+    ]
   }
 }
 
