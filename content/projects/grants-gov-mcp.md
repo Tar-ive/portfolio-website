@@ -5,9 +5,9 @@ date: "2024-12-01"
 status: "completed"
 tags: ["Claude", "MCP", "grants.gov", "API", "TypeScript"]
 github: "https://github.com/Tar-ive/grants-mcp"
-live: "https://x.com/saksham_adh/status/1870666381571600401"
+live: "https://grants-mcp-website.vercel.app/"
 image: "/media/grantsmcp.jpeg"
-video: "/media/mcp-grants1.mp4"
+video: "/media/grants-mcp.mp4"
 pinned: false
 category: "ai-tools"
 priority: 85

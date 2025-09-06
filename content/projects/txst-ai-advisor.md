@@ -1,6 +1,6 @@
 ---
 title: "TXST AI Academic Advisor"
-subtitle: "AI-powered academic advisor"
+subtitle: "1M+ Token Processing with Sub-Second Response Times"
 date: "2024-09-01"
 status: "completed"
 tags: ["AI", "Education", "Next.js", "Academic Advising", "NLP"]
@@ -14,7 +14,7 @@ priority: 70
 
 # TXST AI Academic Advisor
 
-An intelligent academic advising system designed specifically for Texas State University students, providing personalized guidance and recommendations for academic success.
+Deployed production AI system at **Texas State University** processing **1M+ token contexts** with **sub-second response times** - streamlining academic planning for McCoy College students.
 
 ## Overview
 

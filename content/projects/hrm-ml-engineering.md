@@ -1,6 +1,6 @@
 ---
 title: "HRM Fine-Tuning - Production ML Engineering"
-subtitle: "27M Parameter Model Optimization"
+subtitle: "27M Parameter Model Fine-Tuning & Critical Bug Fixes"
 date: "2025-01-15"
 status: "completed"
 tags: ["ML Engineering", "PyTorch", "Fine-tuning", "Cloud Infrastructure", "NVIDIA RTX 4090", "RunPod", "Production ML"]
@@ -13,7 +13,7 @@ priority: 85
 
 # HRM Fine-Tuning - Production ML Engineering
 
-**Advanced Cloud Infrastructure** - Comprehensive ML engineering project involving **27M parameter model optimization** with production-grade deployment and infrastructure management.
+**Fine-tuned 27M parameter HRM model** and delivered **critical PyTorch bug fixes** enabling production deployment for research published in arXiv:2506.21734.
 
 ## Overview
 

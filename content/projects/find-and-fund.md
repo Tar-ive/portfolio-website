@@ -1,8 +1,8 @@
 ---
 title: "Find&Fund"
-subtitle: "Finding the right funding for the right research"
+subtitle: "Live Production Platform - Finding the right funding for the right research"
 date: "2024-12-01"
-status: "currently-building"
+status: "completed"
 tags: ["EXA", "OpenAlex", "grants.gov", "Two-Tower Recommendation", "AI", "Research"]
 github: "https://github.com/Tar-ive/find-fund"
 live: "https://findandfund.vercel.app/"
@@ -14,7 +14,7 @@ category: "ai-research"
 
 # Find&Fund: Revolutionizing Research Funding Discovery
 
-Find&Fund is an innovative platform that bridges the gap between researchers and funding opportunities through intelligent matching and personalized recommendations.
+**Live production platform** serving researchers worldwide - Find&Fund bridges the gap between researchers and funding opportunities through intelligent matching and personalized recommendations.
 
 ## 🎯 Project Overview
 
