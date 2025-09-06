@@ -24,14 +24,71 @@ function LoadingPost() {
   )
 }
 
-async function BlogPostContent({ slug }: { slug: string }) {
-  try {
-    console.log(`Fetching blog post with slug: ${slug}`)
-    const post = await getBlogPostWithFallback(slug, getBlogPost)
-    
-    const isUsingFallback = post.id.startsWith('fallback-')
+// Timeout wrapper to prevent hanging
+async function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    setTimeout(() => reject(new Error(`Operation timed out after ${timeoutMs}ms`)), timeoutMs)
+  })
+  
+  return Promise.race([promise, timeoutPromise])
+}
 
-    return (
+async function BlogPostContent({ slug }: { slug: string }) {
+  console.log(`BlogPostContent: Starting fetch for slug: ${slug}`)
+  
+  let post;
+  try {
+    console.log(`BlogPostContent: Calling getBlogPostWithFallback for slug: ${slug}`)
+    
+    // Add 10 second timeout to prevent hanging
+    post = await withTimeout(
+      getBlogPostWithFallback(slug, getBlogPost),
+      10000
+    )
+    
+    console.log(`BlogPostContent: Successfully got post:`, post?.id, post?.title)
+    
+    if (!post) {
+      console.error(`BlogPostContent: Post is null/undefined for slug: ${slug}`)
+      throw new Error(`Post not found: ${slug}`)
+    }
+    
+  } catch (error) {
+    console.error(`BlogPostContent: Error in getBlogPostWithFallback for ${slug}:`, error)
+    
+    // Force fallback if primary fetch fails
+    post = {
+      id: `emergency-fallback-${slug}`,
+      title: 'Content Temporarily Unavailable',
+      description: 'This content is temporarily unavailable due to technical issues.',
+      date: new Date().toISOString(),
+      slug,
+      author: 'Saksham Adhikari',
+      published: true,
+      content: `# Content Temporarily Unavailable
+
+The blog post you're looking for is temporarily unavailable due to technical issues with our content management system.
+
+**What happened?** We encountered an unexpected error while trying to load this content.
+
+## What You Can Do
+
+- **Try Refreshing**: The issue may resolve quickly
+- **Check Back Later**: Most issues are resolved within minutes  
+- **Browse Other Content**: Check out my [projects](/projects) or [homepage](/)
+- **Contact Me**: If this persists, feel free to reach out
+
+This is likely a temporary issue and the content will be restored automatically once the problem is resolved.
+
+Thank you for your patience!`,
+      fullContentObject: null,
+    }
+  }
+  
+  const isUsingFallback = post.id.startsWith('fallback-') || post.id.startsWith('emergency-fallback-')
+  console.log(`BlogPostContent: Rendering post with fallback status: ${isUsingFallback}`)
+
+  return (
       <article className="prose prose-slate max-w-none dark:prose-invert prose-pre:p-0 prose-pre:bg-transparent">
         {isUsingFallback && (
           <Alert className="border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950 mb-6">
@@ -64,27 +121,6 @@ async function BlogPostContent({ slug }: { slug: string }) {
         <ReactMarkdown components={mdxComponents}>{post.content}</ReactMarkdown>
       </article>
     )
-  } catch (error) {
-    console.error("Error in BlogPostContent:", error)
-
-    if (error instanceof Error && error.message.includes("Post not found")) {
-      notFound()
-    }
-
-    // This should rarely happen now due to fallback system
-    return (
-      <Alert variant="destructive">
-        <AlertCircle className="h-4 w-4" />
-        <AlertTitle>Content Unavailable</AlertTitle>
-        <AlertDescription>
-          {error instanceof Error ? error.message : "Failed to load blog post"}
-          {process.env.NODE_ENV === "development" && error instanceof Error && (
-            <div className="mt-2 text-xs opacity-70 whitespace-pre-wrap">{error.stack}</div>
-          )}
-        </AlertDescription>
-      </Alert>
-    )
-  }
 }
 
 export default function BlogPostPage({
