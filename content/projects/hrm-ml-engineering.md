@@ -5,7 +5,6 @@ date: "2025-01-15"
 status: "completed"
 tags: ["ML Engineering", "PyTorch", "Fine-tuning", "Cloud Infrastructure", "NVIDIA RTX 4090", "RunPod", "Production ML"]
 github: "https://github.com/Tar-ive/hrm-ml-engineering"
-live: ""
 image: "/media/ml-engineering.png"
 pinned: false
 category: "ml-engineering"

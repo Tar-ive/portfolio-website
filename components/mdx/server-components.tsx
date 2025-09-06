@@ -1,5 +1,3 @@
-'use client';
-
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,25 +8,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import CodeBlock from './code-block';
 import { isMermaidCode } from '@/lib/syntax-highlighting';
 import PDFLink from './pdf-link';
 import dynamic from 'next/dynamic';
 
-// Dynamically import the working Mermaid component to avoid SSR issues
-const SimpleMermaid = dynamic(() => import('./simple-mermaid'), {
+// Use a client wrapper component for proper hydration
+const CodeWrapper = dynamic(() => import('./code-wrapper'), {
   ssr: false,
-  loading: () => (
-    <div className="my-6 p-4 border rounded-lg bg-muted/50">
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-medium">mermaid</span>
-        <div className="text-sm text-muted-foreground">Loading diagram...</div>
-      </div>
-      <div className="flex items-center justify-center p-8 min-h-[200px]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-      </div>
-    </div>
-  ),
 });
 
 // Enhanced typography components with shadcn/ui styling
@@ -167,8 +153,8 @@ const DataTable = ({ children, ...props }: any) => (
   </div>
 );
 
-// Default MDX components with shadcn/ui integration
-export const defaultComponents = {
+// Server-compatible MDX components
+export const serverComponents = {
   // Typography
   ...TypographyComponents,
   
@@ -176,9 +162,9 @@ export const defaultComponents = {
   a: CustomLink,
   img: OptimizedImage,
   
-  // Code
+  // Code handling - server-side detection and routing
   code: ({ children, className, ...props }: any) => {
-    console.log('MDX code component called:', { children: typeof children === 'string' ? children.substring(0, 50) + '...' : children, className, hasClassName: !!className });
+    console.log('Server code component:', { children: typeof children === 'string' ? children.substring(0, 50) + '...' : children, className });
     
     // Inline code
     if (!className) {
@@ -195,23 +181,15 @@ export const defaultComponents = {
     // Check if this is a Mermaid diagram
     const isMermaid = language === 'mermaid' || (typeof children === 'string' && isMermaidCode(children, language));
     
-    console.log('MDX code processing:', { language, isMermaid, childrenType: typeof children });
+    console.log('Server code processing:', { language, isMermaid, childrenType: typeof children });
     
-    if (isMermaid) {
-      console.log('Rendering Mermaid diagram');
-      return (
-        <SimpleMermaid 
-          code={children}
-        />
-      );
-    }
-    
-    // Block code
-    console.log('Rendering CodeBlock with syntax highlighting');
-    return <CodeBlock className={className} {...props}>{children}</CodeBlock>;
+    // Block code - use wrapper component for both regular code and Mermaid
+    console.log('Using CodeWrapper for block code');
+    return <CodeWrapper className={className} language={language} {...props}>{children}</CodeWrapper>;
   },
+  
   pre: ({ children, ...props }: any) => {
-    console.log('MDX pre component called:', { 
+    console.log('Server pre component:', { 
       hasChildren: !!children, 
       childrenProps: children?.props, 
       childrenPropsClassName: children?.props?.className 
@@ -225,22 +203,13 @@ export const defaultComponents = {
       // Check if this is a Mermaid diagram
       const isMermaid = language === 'mermaid' || (typeof code === 'string' && isMermaidCode(code, language));
       
-      console.log('MDX pre processing:', { language, isMermaid, codeType: typeof code });
+      console.log('Server pre processing:', { language, isMermaid, codeType: typeof code });
 
-      if (isMermaid) {
-        console.log('Rendering Mermaid from pre component');
-        return (
-          <SimpleMermaid 
-            code={code}
-          />
-        );
-      }
-      
-      console.log('Rendering CodeBlock from pre component');
-      return <CodeBlock {...children.props}>{children.props.children}</CodeBlock>;
+      console.log('Using CodeWrapper from server pre component');
+      return <CodeWrapper {...children.props} language={language}>{children.props.children}</CodeWrapper>;
     }
     
-    console.log('Pre component returning children as-is');
+    console.log('Server pre component returning children as-is');
     return children; // Let code component handle pre
   },
   

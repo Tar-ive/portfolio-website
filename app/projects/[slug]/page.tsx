@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { getAllProjects, getProject } from "@/lib/projects"
 import { compileProjectMDX } from "@/lib/mdx"
-import { defaultComponents } from "@/components/mdx/default-components"
+import { serverComponents } from "@/components/mdx/server-components"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -29,8 +29,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   try {
     const project = await getProject(params.slug)
     
-    // Compile the MDX content with default components
-    const { content } = await compileProjectMDX(project.content, defaultComponents)
+    // Compile the MDX content with server components
+    const { content } = await compileProjectMDX(project.content, serverComponents)
     
     const isCurrentlyBuilding = project.status === 'currently-building'
     

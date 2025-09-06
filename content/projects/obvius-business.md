@@ -2,7 +2,7 @@
 title: "Obvius - Business Founder (6,800+ Users)"
 subtitle: "AI-Powered Place Recommendation Platform"
 date: "2024-01-01"
-status: "active"
+status: "completed"
 tags: ["Business", "Founder", "AI", "Google Maps API", "Gemini", "Product-Market Fit", "User Growth"]
 github: "https://github.com/Tar-ive/obvius"
 live: "https://obvius.site/"

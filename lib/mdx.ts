@@ -4,7 +4,7 @@ import { z } from 'zod';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import { defaultComponents } from '@/components/mdx/default-components';
+import { serverComponents } from '@/components/mdx/server-components';
 
 
 // MDX compilation options
@@ -46,9 +46,16 @@ export async function compileMDXWithFrontmatter<T extends z.ZodSchema>(
 
     if (compileContent) {
       const mergedComponents = {
-        ...defaultComponents,
+        ...serverComponents,
         ...components,
       };
+      
+      console.log('MDX compilation:', {
+        componentsCount: Object.keys(mergedComponents).length,
+        hasCodeComponent: !!mergedComponents.code,
+        hasPreComponent: !!mergedComponents.pre,
+        componentKeys: Object.keys(mergedComponents)
+      });
       
       const result = await compileMDX({
         source,
@@ -108,7 +115,7 @@ export async function compileBlogMDX(
 ) {
   try {
     const mergedComponents = {
-      ...defaultComponents,
+      ...serverComponents,
       ...components,
     };
     

@@ -5,7 +5,6 @@ date: "2024-08-01"
 status: "completed"
 tags: ["AI", "ML", "Protein Science", "GPU Optimization", "ESM-2", "PyTorch", "Competition Winner"]
 github: "https://github.com/Tar-ive/QuantaFold"
-live: ""
 image: "/media/quantafold.png"
 pinned: true
 category: "ai-research"
