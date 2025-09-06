@@ -72,15 +72,12 @@ const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
 export default function Portfolio() {
 
   const achievements = [
-    "Currently building <a href='https://x.com/obvius_site' class='text-blue-600 hover:underline'>Obvius </a> and a <a href='https://findandfund.vercel.app/' class='text-blue-600 hover:underline'>Find&Fund </a> which is looking for funding itself. ",
-    "Developed <a href='https://where-do-i-park-tarive22.replit.app/' class='text-blue-600 hover:underline'>Where Do I Park?</a> - a real-time parking availability app, <a href='https://github.com/Tar-ive/exa-mcp-server' class='text-blue-600 hover:underline'>EXA Advanced MCP for Claude</a>, part of the Echoz team, <a href='https://bobcat-bounty-app-1-tarive22.replit.app/' class='text-blue-600 hover:underline'>Bobcat Bounty</a> website, <a href='https://txst-ai.vercel.app/' class='text-blue-600 hover:underline'>TXST AI Academic Advisor</a>",
-    "Won multiple hackathons and competitions",
-    "AI4ALL Ignite Accelerator Fellow",
-    "Student Ambassador @ Extern",
-    "Resident Assistant and Student at Texas State University",
-    "Cracking Machine Learning Interviews as I speak",
-    "Vice President at ACM AI @ TXST",
-    "Involved in a Nepalese startup: <a href='https://internepal.com.np/' class='text-blue-600 hover:underline'>Intern Nepal</a>",
+    "TPU Cloud Student Researcher at <strong>Google</strong> - optimizing next-gen AI hardware architectures",
+    "<strong>4.0 GPA</strong> Computer Information Systems student at Texas State University with full Merit Scholarship", 
+    "Co-author of 2 research publications with novel AI/ML methodologies in healthcare and protein science",
+    "Vice President at <strong>ACM AI @ TXST</strong> - leading 70+ member tech community",
+    "Currently building <a href='https://grants-mcp-website.vercel.app/' class='text-blue-600 hover:underline'>Grants-MCP</a> and <a href='https://github.com/Tar-ive/QuantaFold' class='text-blue-600 hover:underline'>QuantaFold</a> protein classification system",
+    "Selected for poster presentation at <strong>SC25</strong> (International Conference for High Performance Computing)"
   ]
 
   // Projects have been migrated to the /projects section
@@ -101,7 +98,7 @@ export default function Portfolio() {
                 <XLogo className="h-5 w-5" />
               </Link>
               <Link
-                href="https://www.linkedin.com/in/saksham-adhikari-4727571b5/"
+                href="https://www.linkedin.com/in/adhsaksham/"
                 target="_blank"
                 className="rounded-md p-2 hover:bg-gray-100"
               >
@@ -152,21 +149,21 @@ export default function Portfolio() {
 
       {/* Experience Section */}
       <section className="container px-4 py-12 mx-auto">
-        <h2 className="text-xl font-bold mb-8">Work Experience</h2>
+        <h2 className="text-xl font-bold mb-8">Current Professional Experience</h2>
         <div className="space-y-6">
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Resident Assistant</CardTitle>
-                <Badge>August 2024 - Present</Badge>
+                <CardTitle>TPU Cloud Student Researcher</CardTitle>
+                <Badge>August 2025 - Present</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="font-medium">Housing and Residential Life, Texas State University</p>
+              <p className="font-medium">Google</p>
               <ul className="mt-2 space-y-2">
-                <li>• Creating a safe and supportive environment for new students</li>
-                <li>• Trained in trauma detection, basic CPR, and emergency procedures</li>
-                <li>• Successfully managing and supporting 25 residents</li>
+                <li>• Leading advanced TPU optimization research on Google Cloud TPU v6e architecture</li>
+                <li>• Contributing to open-source vllm project with architecture-adaptive attention backends</li>
+                <li>• Architecting multi-agent RL systems for power grid intelligence with 618-dimensional state space</li>
               </ul>
             </CardContent>
           </Card>
@@ -174,15 +171,16 @@ export default function Portfolio() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Conference Assistant</CardTitle>
-                <Badge>Summer 2024</Badge>
+                <CardTitle>Student Programmer</CardTitle>
+                <Badge>July 2025 - Present</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="font-medium">Housing and Residential Life, Texas State University</p>
+              <p className="font-medium">Center of Analytics and Data Science @ TXST</p>
               <ul className="mt-2 space-y-2">
-                <li>• Managed flow of over 6000 students during summer conference activities</li>
-                <li>• Part of the NSO core team for program planning and operations</li>
+                <li>• Engineered full-stack researcher discovery tool processing 2,454 academic papers with UMAP clustering</li>
+                <li>• Optimized data payload to 259KB achieving sub-500ms load times</li>
+                <li>• Architected DevOps lifecycle with GitHub Actions CI/CD and Vercel deployment</li>
               </ul>
             </CardContent>
           </Card>
@@ -190,24 +188,16 @@ export default function Portfolio() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Data Science Intern</CardTitle>
-                <Badge>March 2023 - June 2023</Badge>
+                <CardTitle>Research Assistant</CardTitle>
+                <Badge>November 2024 - Present</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="font-medium">Dursikshya Education Network Pvt Ltd, Lalitpur District, Nepal</p>
+              <p className="font-medium">Translational Health Research Center</p>
               <ul className="mt-2 space-y-2">
-                <li>
-                  • Analyzed predictive rates of industry demand for college graduates, identifying sectors and
-                  companies with the highest need for new hires
-                </li>
-                <li>
-                  • Developed Regression models to forecast employment trends and opportunities in various industries
-                </li>
-                <li>
-                  • Collaborated with the team to create targeted marketing campaigns based on insights to create
-                  targeted training programs for conversion
-                </li>
+                <li>• Engineered HIPAA-compliant Python NLP pipeline analyzing 619 patient interactions</li>
+                <li>• Reduced data processing time by 40% managing 30k+ patient data points</li>
+                <li>• Delivered project 200% under budget using cost-optimized AWS SageMaker</li>
               </ul>
             </CardContent>
           </Card>
