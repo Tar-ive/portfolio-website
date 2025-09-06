@@ -113,9 +113,10 @@ export default function Portfolio() {
                 <Github className="h-5 w-5" />
               </Link>
               <Link
-                href="https://drive.google.com/file/d/1Fg7YZk_gBxakPRlKMskjW-Dv9c5S4ILg/view?usp=sharing"
+                href="/media/saksham_resume_2025.pdf"
                 target="_blank"
                 className="rounded-md p-2 hover:bg-gray-100"
+                title="Download Resume"
               >
                 <Globe className="h-5 w-5" />
               </Link>
