@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useEffect, useLayoutEffect, useMemo, useState } from "react"
+import { memo, useEffect, useLayoutEffect, useMemo, useState, useCallback } from "react"
 import {
   AnimatePresence,
   motion,
@@ -60,8 +60,8 @@ export function useMediaQuery(
 }
 
 const duration = 0.15
-const transition = { duration, ease: [0.32, 0.72, 0, 1], filter: "blur(4px)" }
-const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
+const transition = { duration, ease: [0.32, 0.72, 0, 1] }
+const transitionOverlay = { duration: 0.3, ease: [0.32, 0.72, 0, 1] }
 
 const Carousel = memo(
   ({
@@ -76,7 +76,7 @@ const Carousel = memo(
     isCarouselActive: boolean
   }) => {
     const isScreenSizeSm = useMediaQuery("(max-width: 640px)")
-    const cylinderWidth = isScreenSizeSm ? 1100 : 1800
+    const cylinderWidth = isScreenSizeSm ? 1400 : 2200
     const faceCount = cards.length
     const faceWidth = cylinderWidth / faceCount
     const radius = cylinderWidth / (2 * Math.PI)
@@ -85,6 +85,16 @@ const Carousel = memo(
       rotation,
       (value) => `rotate3d(0, 1, 0, ${value}deg)`
     )
+
+    // Auto-rotation effect
+    useEffect(() => {
+      if (isCarouselActive) {
+        const interval = setInterval(() => {
+          rotation.set(rotation.get() + 0.2)
+        }, 50)
+        return () => clearInterval(interval)
+      }
+    }, [isCarouselActive, rotation])
 
     return (
       <div
@@ -137,9 +147,7 @@ const Carousel = memo(
               <motion.div
                 className="pointer-events-none w-full rounded-xl overflow-hidden aspect-square relative"
                 layoutId={`img-${imgUrl}`}
-                initial={{ filter: "blur(4px)" }}
                 layout="position"
-                animate={{ filter: "blur(0px)" }}
                 transition={transition}
               >
                 <Image
@@ -147,7 +155,9 @@ const Carousel = memo(
                   alt={`Gallery image ${i + 1}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100px, 150px"
+                  sizes="(max-width: 640px) 140px, 200px"
+                  priority={i < 6}
+                  quality={85}
                 />
               </motion.div>
             </motion.div>
@@ -170,8 +180,8 @@ function ThreeDPhotoCarousel({ images }: ThreeDPhotoCarouselProps) {
   const [isCarouselActive, setIsCarouselActive] = useState(true)
   const controls = useAnimation()
   
-  // Default images if none provided
-  const defaultImages = [
+  // Default images if none provided - reduced to 10 for better performance
+  const defaultImages = useMemo(() => [
     "/media/gallery/1700511257361.jpeg",
     "/media/gallery/1712616657268.jpeg",
     "/media/gallery/1713405112273.jpeg",
@@ -182,26 +192,22 @@ function ThreeDPhotoCarousel({ images }: ThreeDPhotoCarouselProps) {
     "/media/gallery/1730520806295.jpeg",
     "/media/gallery/1739756185658.jpeg",
     "/media/gallery/1740635540740.jpeg",
-    "/media/gallery/1740635541086.jpeg",
-    "/media/gallery/1741322225973.jpeg",
-  ]
+  ], [])
 
   const cards = useMemo(() => images || defaultImages, [images])
 
-  useEffect(() => {
-    console.log("Cards loaded:", cards)
-  }, [cards])
+  // Remove console.log for better performance
 
-  const handleClick = (imgUrl: string) => {
+  const handleClick = useCallback((imgUrl: string) => {
     setActiveImg(imgUrl)
     setIsCarouselActive(false)
     controls.stop()
-  }
+  }, [controls])
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setActiveImg(null)
     setIsCarouselActive(true)
-  }
+  }, [])
 
   return (
     <motion.div layout className="relative">
@@ -239,12 +245,14 @@ function ThreeDPhotoCarousel({ images }: ThreeDPhotoCarouselProps) {
                 height={800}
                 className="object-contain"
                 sizes="(max-width: 768px) 90vw, 800px"
+                quality={90}
+                priority
               />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="relative h-[500px] w-full overflow-hidden">
+      <div className="relative h-[600px] w-full overflow-hidden">
         <Carousel
           handleClick={handleClick}
           controls={controls}
