@@ -1,9 +1,9 @@
 ---
-title: "QuantaFold - MIT Hack Nation AI Winner"
-subtitle: "Protein Classification System"
+title: "QuantaFold"
+subtitle: "Advanced Protein Family Classification System"
 date: "2024-08-01"
-status: "completed"
-tags: ["AI", "ML", "Protein Science", "GPU Optimization", "ESM-2", "PyTorch", "Competition Winner"]
+status: "currently-building"
+tags: ["AI", "ML", "Protein Science", "GPU Optimization", "ESM-2", "PyTorch", "Bioinformatics"]
 github: "https://github.com/Tar-ive/QuantaFold"
 image: "/media/quantafold.png"
 pinned: true
@@ -11,13 +11,13 @@ category: "ai-research"
 priority: 95
 ---
 
-# QuantaFold - MIT Hack Nation AI Winner
+# QuantaFold
 
-**MIT Hack Nation AI Winner** - Advanced protein family classification system achieving exceptional accuracy through cutting-edge ML techniques and GPU optimization.
+**Advanced protein family classification system** achieving exceptional accuracy through cutting-edge ML techniques and GPU optimization.
 
 ## Overview
 
-QuantaFold is a state-of-the-art protein family classification system developed in a 17-hour development sprint that won MIT Hack Nation AI. The system achieves 97.9% accuracy on 1,000 common protein families through ESM-2 model fine-tuning with advanced optimization techniques.
+QuantaFold is a state-of-the-art protein family classification system that achieves high accuracy on protein family classification through ESM-2 model fine-tuning with advanced optimization techniques.
 
 ## Key Achievements
 

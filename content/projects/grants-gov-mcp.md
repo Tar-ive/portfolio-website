@@ -1,25 +1,47 @@
 ---
 title: "Grants.gov MCP"
-subtitle: "MCP for fetching grants data from grants.gov"
+subtitle: "Government Grants Discovery & Analysis Platform"
 date: "2024-12-01"
-status: "completed"
-tags: ["Claude", "MCP", "grants.gov", "API", "TypeScript"]
+status: "currently-building"
+tags: ["Python", "MCP", "FastMCP", "Docker", "Government APIs", "AI Analysis"]
 github: "https://github.com/Tar-ive/grants-mcp"
 live: "https://grants-mcp-website.vercel.app/"
 image: "/media/grantsmcp.jpeg"
-video: "/media/grants-mcp.mp4"
-pinned: false
+pinned: true
 category: "ai-tools"
-priority: 85
+priority: 90
 ---
 
 # Grants.gov MCP Server
 
-A Model Context Protocol (MCP) server that enables Anthropic's Claude to fetch and analyze grants data directly from grants.gov. This tool bridges the gap between AI assistance and government funding opportunities.
+A comprehensive **Model Context Protocol (MCP) server** for government grants discovery and analysis, powered by the Simpler Grants API with advanced AI-driven insights and Docker containerization.
 
-## Overview
+## System Architecture
 
-I recently built an MCP which lets Anthropic's Claude fetch grants data from grants.gov. This integration allows for seamless discovery and analysis of federal funding opportunities directly within Claude conversations.
+### **Technical Stack**
+- **Framework**: FastMCP (Python)
+- **API Integration**: Simpler Grants API
+- **Containerization**: Docker with multi-stage builds
+- **Transport**: Dual support (stdio and HTTP)
+- **Deployment**: Cloud-ready (Google Cloud Run, AWS ECS/Fargate)
+
+### **Core Architecture**
+```
+src/mcp_server/
+├── server.py          # Main MCP server implementation
+├── config/            # Configuration management
+├── models/            # Data models and schemas  
+├── tools/             # Grant discovery tools
+└── prompts/           # System prompts
+```
+
+## Advanced Features
+
+### **🔍 Grant Discovery & Analysis**
+- **Smart Search**: Keyword-based grant discovery across federal agencies
+- **Advanced Filtering**: Funding categories, agencies, deadlines, eligibility
+- **Trend Analysis**: Funding landscape patterns and insights
+- **Agency Mapping**: Comprehensive federal funding ecosystem overview
 
 ## Key Features
 
