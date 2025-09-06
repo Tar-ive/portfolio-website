@@ -61,8 +61,8 @@ export function useMediaQuery(
 }
 
 const duration = 0.15
-const transition = { duration, ease: [0.32, 0.72, 0, 1] }
-const transitionOverlay = { duration: 0.3, ease: [0.32, 0.72, 0, 1] }
+const transition = { duration, ease: "easeOut" as const }
+const transitionOverlay = { duration: 0.3, ease: "easeOut" as const }
 
 const Carousel = memo(
   ({
@@ -149,7 +149,7 @@ const Carousel = memo(
                 className="pointer-events-none w-full rounded-xl overflow-hidden aspect-square relative"
                 layoutId={`img-${imgUrl}`}
                 layout="position"
-                transition={transition}
+                transition={{ duration, ease: "easeOut" }}
               >
                 <Image
                   src={imgUrl}
