@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"
 //import { getCloudinaryUrl, getCloudinaryVideoUrl } from "@/lib/cloudinary"
 //import { mediaMap } from "@/lib/media"
 
@@ -144,6 +145,13 @@ export default function Portfolio() {
 
       <Separator />
 
+      {/* Gallery Section */}
+      <section className="container px-4 py-12 mx-auto">
+        <h2 className="text-xl font-bold mb-8">Gallery</h2>
+        <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
+          <ThreeDPhotoCarousel />
+        </div>
+      </section>
 
       <Separator />
 
