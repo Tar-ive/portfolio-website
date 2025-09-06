@@ -307,24 +307,21 @@ BlogPostContent: Rendering post with fallback status: true
 <w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
 <w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
 <w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
-<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
-<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
-<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
-<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
-<w>  at resolve commonjs /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
-473 modules)
- ✓ Compiled in 725ms (473 modules)
- ✓ Compiled in 106ms (473 modules)
- ✓ Compiled in 195ms (473 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 261ms (473 modules)
- ✓ Compiled in 118ms (473 modules)
- ✓ Compiled in 213ms (473 modules)
- ✓ Compiled in 209ms (473 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 262ms (473 modules)
- ✓ Compiled in 312ms (473 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-webs ✓ Compiled in 513ms (699 modules)
+ ✓ Compiled in 128ms (699 modules)
+ ✓ Compiled in 137ms (699 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/4.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/4.pack.gz'
+ ✓ Compiled in 304ms (699 modules)
+ ✓ Compiled in 250ms (699 modules)
+bsite/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/1.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/1.pack.gz'
+ ✓ Compiled in 597ms (891 modules)
+ ✓ Compiled in 183ms (891 modules)
+ ✓ Compiled in 206ms (891 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/4.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/4.pack.gz'
+ ✓ Compiled in 391ms (891 modules)
+ ✓ Compiled in 680ms (942 modules)
+e.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
 <w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
  ✓ Compiled in 446ms (523 modules)
  ✓ Compiled in 339ms (473 modules)
@@ -1653,3 +1650,9 @@ Import trace for requested module:
 ./app/about/page.tsx
  ✓ Compiled in 1217ms (3059 modules)
 <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/server-development/0.pack.gz'
+ ✓ Compiled in 943ms (3057 modules)
+ ✓ Compiled in 311ms (3057 modules)
+ ✓ Compiled in 362ms (3057 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/3.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/3.pack.gz'
+ ✓ Compiled in 605ms (3057 modules)
+ ✓ Compiled in 530ms (3107 modules)

@@ -181,14 +181,21 @@ function ThreeDPhotoCarousel({ images }: ThreeDPhotoCarouselProps) {
   const [isCarouselActive, setIsCarouselActive] = useState(true)
   const controls = useAnimation()
   
-  // Default images if none provided - reduced to 6 smallest for deployment optimization
+  // Default images - curated selection from user's media_home directory
   const defaultImages = useMemo(() => [
-    "/media/gallery/1713405112273.jpeg",  // 68K
-    "/media/gallery/1730143876504.jpeg",  // 92K
-    "/media/gallery/1712616657268.jpeg",  // 92K
-    "/media/gallery/1741322225973.jpeg",  // 116K
-    "/media/gallery/1700511257361.jpeg",  // 132K
+    "/media/gallery/1740635540740.jpeg",  // 401K
+    "/media/gallery/1740635541086.jpeg",  // 379K
+    "/media/gallery/1741322225973.jpeg",  // 113K
+    "/media/gallery/1741322227706.jpeg",  // 324K
+    "/media/gallery/1744253482973.jpeg",  // 245K
+    "/media/gallery/1744253491878.jpeg",  // 426K
+    "/media/gallery/1744253502174.jpeg",  // 458K
+    "/media/gallery/1744253509811.jpeg",  // 504K
     "/media/gallery/1744253511293.jpeg",  // 192K
+    "/media/gallery/1744253511469.jpeg",  // 227K
+    "/media/gallery/1745006011233.jpeg",  // 334K
+    "/media/gallery/1753204262276.jpeg",  // 554K
+    "/media/gallery/1753204263597.jpeg",  // 455K
   ], [])
 
   const cards = useMemo(() => images || defaultImages, [images])
