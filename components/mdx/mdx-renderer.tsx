@@ -17,7 +17,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CodeBlock from './code-block';
 import MermaidRenderer from './mermaid';
+import dynamic from 'next/dynamic';
 import { isMermaidCode } from '@/lib/syntax-highlighting';
+
+import PDFLink from './pdf-link';
 
 // Enhanced typography components with shadcn/ui styling
 const TypographyComponents = {
@@ -85,17 +88,17 @@ const TypographyComponents = {
 
 // Custom Link Component with PDF detection and external link handling
 const CustomLink = ({ href, children, ...props }: any) => {
-  const isExternal = href?.startsWith('http') && !href.includes(window?.location?.hostname);
+  const isExternal = href?.startsWith('http');
   const isPDF = href?.endsWith('.pdf');
   
   if (isPDF) {
     return (
-      <Button variant="outline" size="sm" asChild>
-        <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-          {children}
-          <ExternalLinkIcon className="ml-2 h-4 w-4" />
-        </a>
-      </Button>
+      <PDFLink
+        href={href}
+        {...props}
+      >
+        {children}
+      </PDFLink>
     );
   }
   
@@ -267,6 +270,9 @@ const defaultComponents = {
       {children}
     </Button>
   ),
+  
+  // PDF Viewer component
+  PDFLink,
 };
 
 export default function MDXRenderer({ 

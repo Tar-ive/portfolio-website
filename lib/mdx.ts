@@ -21,7 +21,7 @@ const mdxOptions = {
             className: ['anchor-link'],
           },
         },
-      ],
+      ] as any,
     ],
   },
 };
@@ -32,27 +32,42 @@ const mdxOptions = {
 export async function compileMDXWithFrontmatter<T extends z.ZodSchema>(
   source: string,
   frontmatterSchema: T,
-  components?: Record<string, React.ComponentType<any>>
+  components?: Record<string, React.ComponentType<any>>,
+  compileContent: boolean = true
 ): Promise<{
-  content: React.ReactElement;
+  content?: React.ReactElement;
   frontmatter: z.infer<T>;
   readingTime: number;
   wordCount: number;
 }> {
   try {
-    const mergedComponents = {
-      ...defaultComponents,
-      ...components,
-    };
-    
-    const { content, frontmatter } = await compileMDX({
-      source,
-      components: mergedComponents,
-      options: {
-        parseFrontmatter: true,
-        ...mdxOptions,
-      },
-    });
+    let content: React.ReactElement | undefined;
+    let frontmatter: any;
+
+    if (compileContent) {
+      const mergedComponents = {
+        ...defaultComponents,
+        ...components,
+      };
+      
+      const result = await compileMDX({
+        source,
+        components: mergedComponents,
+        options: {
+          parseFrontmatter: true,
+          ...mdxOptions,
+        },
+      });
+      
+      content = result.content;
+      frontmatter = result.frontmatter;
+    } else {
+      // Only extract frontmatter without compiling content
+      frontmatter = extractFrontmatter(source);
+      if (!frontmatter) {
+        throw new Error('No frontmatter found in source');
+      }
+    }
 
     // Validate frontmatter with provided schema
     const validatedFrontmatter = frontmatterSchema.parse(frontmatter);
@@ -147,12 +162,19 @@ export function extractFrontmatter(source: string): Record<string, any> | null {
         
         // Parse arrays
         if (value.startsWith('[') && value.endsWith(']')) {
-          value = value.slice(1, -1).split(',').map(item => item.trim().replace(/['"]/g, ''));
+          frontmatter[key] = value.slice(1, -1).split(',').map(item => item.trim().replace(/['"]/g, ''));
+          return;
         }
         
         // Parse booleans
-        if (value === 'true') value = true;
-        if (value === 'false') value = false;
+        if (value === 'true') {
+          frontmatter[key] = true;
+          return;
+        }
+        if (value === 'false') {
+          frontmatter[key] = false;
+          return;
+        }
         
         frontmatter[key] = value;
       }

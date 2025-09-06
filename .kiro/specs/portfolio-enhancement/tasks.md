@@ -14,14 +14,14 @@
   - Add responsive design support and accessibility features
   - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-- [ ] 3. Build PDF viewer component with inline and download options
+- [x] 3. Build PDF viewer component with inline and download options
   - Create PDF viewer component using react-pdf or similar library
   - Implement inline viewing mode with navigation controls
   - Add download functionality and fallback for unsupported browsers
   - Integrate with custom link component for automatic PDF detection
   - _Requirements: 7.4, 8.3_
 
-- [ ] 4. Create file-based project management system
+- [x] 4. Create file-based project management system
   - Set up project directory structure and file parsing utilities
   - Implement frontmatter extraction and validation with Zod schemas
   - Create project service to load and manage markdown-based projects
@@ -33,6 +33,7 @@
   - Build project grid layout with responsive design
   - Implement dynamic project detail pages with MDX rendering
   - Add project status highlighting for "currently-building" projects
+  - Add projects from /Users/tarive/Downloads/Private & Shared/Saksham Projects 24274e49e5de80588dddc562932ad122 to the projects directory and make sure they look good. 
   - _Requirements: 1.1, 5.1, 5.3, 6.1_
 
 - [ ] 6. Add basic project filtering system

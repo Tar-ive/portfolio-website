@@ -17,12 +17,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { MermaidRendererProps } from '@/lib/types';
-
-// Lazy load mermaid to reduce initial bundle size
-const loadMermaid = async () => {
-  const mermaid = await import('mermaid');
-  return mermaid.default;
-};
+import mermaid from 'mermaid';
 
 export default function MermaidRenderer({
   code,
@@ -50,40 +45,40 @@ export default function MermaidRenderer({
     ? (systemTheme === 'dark' ? 'dark' : 'default')
     : theme;
 
+  // Initialize mermaid on component mount
+  useEffect(() => {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: effectiveTheme,
+      securityLevel: 'loose',
+      fontFamily: 'ui-sans-serif, system-ui, sans-serif',
+      themeVariables: {
+        primaryColor: effectiveTheme === 'dark' ? '#3b82f6' : '#2563eb',
+        primaryTextColor: effectiveTheme === 'dark' ? '#f8fafc' : '#1e293b',
+        primaryBorderColor: effectiveTheme === 'dark' ? '#475569' : '#cbd5e1',
+        lineColor: effectiveTheme === 'dark' ? '#64748b' : '#475569',
+        secondaryColor: effectiveTheme === 'dark' ? '#1e293b' : '#f1f5f9',
+        tertiaryColor: effectiveTheme === 'dark' ? '#0f172a' : '#ffffff',
+      },
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+      },
+      sequence: {
+        useMaxWidth: false,
+      },
+      gantt: {
+        useMaxWidth: false,
+      },
+    });
+  }, [effectiveTheme]);
+
   const renderDiagram = useCallback(async () => {
     if (!containerRef.current) return;
 
     try {
       setIsLoading(true);
       setError(null);
-
-      const mermaid = await loadMermaid();
-      
-      // Configure mermaid with theme and security settings
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: effectiveTheme,
-        securityLevel: 'loose',
-        fontFamily: 'ui-sans-serif, system-ui, sans-serif',
-        themeVariables: {
-          primaryColor: effectiveTheme === 'dark' ? '#3b82f6' : '#2563eb',
-          primaryTextColor: effectiveTheme === 'dark' ? '#f8fafc' : '#1e293b',
-          primaryBorderColor: effectiveTheme === 'dark' ? '#475569' : '#cbd5e1',
-          lineColor: effectiveTheme === 'dark' ? '#64748b' : '#475569',
-          secondaryColor: effectiveTheme === 'dark' ? '#1e293b' : '#f1f5f9',
-          tertiaryColor: effectiveTheme === 'dark' ? '#0f172a' : '#ffffff',
-        },
-        flowchart: {
-          useMaxWidth: false,
-          htmlLabels: true,
-        },
-        sequence: {
-          useMaxWidth: false,
-        },
-        gantt: {
-          useMaxWidth: false,
-        },
-      });
 
       // Validate and render the diagram
       const isValid = await mermaid.parse(code);
@@ -132,7 +127,7 @@ export default function MermaidRenderer({
     } finally {
       setIsLoading(false);
     }
-  }, [code, effectiveTheme, mermaidId, zoomable, pannable]);
+  }, [code, mermaidId, zoomable, pannable]);
 
   const setupInteractivity = (svgElement: SVGElement) => {
     // Apply current transform

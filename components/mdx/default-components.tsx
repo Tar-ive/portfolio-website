@@ -12,10 +12,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CodeBlock from './code-block';
 import { isMermaidCode } from '@/lib/syntax-highlighting';
+import PDFLink from './pdf-link';
 import dynamic from 'next/dynamic';
 
-// Dynamically import react-mermaid2 to avoid SSR issues
-const Mermaid = dynamic(() => import('react-mermaid2'), {
+// Dynamically import the working Mermaid component to avoid SSR issues
+const SimpleMermaid = dynamic(() => import('./simple-mermaid'), {
   ssr: false,
   loading: () => (
     <div className="my-6 p-4 border rounded-lg bg-muted/50">
@@ -101,12 +102,12 @@ const CustomLink = ({ href, children, ...props }: any) => {
   
   if (isPDF) {
     return (
-      <Button variant="outline" size="sm" asChild>
-        <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-          {children}
-          <ExternalLinkIcon className="ml-2 h-4 w-4" />
-        </a>
-      </Button>
+      <PDFLink
+        href={href}
+        {...props}
+      >
+        {children}
+      </PDFLink>
     );
   }
   
@@ -185,6 +186,23 @@ export const defaultComponents = {
         </code>
       );
     }
+    
+    // Extract language from className
+    const language = className?.replace('language-', '');
+    
+    // Check if this is a Mermaid diagram
+    const isMermaid = language === 'mermaid' || (typeof children === 'string' && isMermaidCode(children, language));
+    
+
+    
+    if (isMermaid) {
+      return (
+        <SimpleMermaid 
+          code={children}
+        />
+      );
+    }
+    
     // Block code
     return <CodeBlock className={className} {...props}>{children}</CodeBlock>;
   },
@@ -195,19 +213,20 @@ export const defaultComponents = {
       const code = children.props.children;
       
       // Check if this is a Mermaid diagram
-      console.log('Pre component check:', { language, isMermaid: language === 'mermaid', isMermaidCode: typeof code === 'string' ? isMermaidCode(code, language) : false });
+      const isMermaid = language === 'mermaid' || (typeof code === 'string' && isMermaidCode(code, language));
       
-      if (language === 'mermaid' || (typeof code === 'string' && isMermaidCode(code, language))) {
-        console.log('Rendering Mermaid diagram with code:', code);
+
+      if (isMermaid) {
         return (
-          <div className="my-6">
-            <Mermaid chart={code} />
-          </div>
+          <SimpleMermaid 
+            code={code}
+          />
         );
       }
       
       return <CodeBlock {...children.props}>{children.props.children}</CodeBlock>;
     }
+    
     return children; // Let code component handle pre
   },
   
@@ -258,4 +277,7 @@ export const defaultComponents = {
       {children}
     </Button>
   ),
+  
+  // PDF Viewer component
+  PDFLink,
 };

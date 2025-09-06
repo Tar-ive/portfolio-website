@@ -6,7 +6,7 @@ status: "currently-building"
 tags: ["React", "TypeScript", "MDX"]
 github: "https://github.com/test/project"
 live: "https://test-project.com"
-image: "/media/test-image.jpg"
+image: "/media/test-project/test-image.jpg"
 pinned: true
 category: "development"
 ---
@@ -66,10 +66,16 @@ This section tests basic markdown rendering without JSX components for now.
 ## Links and Media
 
 - [External Link](https://example.com)
-- [PDF Document](/Users/tarive/Desktop/personalwebsite/portfolio-website/content/projects/SWE_python.pdf)
+- [PDF Document](/SWE_python.pdf)
 - [Internal Link](/projects)
 
-![Test Image](portfolio-website/public/media/ai-advisor.png)
+![Test Image](/media/test-project/test-image.jpg)
+
+## PDF Viewer Test
+
+The PDF link below should automatically render as an inline PDF viewer:
+
+[Test PDF Document](/SWE_python.pdf)
 
 ## Conclusion
 

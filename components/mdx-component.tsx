@@ -18,17 +18,20 @@ export const mdxComponents: Components = {
   ),
 
   // Handle code blocks and inline code
-  code({ node, inline, className, children, ...props }) {
+  code({ className, children, ...props }: any) {
     const match = /language-(\w+)/.exec(className || "")
     const code = String(children).trim()
 
+    // Check if this is inline code (no className usually means inline)
+    const isInline = !className
+
     // Handle JSX code blocks
-    if (match?.[1] === "jsx" && !inline) {
+    if (match?.[1] === "jsx" && !isInline) {
       return <CodeSandbox code={code} />
     }
 
     // Regular code blocks
-    if (!inline) {
+    if (!isInline) {
       return (
         <code className={cn("text-sm font-mono text-gray-200", className)} {...props}>
           {children}

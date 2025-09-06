@@ -1,0 +1,88 @@
+# Projects
+
+This section contains detailed documentation for various projects.
+
+## Project Architecture
+
+Here's a high-level overview of the project architecture:
+
+```mermaid
+graph TB
+    subgraph "Frontend"
+        A[Next.js App]
+        B[React Components]
+        C[Tailwind CSS]
+    end
+    
+    subgraph "Backend"
+        D[API Routes]
+        E[Database]
+        F[Authentication]
+    end
+    
+    subgraph "External Services"
+        G[Notion API]
+        H[Cloudinary]
+        I[Vercel]
+    end
+    
+    A --> B
+    B --> C
+    A --> D
+    D --> E
+    D --> F
+    D --> G
+    A --> H
+    A --> I
+```
+
+## Development Workflow
+
+```mermaid
+gitgraph
+    commit id: "Initial setup"
+    branch feature
+    checkout feature
+    commit id: "Add component"
+    commit id: "Add tests"
+    checkout main
+    merge feature
+    commit id: "Deploy"
+```
+
+## Data Flow
+
+```mermaid
+flowchart LR
+    A[User Request] --> B[Next.js Router]
+    B --> C{Route Type}
+    C -->|Static| D[Static Page]
+    C -->|Dynamic| E[API Route]
+    E --> F[Database Query]
+    F --> G[Response]
+    G --> H[Rendered Page]
+    D --> H
+```
+
+## Component Hierarchy
+
+```mermaid
+graph TD
+    A[App Layout] --> B[Navigation]
+    A --> C[Main Content]
+    A --> D[Footer]
+    
+    C --> E[Home Page]
+    C --> F[Blog Page]
+    C --> G[Projects Page]
+    
+    E --> H[Hero Section]
+    E --> I[Featured Projects]
+    E --> J[Latest Posts]
+    
+    F --> K[Post List]
+    F --> L[Post Detail]
+    
+    G --> M[Project Grid]
+    G --> N[Project Detail]
+```

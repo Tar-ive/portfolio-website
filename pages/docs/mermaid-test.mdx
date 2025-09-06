@@ -1,0 +1,110 @@
+# Mermaid Diagram Test
+
+This page demonstrates Mermaid diagram rendering in Nextra.
+
+## Basic Flowchart
+
+```mermaid
+graph TB
+    A[User Input] --> B[Validation]
+    B --> C{Valid?}
+    C -->|Yes| D[Process Data]
+    C -->|No| E[Show Error]
+    D --> F[Save to Database]
+    F --> G[Return Success]
+    E --> H[Return Error]
+```
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Database
+    
+    User->>Frontend: Submit Form
+    Frontend->>API: POST /api/data
+    API->>Database: Save Data
+    Database-->>API: Success
+    API-->>Frontend: 200 OK
+    Frontend-->>User: Show Success Message
+```
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class User {
+        +String id
+        +String name
+        +String email
+        +createUser()
+        +updateUser()
+        +deleteUser()
+    }
+    
+    class Project {
+        +String id
+        +String title
+        +String description
+        +Date createdAt
+        +User owner
+        +createProject()
+        +updateProject()
+    }
+    
+    User ||--o{ Project : owns
+```
+
+## State Diagram
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Loading : start
+    Loading --> Success : data loaded
+    Loading --> Error : failed
+    Success --> Idle : reset
+    Error --> Idle : retry
+    Error --> [*] : give up
+```
+
+## Gantt Chart
+
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Requirements    :done,    req, 2024-01-01, 2024-01-15
+    Design         :done,    des, 2024-01-10, 2024-01-25
+    section Development
+    Frontend       :active,  frontend, 2024-01-20, 2024-02-15
+    Backend        :         backend, 2024-01-25, 2024-02-20
+    Testing        :         testing, 2024-02-10, 2024-02-25
+```
+
+## Interactive Features
+
+Nextra's Mermaid integration provides:
+
+- **Responsive Design**: Diagrams scale with the viewport
+- **Theme Support**: Automatic light/dark mode switching
+- **Copy Support**: Click to copy diagram source
+- **Zoom**: Interactive zoom for complex diagrams
+
+## Code Example
+
+Here's how to add a Mermaid diagram in your MDX:
+
+````markdown
+```mermaid
+graph LR
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+````
+
+The diagram will be automatically rendered by Nextra's built-in Mermaid support.

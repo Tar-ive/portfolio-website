@@ -1,3 +1,12 @@
+import nextra from 'nextra'
+
+const withNextra = nextra({
+  latex: true,
+  search: {
+    codeblocks: false
+  },
+})
+
 let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
@@ -21,6 +30,8 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // Configure Nextra to only handle specific routes
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 }
 
 mergeConfig(nextConfig, userConfig)
@@ -45,4 +56,4 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default nextConfig
+export default withNextra(nextConfig)

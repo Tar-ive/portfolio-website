@@ -2,6 +2,13 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { ProjectFrontmatterSchema } from '@/lib/types';
 import { compileProjectMDX } from '@/lib/mdx';
+import { defaultComponents } from '@/components/mdx/default-components';
+import dynamic from 'next/dynamic';
+
+const SimpleMermaid = dynamic(() => import('@/components/mdx/simple-mermaid'), {
+  ssr: false,
+  loading: () => <div>Loading Mermaid...</div>,
+});
 
 export default async function TestMDXPage() {
   try {
@@ -9,8 +16,8 @@ export default async function TestMDXPage() {
     const filePath = join(process.cwd(), 'content/projects/test-project.md');
     const source = await readFile(filePath, 'utf8');
     
-    // Compile the MDX content using our utility function
-    const { content, frontmatter, readingTime, wordCount } = await compileProjectMDX(source);
+    // Compile the MDX content using our utility function with custom components
+    const { content, frontmatter, readingTime, wordCount } = await compileProjectMDX(source, defaultComponents);
     
     return (
       <div className="container mx-auto px-4 py-8">
@@ -36,6 +43,21 @@ export default async function TestMDXPage() {
               <p>Reading time: {readingTime} min</p>
               <p>Word count: {wordCount}</p>
             </div>
+          </div>
+          
+          {/* Test Simple Mermaid directly */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold mb-4">Direct Mermaid Test</h2>
+            <SimpleMermaid 
+              code={`graph TB
+    A[User Input] --> B[Validation]
+    B --> C{Valid?}
+    C -->|Yes| D[Process Data]
+    C -->|No| E[Show Error]
+    D --> F[Save to Database]
+    F --> G[Return Success]
+    E --> H[Return Error]`}
+            />
           </div>
           
           {/* MDX content */}

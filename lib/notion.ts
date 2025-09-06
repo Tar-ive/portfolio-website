@@ -3,28 +3,136 @@ import { NotionToMarkdown } from "notion-to-md"
 import { cache } from "react"
 import fetch from "node-fetch-native"
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
+import { cachedFunction, CACHE_CONFIG, cacheMonitor } from './cache'
+import { config, requireService } from './config'
 
-if (!process.env.NOTION_TOKEN) {
-  throw new Error("NOTION_TOKEN is required. Please add it to your environment variables.")
+// Retry configuration
+const RETRY_CONFIG = {
+  maxRetries: 5,
+  baseDelay: 1000, // 1 second
+  maxDelay: 30000, // 30 seconds
+  backoffFactor: 2,
 }
 
-if (!process.env.BLOG_INDEX_ID) {
-  throw new Error("BLOG_INDEX_ID is required. Please add it to your environment variables.")
+// Rate limiting configuration
+const RATE_LIMIT_CONFIG = {
+  requestQueue: [] as Array<() => Promise<any>>,
+  processing: false,
+  minInterval: 200, // Minimum 200ms between requests
 }
 
+// Enhanced retry function with exponential backoff
+async function retryWithBackoff<T>(
+  operation: () => Promise<T>,
+  context: string,
+  retryCount = 0
+): Promise<T> {
+  try {
+    return await operation()
+  } catch (error) {
+    if (retryCount >= RETRY_CONFIG.maxRetries) {
+      console.error(`Max retries exceeded for ${context}:`, error)
+      throw error
+    }
+
+    if (isNotionClientError(error)) {
+      // Handle rate limiting with longer delay
+      if (error.code === APIErrorCode.RateLimited) {
+        const delay = Math.min(
+          RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount + 2),
+          RETRY_CONFIG.maxDelay
+        )
+        console.log(`Rate limited in ${context}. Retrying in ${delay}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
+        await sleep(delay)
+        return retryWithBackoff(operation, context, retryCount + 1)
+      }
+
+      // Handle other retryable errors
+      if (error.code === ClientErrorCode.RequestTimeout || 
+          error.code === APIErrorCode.InternalServerError ||
+          error.code === APIErrorCode.ServiceUnavailable) {
+        const delay = Math.min(
+          RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount),
+          RETRY_CONFIG.maxDelay
+        )
+        console.log(`Retryable error in ${context}: ${error.code}. Retrying in ${delay}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
+        await sleep(delay)
+        return retryWithBackoff(operation, context, retryCount + 1)
+      }
+    }
+
+    // Non-retryable error, throw immediately
+    throw error
+  }
+}
+
+// Rate-limited request queue
+async function queueNotionRequest<T>(operation: () => Promise<T>): Promise<T> {
+  return new Promise((resolve, reject) => {
+    RATE_LIMIT_CONFIG.requestQueue.push(async () => {
+      try {
+        const result = await operation()
+        resolve(result)
+      } catch (error) {
+        reject(error)
+      }
+    })
+    processQueue()
+  })
+}
+
+// Process the request queue with rate limiting
+async function processQueue() {
+  if (RATE_LIMIT_CONFIG.processing || RATE_LIMIT_CONFIG.requestQueue.length === 0) {
+    return
+  }
+
+  RATE_LIMIT_CONFIG.processing = true
+
+  while (RATE_LIMIT_CONFIG.requestQueue.length > 0) {
+    const request = RATE_LIMIT_CONFIG.requestQueue.shift()
+    if (request) {
+      try {
+        await request()
+      } catch (error) {
+        console.error('Error in queued request:', error)
+      }
+      // Wait between requests to respect rate limits
+      await sleep(RATE_LIMIT_CONFIG.minInterval)
+    }
+  }
+
+  RATE_LIMIT_CONFIG.processing = false
+}
+
+// Simple sleep utility
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+// Initialize Notion client with configuration validation
 let notion: Client
 let n2m: NotionToMarkdown
 
-try {
-  notion = new Client({
-    auth: process.env.NOTION_TOKEN,
-    logLevel: LogLevel.DEBUG,
-    fetch: fetch as any, // Type assertion needed for compatibility
-  })
-  n2m = new NotionToMarkdown({ notionClient: notion })
-} catch (error) {
-  console.error("Failed to initialize Notion client:", error)
-  throw new Error("Failed to initialize Notion client. Please check your NOTION_TOKEN.")
+// Only initialize if Notion is configured, otherwise functions will use fallbacks
+if (config.features.notion && config.notion) {
+  try {
+    notion = new Client({
+      auth: config.notion.token,
+      logLevel: config.isDevelopment ? LogLevel.DEBUG : LogLevel.WARN,
+      fetch: fetch as any, // Type assertion needed for compatibility
+    })
+    n2m = new NotionToMarkdown({ notionClient: notion })
+    console.log("✅ Notion client initialized successfully")
+  } catch (error) {
+    console.error("Failed to initialize Notion client:", error)
+    throw new Error("Failed to initialize Notion client. Please check your NOTION_TOKEN.")
+  }
+} else {
+  console.log("⚠️ Notion client not initialized - using fallback mode")
+  // Create dummy clients to avoid runtime errors - functions will handle fallbacks
+  notion = {} as Client
+  n2m = {} as NotionToMarkdown
 }
 
 function createSlug(text: string): string {
@@ -48,103 +156,117 @@ interface NotionPage {
   }
 }
 
-export const getBlogPosts = cache(async () => {
+export const getBlogPosts = cache(async (forceRefresh = false) => {
   console.log("Starting getBlogPosts...")
 
-  if (!process.env.NOTION_TOKEN || !process.env.BLOG_INDEX_ID) {
-    throw new Error("Missing required environment variables: NOTION_TOKEN or BLOG_INDEX_ID")
+  // Check if Notion is configured, if not, fallback system will handle it
+  if (!config.features.notion || !config.notion) {
+    console.log("Notion not configured - delegating to fallback system")
+    throw new Error("Notion API not configured - fallback system will be used")
   }
 
-  try {
-    console.log("Querying Notion database...")
-    const response = await notion.databases.query({
-      database_id: process.env.BLOG_INDEX_ID,
-      filter: {
-        property: "published",
-        checkbox: {
-          equals: true,
-        },
-      },
-      sorts: [
-        {
-          property: "Date",
-          direction: "descending",
-        },
-      ],
-    })
+  // Use enhanced caching to reduce API calls
+  return cachedFunction(
+    CACHE_CONFIG.BLOG_POSTS.key,
+    async () => {
+      console.log("Cache miss - fetching fresh blog posts from Notion...")
+      
+      // Log current cache stats
+      cacheMonitor.logStats()
+      
+      const response = await retryWithBackoff(
+        () => queueNotionRequest(() => notion.databases.query({
+          database_id: config.notion!.blogIndexId,
+          filter: {
+            property: "published",
+            checkbox: {
+              equals: true,
+            },
+          },
+          sorts: [
+            {
+              property: "Date",
+              direction: "descending",
+            },
+          ],
+        })),
+        "database query"
+      )
 
-    console.log(`Found ${response.results.length} published posts`)
+      console.log(`Found ${response.results.length} published posts`)
 
-    const posts = await Promise.all(
-      response.results
+      // Process posts sequentially to avoid overwhelming the API
+      const posts: any[] = []
+      const filteredPages = response.results
         .filter((page): page is PageObjectResponse => 'properties' in page)
-        .map(async (page) => {
-          try {
-            console.log(`Processing page: ${page.id}`)
-            const pageContent = await notion.blocks.children.list({
-              block_id: page.id,
-            })
 
-            const title = page.properties.Page?.title?.[0]?.plain_text || "Untitled"
-            const providedSlug = page.properties.Slug?.rich_text?.[0]?.plain_text
-            const slug = providedSlug ? createSlug(providedSlug) : createSlug(title)
+      for (const page of filteredPages) {
+        try {
+          console.log(`Processing page: ${page.id}`)
+          
+          // Use cached page content if available
+          const pageContent = await cachedFunction(
+            CACHE_CONFIG.PAGE_CONTENT.key(page.id),
+            () => retryWithBackoff(
+              () => queueNotionRequest(() => notion.blocks.children.list({
+                block_id: page.id,
+              })),
+              `page content for ${page.id}`
+            ),
+            CACHE_CONFIG.PAGE_CONTENT.ttl
+          )
 
-            const description = page.properties.Description?.rich_text?.[0]?.plain_text || ""
-            const date = page.properties.Date?.date?.start || new Date().toISOString()
-            const author = page.properties.Author?.people?.[0]?.name || "Anonymous"
-            const published = page.properties.published?.checkbox || false
+          // Extract properties with type guards
+          const pageProperty = page.properties.Page
+          const title = (pageProperty && 'title' in pageProperty && pageProperty.title?.[0]?.plain_text) || "Untitled"
+          
+          const slugProperty = page.properties.Slug
+          const providedSlug = (slugProperty && 'rich_text' in slugProperty && slugProperty.rich_text?.[0]?.plain_text) || null
+          const slug = providedSlug ? createSlug(providedSlug) : createSlug(title)
 
-            console.log(`Converting blocks to markdown for page: ${page.id}`)
-            const mdBlocks = await n2m.blocksToMarkdown(pageContent.results)
-            const { parent: content } = n2m.toMarkdownString(mdBlocks)
+          const descProperty = page.properties.Description
+          const description = (descProperty && 'rich_text' in descProperty && descProperty.rich_text?.[0]?.plain_text) || ""
+          
+          const dateProperty = page.properties.Date
+          const date = (dateProperty && 'date' in dateProperty && dateProperty.date?.start) || new Date().toISOString()
+          
+          const authorProperty = page.properties.Author
+          const authorObj = authorProperty && 'people' in authorProperty && authorProperty.people?.[0]
+          const author = (authorObj && 'name' in authorObj ? authorObj.name : null) || "Anonymous"
+          
+          const publishedProperty = page.properties.published
+          const published = (publishedProperty && 'checkbox' in publishedProperty && publishedProperty.checkbox) || false
 
-            console.log(`Processed post: ${title} with slug: ${slug}`)
-            console.log(`Content preview: ${content.substring(0, 100)}...`)
-            console.log(`Full content object:`, JSON.stringify(n2m.toMarkdownString(mdBlocks), null, 2))
+          console.log(`Converting blocks to markdown for page: ${page.id}`)
+          const mdBlocks = await n2m.blocksToMarkdown(pageContent.results)
+          const { parent: content } = n2m.toMarkdownString(mdBlocks)
 
-            return {
-              id: page.id,
-              title,
-              description,
-              date,
-              slug,
-              author,
-              published,
-              content,
-              fullContentObject: n2m.toMarkdownString(mdBlocks), // Including full content object for debugging
-            }
-          } catch (error) {
-            console.error(`Error processing page ${page.id}:`, error)
-            return null
-          }
-        }),
-    )
+          console.log(`Processed post: ${title} with slug: ${slug}`)
+          
+          posts.push({
+            id: page.id,
+            title,
+            description,
+            date,
+            slug,
+            author,
+            published,
+            content,
+            fullContentObject: n2m.toMarkdownString(mdBlocks),
+          })
 
-    return posts.filter((post): post is NonNullable<typeof post> => post !== null)
-  } catch (error: unknown) {
-    console.error("Detailed error in getBlogPosts:", error)
-
-    if (isNotionClientError(error)) {
-      switch (error.code) {
-        case ClientErrorCode.RequestTimeout:
-          throw new Error("Request to Notion API timed out")
-        case APIErrorCode.ObjectNotFound:
-          throw new Error("Notion database not found. Please check your BLOG_INDEX_ID")
-        case APIErrorCode.Unauthorized:
-          throw new Error("Unauthorized access to Notion API. Please check your NOTION_TOKEN")
-        default:
-          throw new Error(`Notion API Error: ${error.code} - ${error.message}`)
+        } catch (error) {
+          console.error(`Error processing page ${page.id}:`, error)
+          // Continue processing other posts instead of failing completely
+        }
       }
-    }
 
-    if (error instanceof Error) {
-      console.error("Error stack:", error.stack)
-    }
-
-    throw new Error(
-      `An unexpected error occurred while fetching blog posts: ${error instanceof Error ? error.message : "Unknown error"}`,
-    )
-  }
+      console.log(`Successfully processed ${posts.length} blog posts`)
+      return posts
+    },
+    CACHE_CONFIG.BLOG_POSTS.ttl,
+    forceRefresh
+  )
 })
 
 export const getBlogPost = cache(async (slug: string) => {
@@ -154,42 +276,30 @@ export const getBlogPost = cache(async (slug: string) => {
     throw new Error("Slug is required")
   }
 
-  try {
-    const posts = await getBlogPosts()
-    const cleanSlug = createSlug(slug)
-    console.log("Looking for post with slug:", cleanSlug)
+  // Use individual post caching
+  return cachedFunction(
+    CACHE_CONFIG.BLOG_POST.key(slug),
+    async () => {
+      console.log(`Cache miss - fetching blog post for slug: ${slug}`)
+      
+      const posts = await getBlogPosts()
+      const cleanSlug = createSlug(slug)
+      console.log("Looking for post with slug:", cleanSlug)
 
-    const post = posts.find((p) => p.slug === cleanSlug)
+      const post = posts.find((p) => p.slug === cleanSlug)
 
-    if (!post) {
-      console.log(
-        "Available slugs:",
-        posts.map((p) => p.slug),
-      )
-      throw new Error(`Post not found: ${cleanSlug}`)
-    }
-
-    console.log("Found post:", post.title)
-    console.log("Post content preview:", post.content.substring(0, 100))
-    return post
-  } catch (error: unknown) {
-    console.error("Detailed error in getBlogPost:", error)
-
-    if (isNotionClientError(error)) {
-      switch (error.code) {
-        case ClientErrorCode.RequestTimeout:
-          throw new Error("Request to Notion API timed out")
-        case APIErrorCode.ObjectNotFound:
-          throw new Error("Notion page not found. Please check the post ID")
-        case APIErrorCode.Unauthorized:
-          throw new Error("Unauthorized access to Notion API. Please check your NOTION_TOKEN")
-        default:
-          throw new Error(`Notion API Error: ${error.code} - ${error.message}`)
+      if (!post) {
+        console.log(
+          "Available slugs:",
+          posts.map((p) => p.slug),
+        )
+        throw new Error(`Post not found: ${cleanSlug}`)
       }
-    }
 
-    throw new Error(
-      `An unexpected error occurred while fetching the blog post: ${error instanceof Error ? error.message : "Unknown error"}`,
-    )
-  }
+      console.log("Found post:", post.title)
+      console.log("Post content preview:", post.content.substring(0, 100))
+      return post
+    },
+    CACHE_CONFIG.BLOG_POST.ttl
+  )
 })
