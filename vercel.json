@@ -12,6 +12,11 @@
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install --legacy-peer-deps",
+  "functions": {
+    "app/blog/[slug]/page.tsx": {
+      "maxDuration": 30
+    }
+  },
   "git": {
     "lfs": true
   }

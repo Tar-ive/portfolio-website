@@ -23,10 +23,10 @@ function LoadingPost() {
   )
 }
 
-// Timeout wrapper to prevent hanging - Updated based on 2024 research
+// Timeout wrapper for Vercel serverless function limits
 async function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
   const timeoutPromise = new Promise<never>((_, reject) => {
-    setTimeout(() => reject(new Error(`Blog post fetch timed out after ${timeoutMs/1000}s. This may indicate Notion API issues or large dataset handling delays.`)), timeoutMs)
+    setTimeout(() => reject(new Error(`Blog post fetch timed out after ${timeoutMs/1000}s. Notion API response taking longer than expected.`)), timeoutMs)
   })
   
   return Promise.race([promise, timeoutPromise])
@@ -39,10 +39,10 @@ async function BlogPostContent({ slug }: { slug: string }) {
   try {
     console.log(`BlogPostContent: Calling getBlogPostWithFallback for slug: ${slug}`)
     
-    // Add 60 second timeout for production reliability (based on GitHub research)
+    // Add 25 second timeout for Vercel serverless function limits
     post = await withTimeout(
       getBlogPostWithFallback(slug, getBlogPost),
-      60000
+      25000
     )
     
     console.log(`BlogPostContent: Successfully got post:`, post?.id, post?.title)

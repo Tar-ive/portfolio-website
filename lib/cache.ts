@@ -99,10 +99,10 @@ export const CACHE_CONFIG = {
     ttl: 600, // 10 minutes
   },
   
-  // Individual blog post cache for 30 minutes
+  // Individual blog post cache for 2 hours (reduce API load)
   BLOG_POST: {
     key: (slug: string) => `notion:blog-post:${slug}`,
-    ttl: 1800, // 30 minutes
+    ttl: 7200, // 2 hours
   },
   
   // Notion database schema cache for 1 hour (rarely changes)
@@ -111,10 +111,10 @@ export const CACHE_CONFIG = {
     ttl: 3600, // 1 hour
   },
   
-  // Page content cache for 20 minutes
+  // Page content cache for 1 hour (reduce API load)
   PAGE_CONTENT: {
     key: (pageId: string) => `notion:page:${pageId}`,
-    ttl: 1200, // 20 minutes
+    ttl: 3600, // 1 hour
   }
 }
 
