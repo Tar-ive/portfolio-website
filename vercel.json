@@ -10,7 +10,8 @@
   },
   "images": {
     "formats": ["image/webp"],
-    "minimumCacheTTL": 86400
+    "minimumCacheTTL": 86400,
+    "sizes": [16, 32, 48, 64, 96, 128, 256, 384]
   },
   "git": {
     "lfs": false
