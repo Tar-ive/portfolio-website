@@ -1,5 +1,5 @@
-import { getBlogPost } from "@/lib/notion"
-import { getBlogPostWithFallback } from "@/lib/blog-fallback"
+import { getBlogPost, getBlogPosts } from "@/lib/notion"
+import { getBlogPostWithFallback, getBlogPostsWithFallback } from "@/lib/blog-fallback"
 import { notFound } from "next/navigation"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle, WifiOff, Wifi } from "lucide-react"
@@ -8,6 +8,23 @@ import { mdxComponents } from "@/components/mdx-component"
 import { BlogErrorBoundary } from "@/components/error-boundary"
 
 export const revalidate = 3600 // Revalidate every hour
+
+// Generate static params for all blog posts at build time
+export async function generateStaticParams() {
+  try {
+    console.log('generateStaticParams: Attempting to fetch blog posts for static generation')
+    const posts = await getBlogPostsWithFallback(() => getBlogPosts())
+    console.log(`generateStaticParams: Found ${posts.length} posts`)
+    
+    return posts.map((post) => ({
+      slug: post.slug,
+    }))
+  } catch (error) {
+    console.error('generateStaticParams: Failed to fetch posts, generating empty params:', error)
+    // Return empty array to allow fallback behavior
+    return []
+  }
+}
 
 function LoadingPost() {
   return (
@@ -135,4 +152,7 @@ export default function BlogPostPage({
     </BlogErrorBoundary>
   )
 }
+
+// Force dynamic for pages not covered by generateStaticParams
+export const dynamicParams = true
 

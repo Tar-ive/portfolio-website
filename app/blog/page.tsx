@@ -7,7 +7,8 @@ import { getBlogPostsWithFallback } from "@/lib/blog-fallback"
 import { BlogErrorBoundary } from "@/components/error-boundary"
 import { Suspense } from "react"
 
-export const revalidate = 3600 // Revalidate every hour
+// Use static generation with ISR (Incremental Static Regeneration)
+export const revalidate = 1800 // Revalidate every 30 minutes
 
 function LoadingPosts() {
   return (
