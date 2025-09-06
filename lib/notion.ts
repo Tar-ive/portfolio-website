@@ -6,12 +6,13 @@ import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 import { cachedFunction, CACHE_CONFIG, cacheMonitor } from './cache'
 import { config, requireService } from './config'
 
-// Retry configuration
+// Retry configuration - Updated based on 2024 Notion API research
 const RETRY_CONFIG = {
-  maxRetries: 5,
-  baseDelay: 1000, // 1 second
-  maxDelay: 30000, // 30 seconds
-  backoffFactor: 2,
+  maxRetries: 6, // Increased based on GitHub findings for large datasets
+  baseDelay: 2000, // Increased base delay for 502/504 errors
+  maxDelay: 45000, // Extended max delay for production reliability  
+  backoffFactor: 2.5, // More aggressive backoff
+  jitterRange: 0.5, // Add jitter to prevent thundering herd
 }
 
 // Rate limiting configuration
@@ -22,6 +23,12 @@ const RATE_LIMIT_CONFIG = {
 }
 
 // Enhanced retry function with exponential backoff
+// Add jitter to prevent thundering herd - Based on GitHub research
+function addJitter(delay: number): number {
+  const jitter = delay * RETRY_CONFIG.jitterRange * (Math.random() - 0.5) * 2
+  return Math.max(delay + jitter, 500) // Minimum 500ms
+}
+
 async function retryWithBackoff<T>(
   operation: () => Promise<T>,
   context: string,
@@ -38,24 +45,38 @@ async function retryWithBackoff<T>(
     if (isNotionClientError(error)) {
       // Handle rate limiting with longer delay
       if (error.code === APIErrorCode.RateLimited) {
-        const delay = Math.min(
-          RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount + 2),
-          RETRY_CONFIG.maxDelay
-        )
-        console.log(`Rate limited in ${context}. Retrying in ${delay}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
+        const baseDelay = RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount + 2)
+        const delay = Math.min(addJitter(baseDelay), RETRY_CONFIG.maxDelay)
+        console.log(`Rate limited in ${context}. Retrying in ${Math.round(delay)}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
         await sleep(delay)
         return retryWithBackoff(operation, context, retryCount + 1)
       }
 
-      // Handle other retryable errors
+      // Handle authentication errors - Based on 2024 token format changes
+      if (error.code === APIErrorCode.Unauthorized) {
+        console.error(`Authentication failed in ${context}. Check if using new ntn_ token format:`, error)
+        throw error // Don't retry auth errors
+      }
+
+      // Handle other retryable errors including timeouts and server errors
       if (error.code === ClientErrorCode.RequestTimeout || 
           error.code === APIErrorCode.InternalServerError ||
           error.code === APIErrorCode.ServiceUnavailable) {
-        const delay = Math.min(
-          RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount),
-          RETRY_CONFIG.maxDelay
-        )
-        console.log(`Retryable error in ${context}: ${error.code}. Retrying in ${delay}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
+        const baseDelay = RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount)
+        const delay = Math.min(addJitter(baseDelay), RETRY_CONFIG.maxDelay)
+        console.log(`Retryable error in ${context}: ${error.code}. Retrying in ${Math.round(delay)}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
+        await sleep(delay)
+        return retryWithBackoff(operation, context, retryCount + 1)
+      }
+    }
+
+    // Handle potential 502/504 errors from large datasets (found in GitHub research)
+    if (error instanceof Error) {
+      if (error.message.includes('502') || error.message.includes('504') || 
+          error.message.includes('gateway') || error.message.includes('timeout')) {
+        const baseDelay = RETRY_CONFIG.baseDelay * Math.pow(RETRY_CONFIG.backoffFactor, retryCount)
+        const delay = Math.min(addJitter(baseDelay), RETRY_CONFIG.maxDelay)
+        console.log(`Gateway error in ${context}: ${error.message}. Retrying in ${Math.round(delay)}ms (attempt ${retryCount + 1}/${RETRY_CONFIG.maxRetries})`)
         await sleep(delay)
         return retryWithBackoff(operation, context, retryCount + 1)
       }
