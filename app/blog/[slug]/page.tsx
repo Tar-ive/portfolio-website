@@ -4,7 +4,6 @@ import { notFound } from "next/navigation"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle, WifiOff, Wifi } from "lucide-react"
 import ReactMarkdown from "react-markdown"
-import { Suspense } from "react"
 import { mdxComponents } from "@/components/mdx-component"
 import { BlogErrorBoundary } from "@/components/error-boundary"
 
@@ -131,9 +130,7 @@ export default function BlogPostPage({
   return (
     <BlogErrorBoundary>
       <div className="container mx-auto px-4 py-12 bg-white">
-        <Suspense fallback={<LoadingPost />}>
-          <BlogPostContent slug={params.slug} />
-        </Suspense>
+        <BlogPostContent slug={params.slug} />
       </div>
     </BlogErrorBoundary>
   )
