@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "next build && rm -rf .next/cache",
+  "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install --legacy-peer-deps",
   "functions": {

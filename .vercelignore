@@ -1,0 +1,9 @@
+# Vercel ignore patterns
+.next/cache
+node_modules
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+dev.log
+*.log
