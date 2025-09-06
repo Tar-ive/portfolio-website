@@ -120,7 +120,7 @@ export default function Portfolio() {
               </Link>
             </div>
             <p className="text-base leading-relaxed">
-              Nepal-born, Texas-based, eternally curious. I'm Saksham, 20, and I spend my days tinkering with AI, making
+              Nepal-born, Texas-based, eternally curious. I'm Saksham, 21, and I spend my days tinkering with AI, making
               data tell stories, and building whatever sounds fun. Usually found building AI and ML apps, meditating,
               reading books and hanging out with my{" "}
               <a href="https://quamos.dev/" className="text-pink-600 hover:underline">
