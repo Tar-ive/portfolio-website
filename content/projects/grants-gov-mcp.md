@@ -6,6 +6,7 @@ status: "currently-building"
 tags: ["Python", "MCP", "FastMCP", "Docker", "Government APIs", "AI Analysis"]
 github: "https://github.com/Tar-ive/grants-mcp"
 live: "https://grants-mcp-website.vercel.app/"
+video: "/media/grants-mcp.mp4"
 image: "/media/grantsmcp.jpeg"
 pinned: true
 category: "ai-tools"

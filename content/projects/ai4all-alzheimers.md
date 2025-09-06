@@ -5,6 +5,7 @@ date: "2024-09-01"
 status: "completed"
 tags: ["AI4ALL", "Fellowship", "Team Leadership", "Alzheimer's", "Medical AI", "Machine Learning", "Streamlit", "Neural Networks"]
 github: "https://github.com/Tar-ive/alzheimers-detection"
+live: "https://ai4all-alzheimers.streamlit.app/"
 image: "/media/ai4all-alzheimers.png"
 pinned: true
 category: "medical-ai"

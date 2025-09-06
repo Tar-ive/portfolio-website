@@ -259,12 +259,18 @@ export default function AboutPage() {
         </CardContent>
       </Card>
 
-      {/* Download Resume Button */}
-      <div className="text-center">
+      {/* Download Documents */}
+      <div className="flex gap-4 justify-center">
         <Button asChild>
-          <Link href="/resume.pdf" download>
+          <Link href="/media/saksham_resume_2025.pdf" download>
             <Download className="mr-2 h-4 w-4" />
-            Download Resume
+            Download Resume (PDF)
+          </Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="/media/Saksham_CV.docx" download>
+            <Download className="mr-2 h-4 w-4" />
+            Download CV (DOCX)
           </Link>
         </Button>
       </div>
