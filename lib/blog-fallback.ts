@@ -111,22 +111,47 @@ export function shouldUseFallback(error: unknown): boolean {
   if (!error) return false
   
   const errorMessage = error instanceof Error ? error.message : String(error)
+  const errorName = error instanceof Error ? error.constructor.name : 'UnknownError'
   
   // Use fallback for these error types
   const fallbackTriggers = [
     'rate limit',
     'rate_limited', 
+    'unauthorized',
+    'invalid',
+    'invalid token',
+    'api token',
     'Network',
     'timeout',
     'ECONNREFUSED',
     'ETIMEDOUT',
     'Service unavailable',
-    'Internal server error'
+    'Internal server error',
+    'APIResponseError',
+    'NotionClientError',
+    // Build-time specific errors
+    'fetch failed',
+    'request failed',
+    'connection refused'
   ]
   
-  return fallbackTriggers.some(trigger => 
+  // Check error message
+  const messageMatch = fallbackTriggers.some(trigger => 
     errorMessage.toLowerCase().includes(trigger.toLowerCase())
   )
+  
+  // Check error constructor name
+  const nameMatch = fallbackTriggers.some(trigger => 
+    errorName.toLowerCase().includes(trigger.toLowerCase())
+  )
+  
+  // Special handling for API errors during build
+  if (process.env.NODE_ENV === 'production' || process.env.NEXT_PHASE === 'phase-production-build') {
+    console.log(`Build-time error detected: ${errorName} - ${errorMessage}`)
+    return true // Always use fallback during production builds
+  }
+  
+  return messageMatch || nameMatch
 }
 
 /**
