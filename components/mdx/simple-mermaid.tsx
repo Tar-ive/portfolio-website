@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import mermaid from 'mermaid';
 import { useTheme } from 'next-themes';
 
 interface SimpleMermaidProps {
@@ -16,20 +15,23 @@ export default function SimpleMermaid({ code, className }: SimpleMermaidProps) {
 
   
   useEffect(() => {
-    // Initialize mermaid
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: theme === 'dark' ? 'dark' : 'default',
-      securityLevel: 'loose',
-      fontFamily: 'ui-sans-serif, system-ui, sans-serif',
-    });
-
-    // Render the diagram
+    // Render the diagram with dynamic import
     const renderDiagram = async () => {
       if (containerRef.current) {
         try {
           // Clear any existing content
           containerRef.current.innerHTML = '';
+          
+          // Dynamic import to avoid bundling mermaid in serverless functions
+          const { default: mermaid } = await import('mermaid');
+          
+          // Initialize mermaid
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: theme === 'dark' ? 'dark' : 'default',
+            securityLevel: 'loose',
+            fontFamily: 'ui-sans-serif, system-ui, sans-serif',
+          });
           
           // Generate a unique ID for this diagram
           const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;

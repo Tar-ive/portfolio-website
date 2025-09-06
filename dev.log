@@ -280,47 +280,39 @@ BlogPostContent: Rendering post with fallback status: true
 <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
 <w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
  ✓ Compiled in 297ms (699 modules)
-ite/.next/cache/webpack/client-development/1.pack.gz'
 <w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 204ms (282 modules)
- ✓ Compiled in 94ms (282 modules)
- ✓ Compiled in 148ms (282 modules)
- ✓ Compiled in 107ms (282 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 164ms (282 modules)
- ✓ Compiled in 227ms (282 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 262ms (282 modules)
- ✓ Compiled in 193ms (282 modules)
- ✓ Compiled in 203ms (282 modules)
- ✓ Compiled in 152ms (282 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 96ms (282 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 426ms (282 modules)
- ✓ Compiled in 120ms (282 modules)
- ✓ Compiled in 106ms (282 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
- ✓ Compiled in 252ms (282 modules)
-ent/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
- ✓ Compiled in 1188ms (473 modules)
- ✓ Compiled in 699ms (473 modules)
- ✓ Compiled in 554ms (473 modules)
- ✓ Compiled in 1022ms (473 modules)
+ ✓ Compiled in 299ms (699 modules)
+ ✓ Compiled in 99ms (699 modules)
+ ✓ Compiled in 173ms (699 modules)
+ ✓ Compiled in 165ms (699 modules)
 <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
- ✓ Compiled in 676ms (473 modules)
- ✓ Compiled in 522ms (473 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
- ✓ Compiled in 458ms (473 modules)
- ✓ Compiled in 238ms (473 modules)
- ✓ Compiled in 293ms (473 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
- ✓ Compiled in 4.9s (473 modules)
- ✓ Compiled in 869ms (473 modules)
- ✓ Compiled in 1701ms (473 modules)
- ✓ Compiled in 975ms (473 modules)
- ✓ Compiled in 40.9s (473 modules)
- ✓ Compiled in 551ms (473 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
+ ✓ Compiled in 266ms (699 modules)
+ ✓ Compiled / in 124ms (672 modules)
+ ✓ Compiled /_not-found in 159ms (1374 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 883ms (1596 modules)
+ GET / 404 in 1271ms
+ ✓ Compiled in 373ms (893 modules)
+ ✓ Compiled in 241ms (893 modules)
+ ✓ Compiled in 379ms (893 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/vendor-chunks/@swc.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@swc' in /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server for build dependencies doesn't lead to expected result '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/vendor-chunks/@swc.js', but to 'Error: Can't resolve './vendor-chunks/@swc' in '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@swc (expected /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/vendor-chunks/@swc.js)
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_error.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_error.js
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+473 modules)
  ✓ Compiled in 725ms (473 modules)
  ✓ Compiled in 106ms (473 modules)
  ✓ Compiled in 195ms (473 modules)
@@ -348,3 +340,1316 @@ ent/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.nex
  ✓ Compiled in 157ms (473 modules)
 <w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
  ✓ Compiled in 356ms (473 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development/0.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/client-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
+ ✓ Compiled in 340ms (473 modules)
+ ✓ Compiled in 114ms (473 modules)
+ ✓ Compiled in 250ms (473 modules)
+ ✓ Compiled in 195ms (473 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 2.2s (1604 modules)
+ GET / 200 in 2347ms
+ ✓ Compiled /_not-found in 233ms (1594 modules)
+ GET /_next/static/chunks/main-app.js?v=1757201237048 404 in 278ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 8ms
+ ✓ Compiled /about in 314ms (1669 modules)
+ GET /about 200 in 378ms
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/about/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/about/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ✓ Compiled /_error in 180ms (1645 modules)
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:198:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:162:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+ ○ Compiling /projects ...
+ ✓ Compiled /blog in 6.7s (5793 modules)
+
+🔧 Configuration Status:
+✅ Available services: Core Application
+⚠️  Services in fallback mode: Notion CMS, Cloudinary Media
+
+⚠️  Configuration Warnings:
+   Notion CMS unavailable - missing: BLOG_INDEX_ID. Blog will use fallback content.
+   Cloudinary unavailable - missing: CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET. Images will use local fallbacks.
+
+⚠️ Notion client not initialized - using fallback mode
+Fetching blog posts with fallback support...
+Starting getBlogPosts...
+Notion not configured - delegating to fallback system
+Primary blog fetch failed: Error: Notion API not configured - fallback system will be used
+    at eval (webpack-internal:///(rsc)/./lib/notion.ts:158:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:352977
+    at eval (webpack-internal:///(rsc)/./app/blog/page.tsx:90:163)
+    at getBlogPostsWithFallback (webpack-internal:///(rsc)/./lib/blog-fallback.ts:154:29)
+    at BlogPosts (webpack-internal:///(rsc)/./app/blog/page.tsx:90:101)
+    at e_ (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:264164)
+    at e (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268296)
+    at eF (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268784)
+    at eq (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:274748)
+    at ej (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:264992)
+    at e_ (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:264034)
+    at e (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268296)
+    at eF (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268784)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266015
+    at Object.toJSON (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266479)
+    at stringify (<anonymous>)
+    at eq (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:274847)
+    at ej (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:264992)
+    at e_ (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:264034)
+    at e (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268296)
+    at eF (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:268784)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266015
+    at Array.toJSON (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266479)
+    at stringify (<anonymous>)
+    at eq (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:274847)
+    at eJ (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:275365)
+    at Timeout._onTimeout (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:265152)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+ ⨯ lib/notion.ts (186:11) @ eval
+ ⨯ Error: Notion API not configured - fallback system will be used
+    at eval (./lib/notion.ts:158:15)
+    at eval (./app/blog/page.tsx:90:163)
+    at getBlogPostsWithFallback (./lib/blog-fallback.ts:154:29)
+    at BlogPosts (./app/blog/page.tsx:90:101)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2280987637"
+[0m [90m 184 |[39m   [36mif[39m ([33m![39mconfig[33m.[39mfeatures[33m.[39mnotion [33m||[39m [33m![39mconfig[33m.[39mnotion) {[0m
+[0m [90m 185 |[39m     console[33m.[39mlog([32m"Notion not configured - delegating to fallback system"[39m)[0m
+[0m[31m[1m>[22m[39m[90m 186 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m"Notion API not configured - fallback system will be used"[39m)[0m
+[0m [90m     |[39m           [31m[1m^[22m[39m[0m
+[0m [90m 187 |[39m   }[0m
+[0m [90m 188 |[39m[0m
+[0m [90m 189 |[39m   [90m// Use enhanced caching to reduce API calls[39m[0m
+ ⨯ lib/notion.ts (186:11) @ eval
+ ⨯ Error: Notion API not configured - fallback system will be used
+    at eval (./lib/notion.ts:158:15)
+    at eval (./app/blog/page.tsx:90:163)
+    at getBlogPostsWithFallback (./lib/blog-fallback.ts:154:29)
+    at BlogPosts (./app/blog/page.tsx:90:101)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2280987637"
+[0m [90m 184 |[39m   [36mif[39m ([33m![39mconfig[33m.[39mfeatures[33m.[39mnotion [33m||[39m [33m![39mconfig[33m.[39mnotion) {[0m
+[0m [90m 185 |[39m     console[33m.[39mlog([32m"Notion not configured - delegating to fallback system"[39m)[0m
+[0m[31m[1m>[22m[39m[90m 186 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m"Notion API not configured - fallback system will be used"[39m)[0m
+[0m [90m     |[39m           [31m[1m^[22m[39m[0m
+[0m [90m 187 |[39m   }[0m
+[0m [90m 188 |[39m[0m
+[0m [90m 189 |[39m   [90m// Use enhanced caching to reduce API calls[39m[0m
+ GET /blog 200 in 3096ms
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './4545.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4493
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/_not-found/page.js:1:4536)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2090:30)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:365:24)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:374:13)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ ⨯ Error: Cannot find module './1682.js'
+Require stack:
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js
+- /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:267:28)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:180:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:179:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js:231:22)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:340
+    at Object.<anonymous> (/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/pages/_document.js:1:383)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js:109:84)
+    at /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/webpack-runtime.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/server/app/blog/page.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/require.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/build/utils.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:569:9)
+    at process.processTimers (node:internal/timers:543:7)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+    at readFileSync (node:fs:435:20)
+    at loadManifest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-manifest.js:36:52)
+    at loadManifestWithRetries (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-components.js:40:51)
+    at async loadDefaultErrorComponentsImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/load-default-error-components.js:30:24)
+    at async DevServer.getFallbackErrorComponents (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:594:16)
+    at async DevServer.renderErrorToResponseImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2203:40)
+    at async pipe.req.req (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:2056:30)
+    at async DevServer.pipeImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/base-server.js:922:25)
+    at async /Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:173:21)
+    at async requestHandlerImpl (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/router-server.js:386:24)
+    at async Server.requestListener (/Users/tarive/Desktop/personalwebsite/portfolio-website/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/fallback-build-manifest.json'
+}
+ ✓ Compiled in 550ms (3029 modules)
+ GET / 200 in 65ms
+ GET /_next/static/css/app/layout.css?v=1757201275703 404 in 14ms
+ GET /_next/static/chunks/main-app.js?v=1757201275703 404 in 20ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 18ms
+ GET / 200 in 56ms
+ GET /_next/static/css/app/layout.css?v=1757201292641 404 in 14ms
+ GET /_next/static/chunks/main-app.js?v=1757201292641 404 in 12ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 12ms
+ GET /_next/static/chunks/app/page.js 404 in 15ms
+ GET / 200 in 26ms
+ GET /_next/static/css/app/layout.css?v=1757201294810 404 in 19ms
+ GET /_next/static/chunks/main-app.js?v=1757201294810 404 in 27ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 26ms
+ GET /_next/static/chunks/app/page.js 404 in 26ms
+ ✓ Compiled in 924ms (5793 modules)
+ ⨯ ./components/mdx/pdf-viewer.tsx
+Error: Failed to read source code from /Users/tarive/Desktop/personalwebsite/portfolio-website/components/mdx/pdf-viewer.tsx
+
+Caused by:
+    No such file or directory (os error 2)
+
+Import trace for requested module:
+./components/mdx/pdf-viewer.tsx
+./app/about/page.tsx
+ ✓ Compiled in 1217ms (3059 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat '/Users/tarive/Desktop/personalwebsite/portfolio-website/.next/cache/webpack/server-development/0.pack.gz'
