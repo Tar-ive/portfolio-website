@@ -52,6 +52,29 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## ✍️ Writing Blog Posts
+
+Blog posts are stored as Markdown files inside `content/blog`. Each file uses frontmatter metadata to provide the title, description, publication date, and author information.
+
+To publish a new post:
+
+1. Create a new `.md` file in `content/blog` with YAML frontmatter:
+
+   ```markdown
+   ---
+   title: "My Post Title"
+   description: "A short summary that appears on the blog index."
+   date: "2024-05-01"
+   author: "Your Name"
+   published: true
+   ---
+
+   ## Your content starts here
+   ```
+
+2. Commit the file and push it to GitHub.
+3. Deploy the site (or wait for the next automated deployment). The blog page will automatically list the new post.
+
 ## 🔑 Key Features Implementation
 
 ### Currently Building Section
