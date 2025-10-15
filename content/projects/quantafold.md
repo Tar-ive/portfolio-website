@@ -6,6 +6,8 @@ status: "currently-building"
 tags: ["AI", "ML", "Protein Science", "GPU Optimization", "ESM-2", "PyTorch", "Bioinformatics"]
 github: "https://github.com/Tar-ive/QuantaFold"
 image: "/media/quantafold.png"
+paper: "https://ai.vixra.org/pdf/2509.0070v1.pdf"
+paperLabel: "Read Paper"
 pinned: true
 category: "ai-research"
 priority: 95
@@ -18,6 +20,10 @@ priority: 95
 ## Overview
 
 QuantaFold is a state-of-the-art protein family classification system that achieves high accuracy on protein family classification through ESM-2 model fine-tuning with advanced optimization techniques.
+
+## Publication
+
+- 📄 **Research paper**: [QuantaFold Protein Family Classification Pipeline (2025)](https://ai.vixra.org/pdf/2509.0070v1.pdf)
 
 ## Key Achievements
 

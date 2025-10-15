@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Github, Globe, Calendar, Clock, ArrowLeft } from "lucide-react"
+import { Github, Globe, Calendar, Clock, ArrowLeft, FileText } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { VideoPreview } from "@/components/video-preview"
@@ -110,6 +110,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </Button>
                 </Link>
               )}
+              {project.paper && (
+                <Link href={project.paper} target="_blank">
+                  <Button variant="outline" className="gap-2">
+                    <FileText className="h-4 w-4" />
+                    {project.paperLabel || 'View Paper'}
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -137,6 +145,59 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </CardContent>
             </Card>
           )}
+
+          {/* Affiliations */}
+          {project.affiliations?.length ? (
+            <div className="mb-8 space-y-3">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Affiliations</h3>
+              <div className="flex flex-wrap items-center gap-4">
+                {project.affiliations.map((affiliation, index) => {
+                  const content = affiliation.logo ? (
+                    <div className="relative h-12 w-24">
+                      <Image
+                        src={affiliation.logo}
+                        alt={affiliation.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <Badge variant="outline" className="text-sm">
+                      {affiliation.name}
+                    </Badge>
+                  );
+
+                  return affiliation.url ? (
+                    <Link
+                      key={`${affiliation.name}-${index}`}
+                      href={affiliation.url}
+                      target="_blank"
+                      className="inline-flex flex-col items-center gap-2 text-center"
+                    >
+                      {content}
+                      {affiliation.description && (
+                        <span className="text-xs text-muted-foreground max-w-[12rem]">
+                          {affiliation.description}
+                        </span>
+                      )}
+                    </Link>
+                  ) : (
+                    <div
+                      key={`${affiliation.name}-${index}`}
+                      className="inline-flex flex-col items-center gap-2 text-center"
+                    >
+                      {content}
+                      {affiliation.description && (
+                        <span className="text-xs text-muted-foreground max-w-[12rem]">
+                          {affiliation.description}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-8">

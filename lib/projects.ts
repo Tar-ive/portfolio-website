@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { Project, ProjectFrontmatter, ProjectFrontmatterSchema, ProjectService } from './types';
+import { Project, ProjectAffiliation, ProjectFrontmatter, ProjectFrontmatterSchema, ProjectService } from './types';
 import { compileProjectMDX, compileMDXWithFrontmatter, extractFrontmatter, validateMDXSyntax } from './mdx';
 
 // React cache import with fallback for non-React environments
@@ -110,6 +110,9 @@ class FileBasedProjectService implements ProjectService {
         video: resolvedFrontmatter.video,
         pinned: resolvedFrontmatter.pinned || false,
         category: resolvedFrontmatter.category,
+        paper: resolvedFrontmatter.paper,
+        paperLabel: resolvedFrontmatter.paperLabel,
+        affiliations: resolvedFrontmatter.affiliations,
         source: 'file-based',
         priority: this.calculatePriority(resolvedFrontmatter),
         readingTime,
@@ -140,6 +143,20 @@ class FileBasedProjectService implements ProjectService {
     // Resolve video path
     if (resolved.video && resolved.video.startsWith('./')) {
       resolved.video = await this.resolveAssetPath(resolved.video, slug);
+    }
+
+    if (resolved.affiliations?.length) {
+      resolved.affiliations = await Promise.all(
+        resolved.affiliations.map(async (affiliation: ProjectAffiliation) => {
+          if (affiliation.logo?.startsWith('./')) {
+            return {
+              ...affiliation,
+              logo: await this.resolveAssetPath(affiliation.logo, slug),
+            };
+          }
+          return affiliation;
+        })
+      );
     }
 
     return resolved;

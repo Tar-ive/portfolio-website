@@ -9,6 +9,11 @@ live: "https://grants-mcp-website.vercel.app/"
 video: "/media/grants-mcp.mp4"
 image: "/media/grantsmcp.jpeg"
 pinned: true
+affiliations:
+  - name: "Grants.gov"
+    url: "https://www.grants.gov/"
+    logo: "https://www.grants.gov/_nuxt/grants-gov-logo-text.Bxb08h7s.png"
+    description: "Built in partnership with the Grants.gov data ecosystem"
 category: "ai-tools"
 priority: 90
 ---

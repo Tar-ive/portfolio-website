@@ -8,6 +8,11 @@ github: "https://github.com/Tar-ive/alzheimers-detection"
 live: "https://ai4all-alzheimers.streamlit.app/"
 image: "/media/ai4all-alzheimers.png"
 pinned: true
+affiliations:
+  - name: "AI4ALL"
+    url: "https://ai-4-all.org/"
+    logo: "https://ai-4-all.org/wp-content/uploads/2024/10/ai4all-logo.png"
+    description: "AI4ALL National Fellowship program"
 category: "medical-ai"
 priority: 88
 ---

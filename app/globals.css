@@ -96,15 +96,15 @@ body {
 /* Syntax highlighting styles */
 @layer components {
   .syntax-highlighted {
-    @apply rounded-lg border overflow-x-auto;
+    @apply rounded-lg border border-slate-800 bg-slate-950 text-slate-100 overflow-x-auto shadow-sm dark:bg-slate-900/80 dark:border-slate-800;
   }
   
   .syntax-highlighted pre {
-    @apply m-0 p-4 bg-muted font-mono text-sm leading-relaxed;
+    @apply m-0 p-4 font-mono text-sm leading-relaxed bg-transparent text-slate-100 dark:text-slate-100;
   }
   
   .syntax-highlighted code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 text-slate-100 dark:text-slate-100;
   }
   
   /* Line numbers support */
