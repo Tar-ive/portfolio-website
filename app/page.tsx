@@ -1,13 +1,13 @@
 "use client";
 
 import { Github, Globe, MapPin } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel"
+import HeroAscii from "@/components/ui/hero-ascii"
 //import { getCloudinaryUrl, getCloudinaryVideoUrl } from "@/lib/cloudinary"
 //import { mediaMap } from "@/lib/media"
 
@@ -87,8 +87,8 @@ export default function Portfolio() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="container px-4 py-12 mx-auto">
-        <div className="flex flex-col-reverse md:flex-row justify-between items-start gap-8">
-          <div className="space-y-6 flex-1">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8">
+          <div className="space-y-6 flex-1 w-full">
             <h1 className="text-3xl font-bold">Saksham Adhikari</h1>
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
@@ -137,8 +137,8 @@ export default function Portfolio() {
               ))}
             </ul>
           </div>
-          <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-200">
-            <Image src="/media/profile_p.jpeg" alt="Profile" fill className="object-cover" />
+          <div className="flex-1 max-w-xl w-full self-stretch md:min-h-[24rem]">
+            <HeroAscii className="relative h-48 md:h-full overflow-hidden rounded-3xl border border-slate-200 shadow-sm bg-black" />
           </div>
         </div>
       </div>
@@ -288,4 +288,3 @@ export default function Portfolio() {
     </div>
   )
 }
-
