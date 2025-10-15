@@ -1,6 +1,15 @@
 import { z } from 'zod';
 
 // Project frontmatter schema for file-based projects
+const ProjectAffiliationSchema = z.object({
+  name: z.string(),
+  url: z.string().url().optional(),
+  logo: z.string().optional(),
+  description: z.string().optional(),
+});
+
+export type ProjectAffiliation = z.infer<typeof ProjectAffiliationSchema>;
+
 export const ProjectFrontmatterSchema = z.object({
   title: z.string(),
   subtitle: z.string().optional(),
@@ -13,6 +22,9 @@ export const ProjectFrontmatterSchema = z.object({
   video: z.string().optional(),
   pinned: z.boolean().optional().default(false),
   category: z.string().optional(),
+  paper: z.string().url().optional(),
+  paperLabel: z.string().optional(),
+  affiliations: z.array(ProjectAffiliationSchema).optional(),
 });
 
 export type ProjectFrontmatter = z.infer<typeof ProjectFrontmatterSchema>;
@@ -38,6 +50,9 @@ export const ProjectSchema = z.object({
   priority: z.number().optional(),
   readingTime: z.number().optional(),
   wordCount: z.number().optional(),
+  paper: z.string().url().optional(),
+  paperLabel: z.string().optional(),
+  affiliations: z.array(ProjectAffiliationSchema).optional(),
 });
 
 export type Project = z.infer<typeof ProjectSchema>;

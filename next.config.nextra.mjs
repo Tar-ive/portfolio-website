@@ -24,6 +24,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['docs.gato.txst.edu', 'res.cloudinary.com', 'img.shields.io', 'www.grants.gov', 'avatars.githubusercontent.com', 'ai-4-all.org'],
   },
   experimental: {
     webpackBuildWorker: true,

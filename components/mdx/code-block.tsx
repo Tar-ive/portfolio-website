@@ -22,6 +22,7 @@ export default function CodeBlock({
   const [highlightedCode, setHighlightedCode] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const { theme } = useTheme();
+  const isDark = theme === 'dark';
   
   // Extract language from className or use provided language
   const detectedLanguage = language || extractLanguage(className);
@@ -87,15 +88,22 @@ export default function CodeBlock({
     <div className="relative group my-6">
       {/* Header with filename and language */}
       {(filename || detectedLanguage !== 'text') && (
-        <div className="flex items-center justify-between px-4 py-2 bg-muted border border-b-0 rounded-t-lg">
+        <div
+          className={cn(
+            "flex items-center justify-between px-4 py-2 border border-b-0 rounded-t-lg",
+            isDark
+              ? "bg-slate-900/80 border-slate-800 text-slate-100"
+              : "bg-slate-900 text-slate-100 border-slate-800 shadow-sm"
+          )}
+        >
           <div className="flex items-center gap-2">
             {filename && (
-              <span className="text-sm font-medium text-foreground">
+              <span className="text-sm font-medium">
                 {filename}
               </span>
             )}
             {detectedLanguage !== 'text' && (
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="secondary" className="text-xs bg-slate-800/70 text-slate-100 border border-slate-700">
                 {detectedLanguage}
               </Badge>
             )}
@@ -103,7 +111,10 @@ export default function CodeBlock({
           <Button
             size="sm"
             variant="ghost"
-            className="h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+            className={cn(
+              "h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity text-slate-100",
+              "hover:bg-slate-800/60"
+            )}
             onClick={handleCopy}
           >
             {copied ? (
@@ -116,12 +127,19 @@ export default function CodeBlock({
       )}
       
       {/* Code content */}
-      <div className={cn(
-        "relative overflow-x-auto",
-        (filename || detectedLanguage !== 'text') ? "rounded-b-lg" : "rounded-lg"
-      )}>
+      <div
+        className={cn(
+          "relative overflow-x-auto",
+          (filename || detectedLanguage !== 'text')
+            ? "rounded-b-lg border border-t-0"
+            : "rounded-lg border",
+          isDark
+            ? "bg-slate-950/90 border-slate-800"
+            : "bg-slate-900/90 border-slate-800 shadow-sm"
+        )}
+      >
         {isLoading ? (
-          <pre className="mb-0 mt-0 overflow-x-auto border bg-muted px-4 py-4">
+          <pre className="mb-0 mt-0 overflow-x-auto px-4 py-4 font-mono text-sm text-slate-100">
             <code className="animate-pulse">Loading syntax highlighting...</code>
           </pre>
         ) : highlightedCode ? (
@@ -133,10 +151,13 @@ export default function CodeBlock({
             dangerouslySetInnerHTML={{ __html: highlightedCode }}
           />
         ) : (
-          <pre className={cn(
-            "mb-0 mt-0 overflow-x-auto border bg-muted px-4 py-4 font-mono text-sm",
-            className
-          )} {...props}>
+          <pre
+            className={cn(
+              "mb-0 mt-0 overflow-x-auto px-4 py-4 font-mono text-sm text-slate-100",
+              className
+            )}
+            {...props}
+          >
             <code>{codeContent}</code>
           </pre>
         )}
@@ -145,8 +166,11 @@ export default function CodeBlock({
         {!(filename || detectedLanguage !== 'text') && (
           <Button
             size="sm"
-            variant="outline"
-            className="absolute top-2 right-2 h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+            variant="ghost"
+            className={cn(
+              "absolute top-2 right-2 h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity text-slate-100",
+              "hover:bg-slate-800/60"
+            )}
             onClick={handleCopy}
           >
             {copied ? (

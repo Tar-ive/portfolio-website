@@ -38,7 +38,7 @@ export default function CodeWrapper({ children, className, language, ...props }:
   
   return (
     <Suspense fallback={
-      <pre className="mb-0 mt-0 overflow-x-auto border bg-muted px-4 py-4 font-mono text-sm">
+      <pre className="mb-0 mt-0 overflow-x-auto px-4 py-4 font-mono text-sm rounded-lg border border-slate-800 bg-slate-900 text-slate-100">
         <code>Loading...</code>
       </pre>
     }>

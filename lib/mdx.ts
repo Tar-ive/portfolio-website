@@ -4,6 +4,7 @@ import { z } from 'zod';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import matter from 'gray-matter';
 import { serverComponents } from '@/components/mdx/server-components';
 
 
@@ -90,8 +91,15 @@ export async function compileMDXWithFrontmatter<T extends z.ZodSchema>(
       readingTime,
       wordCount,
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error('MDX compilation error:', error);
+    if (error?.position || error?.loc || error?.reason) {
+      console.error('MDX error details:', {
+        reason: error.reason,
+        position: error.position,
+        location: error.loc,
+      });
+    }
     throw new Error(`Failed to compile MDX: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
@@ -145,49 +153,9 @@ export async function compileBlogMDX(
  * Extract frontmatter from MDX source without compiling
  */
 export function extractFrontmatter(source: string): Record<string, any> | null {
-  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---/;
-  const match = source.match(frontmatterRegex);
-  
-  if (!match) return null;
-  
   try {
-    // Simple YAML-like parsing for frontmatter
-    const frontmatterText = match[1];
-    const frontmatter: Record<string, any> = {};
-    
-    frontmatterText.split('\n').forEach(line => {
-      const colonIndex = line.indexOf(':');
-      if (colonIndex > 0) {
-        const key = line.slice(0, colonIndex).trim();
-        let value = line.slice(colonIndex + 1).trim();
-        
-        // Remove quotes if present
-        if ((value.startsWith('"') && value.endsWith('"')) || 
-            (value.startsWith("'") && value.endsWith("'"))) {
-          value = value.slice(1, -1);
-        }
-        
-        // Parse arrays
-        if (value.startsWith('[') && value.endsWith(']')) {
-          frontmatter[key] = value.slice(1, -1).split(',').map(item => item.trim().replace(/['"]/g, ''));
-          return;
-        }
-        
-        // Parse booleans
-        if (value === 'true') {
-          frontmatter[key] = true;
-          return;
-        }
-        if (value === 'false') {
-          frontmatter[key] = false;
-          return;
-        }
-        
-        frontmatter[key] = value;
-      }
-    });
-    
-    return frontmatter;
+    const { data } = matter(source);
+    return Object.keys(data).length ? data : null;
   } catch (error) {
     console.error('Failed to parse frontmatter:', error);
     return null;

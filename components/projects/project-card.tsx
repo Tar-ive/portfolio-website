@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Globe, Calendar, Clock } from "lucide-react"
+import { Github, Globe, Calendar, Clock, FileText } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Project } from "@/lib/types"
@@ -112,6 +112,46 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           )}
         </div>
 
+        {project.affiliations?.length ? (
+          <div className="space-y-1 text-xs">
+            <p className="uppercase tracking-wide font-semibold text-muted-foreground">Affiliations</p>
+            <div className="flex flex-wrap gap-3 items-center">
+              {project.affiliations.map((affiliation, index) => {
+                const logo = affiliation.logo;
+                const content = logo ? (
+                  <div className="relative h-8 w-16">
+                    <Image
+                      src={logo}
+                      alt={affiliation.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ) : (
+                  <Badge variant="outline" className="text-xs">
+                    {affiliation.name}
+                  </Badge>
+                );
+
+                return affiliation.url ? (
+                  <Link
+                    key={`${affiliation.name}-${index}`}
+                    href={affiliation.url}
+                    target="_blank"
+                    className="inline-flex items-center justify-center"
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={`${affiliation.name}-${index}`} className="inline-flex items-center justify-center">
+                    {content}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
+
         {/* Action Buttons */}
         <div className="flex gap-2 pt-2">
           <Link href={`/projects/${project.slug}`} className="flex-1">
@@ -121,6 +161,18 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           </Link>
           
           <div className="flex gap-2">
+            {project.paper && (
+              <Link href={project.paper} target="_blank">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  aria-label={project.paperLabel || 'Project paper'}
+                  title={project.paperLabel || 'Project paper'}
+                >
+                  <FileText className="h-4 w-4" />
+                </Button>
+              </Link>
+            )}
             {project.github && (
               <Link href={project.github} target="_blank">
                 <Button variant="outline" size="sm">

@@ -19,7 +19,7 @@ const nextConfig = {
   images: {
     // Enable image optimization for better performance
     unoptimized: false,
-    domains: ['res.cloudinary.com'], // Allow Cloudinary images
+    domains: ['res.cloudinary.com', 'docs.gato.txst.edu', 'img.shields.io', 'www.grants.gov', 'avatars.githubusercontent.com', 'ai-4-all.org'], // Allow Cloudinary, NSF, Grants.gov, Prime, AI4ALL assets
     formats: ['image/webp', 'image/avif'],
   },
   experimental: {
