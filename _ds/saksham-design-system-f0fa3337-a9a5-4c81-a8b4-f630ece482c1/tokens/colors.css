@@ -1,0 +1,70 @@
+/* ——— Color tokens ———
+   Warm paper + ink, with a sindoor-vermillion accent.
+   Light = Prakriti (manifest, paper). Dark = Purusha (witness, night).
+   Toggle with .dark on <html> or any container. */
+
+:root {
+  /* Base ramp — paper (warm neutrals) */
+  --paper-0: #FBF8F1; /* page */
+  --paper-1: #F5F0E6; /* tint / wells */
+  --paper-2: #ECE5D6; /* pressed / code bg */
+  --line-1: #E2DACA;  /* hairline borders */
+  --line-2: #CDC3AC;  /* strong borders */
+
+  /* Base ramp — ink */
+  --ink-0: #161310;   /* display headings */
+  --ink-1: #26221B;   /* body text */
+  --ink-2: #5C5544;   /* secondary text */
+  --ink-3: #8B826D;   /* faint / metadata */
+
+  /* Accent — sindoor vermillion */
+  --accent-050: #FAEFE7;
+  --accent-100: #F3DCCB;
+  --accent-300: #D78F63;
+  --accent-500: #B14E24; /* primary accent */
+  --accent-600: #93401D;
+  --accent-700: #743114;
+
+  /* Semantic aliases */
+  --surface-page: var(--paper-0);
+  --surface-card: var(--paper-0);
+  --surface-tint: var(--paper-1);
+  --surface-code: var(--paper-2);
+  --text-display: var(--ink-0);
+  --text-body: var(--ink-1);
+  --text-muted: var(--ink-2);
+  --text-faint: var(--ink-3);
+  --text-on-accent: #FBF8F1;
+  --text-on-ink: #FBF8F1;
+  --link: var(--accent-600);
+  --link-hover: var(--accent-700);
+  --border-subtle: var(--line-1);
+  --border-strong: var(--line-2);
+  --focus-ring: var(--accent-500);
+  --selection-bg: var(--accent-100);
+}
+
+/* Dark scope — the "witness" theme */
+.dark {
+  --paper-0: #161310;
+  --paper-1: #201C15;
+  --paper-2: #2A251C;
+  --line-1: #383225;
+  --line-2: #4D4533;
+
+  --ink-0: #F4EEDF;
+  --ink-1: #E8E1D0;
+  --ink-2: #ABA28B;
+  --ink-3: #837B66;
+
+  --accent-050: #2E1D12;
+  --accent-100: #45281636;
+  --accent-300: #A85A31;
+  --accent-500: #D77A4D;
+  --accent-600: #E08F66;
+  --accent-700: #ECA984;
+
+  --text-on-accent: #1B0F07;
+  --text-on-ink: #161310;
+  --selection-bg: #45342266;
+}

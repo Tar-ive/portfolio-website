@@ -1,0 +1,9 @@
+/* Webfonts.
+   NOTE: served from Google Fonts CDN — no font binaries existed in the source
+   repo (it used system Arial/Helvetica). These are deliberate upgrades:
+   - Spectral        → display + prose serif (Substack-essay feel)
+   - IBM Plex Mono   → code, dates, metadata
+   - Tiro Devanagari Sanskrit → Sāṅkhya ornament glyphs (सांख्य, ॥)
+   UI chrome stays on the system sans stack (levels.io-style, zero webfont cost). */
+
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap");

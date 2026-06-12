@@ -1,0 +1,36 @@
+/* ——— Spacing, radii, borders, shadows, motion ——— */
+
+:root {
+  /* Spacing — 4px base */
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+
+  /* Radii — restrained; this is a paper-and-ink site */
+  --radius-sm: 4px;   /* tags, badges, code spans */
+  --radius-md: 8px;   /* cards, buttons, images */
+  --radius-full: 999px; /* avatars, pills */
+
+  /* Borders */
+  --border-hairline: 1px solid var(--border-subtle);
+  --border-rule: 1px solid var(--border-strong);
+
+  /* Shadows — near-flat; depth comes from borders + tints */
+  --shadow-card: 0 1px 2px rgba(22, 19, 16, 0.05);
+  --shadow-raised: 0 2px 8px rgba(22, 19, 16, 0.08), 0 1px 2px rgba(22, 19, 16, 0.05);
+
+  /* Layout */
+  --measure-prose: 42rem;  /* 672px reading column */
+  --measure-page: 64rem;   /* 1024px max site width */
+
+  /* Motion — quiet. Color/opacity fades only, no bounces. */
+  --ease-out: cubic-bezier(0.25, 0.6, 0.3, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-normal: 200ms; /* @kind other */
+}

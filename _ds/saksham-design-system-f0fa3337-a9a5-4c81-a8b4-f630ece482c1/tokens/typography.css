@@ -1,0 +1,38 @@
+/* ——— Typography tokens ——— */
+
+:root {
+  /* Families */
+  --font-display: "Spectral", "Iowan Old Style", Georgia, serif;
+  --font-body: "Spectral", "Iowan Old Style", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-devanagari: "Tiro Devanagari Sanskrit", "Spectral", serif;
+
+  /* Scale */
+  --text-xs: 0.75rem;     /* 12 — metadata, badges */
+  --text-sm: 0.8125rem;   /* 13 — UI labels, nav */
+  --text-base: 0.9375rem; /* 15 — UI body */
+  --text-md: 1.0625rem;   /* 17 — prose body */
+  --text-lg: 1.375rem;    /* 22 — card titles, h3 */
+  --text-xl: 1.75rem;     /* 28 — section headings, h2 */
+  --text-2xl: 2.375rem;   /* 38 — page titles, h1 */
+  --text-3xl: 3.25rem;    /* 52 — hero display */
+
+  /* Line heights */
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-prose: 1.72;
+
+  /* Weights (Spectral renders heavy; stay light) */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Tracking */
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;   /* uppercase kickers */
+  --tracking-wider: 0.14em;  /* mono labels */
+}
