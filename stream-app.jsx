@@ -11,11 +11,11 @@ const TYPE_LABEL = { essay: 'essay', win: 'win', project: 'project', photo: 'pho
 
 const FILTERS = [
   { key: 'all', label: 'everything', match: (t) => t !== 'x' },
+  { key: 'work', label: 'work experience', match: (t) => t === 'work experience'},
   { key: 'essay', label: 'essays', match: (t) => t === 'essay' },
   { key: 'paper', label: 'papers', match: (t) => t === 'paper' },
   { key: 'win', label: 'wins', match: (t) => t === 'win' },
   { key: 'project', label: 'projects', match: (t) => t === 'project' },
-  { key: 'work', label: 'work', match: (t) => t === 'work' },
   { key: 'x', label: 'x posts', match: (t) => t === 'x' },
   { key: 'sutra', label: 'sūtras & takes', match: (t) => t === 'sutra' || t === 'take' },
 ];

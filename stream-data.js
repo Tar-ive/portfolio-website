@@ -465,7 +465,7 @@ window.STREAM_DATA = [
     tags: ['scholarship'],
   },
   {
-    id: 'win-montgomery', type: 'win', date: '2024-03-15', display: 'mar 2024',
+    id: 'win-montgomery', type: 'win', date: '2025-05-15', display: 'may 2025',
     title: 'Montgomery Endowment Web Service Scholarship',
     desc: '$2,000 for excellence in web service and leadership in housing communities.',
     tags: ['scholarship'],
