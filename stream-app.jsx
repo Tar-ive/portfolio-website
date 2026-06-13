@@ -11,7 +11,7 @@ const TYPE_LABEL = { essay: 'essay', win: 'win', project: 'project', photo: 'pho
 
 const FILTERS = [
   { key: 'all', label: 'everything', match: (t) => t !== 'x' },
-  { key: 'work', label: 'work experience', match: (t) => t === 'work experience'},
+  { key: 'work', label: 'work experience', match: (t) => t === 'work'},
   { key: 'essay', label: 'essays', match: (t) => t === 'essay' },
   { key: 'paper', label: 'papers', match: (t) => t === 'paper' },
   { key: 'win', label: 'wins', match: (t) => t === 'win' },
