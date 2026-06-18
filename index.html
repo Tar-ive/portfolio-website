@@ -186,6 +186,27 @@
   .st-compact .st-video, .st-compact .st-media { display: none; }
   .st-compact .st-joined .sds-card { border-radius: var(--radius-md); }
 
+  /* photo galleries */
+  .st-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .st-gallery__item {
+    display: block;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .st-gallery__item img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .st-compact .st-gallery { display: none; }
+
   /* embedded tweets */
   .st-item--embed { display: flex; justify-content: flex-start; }
   .st-embed { width: 100%; max-width: 500px; }
@@ -252,6 +273,7 @@
     .st-item__row { flex-direction: column; }
     .st-item__thumb { flex-basis: auto; width: 100%; }
     .st-item__thumb img { height: 160px; }
+    .st-gallery { grid-template-columns: 1fr; }
   }
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>

@@ -10,12 +10,26 @@ const img = (u) => u; // substackcdn URLs already sized w_320
 window.STREAM_DATA = [
   // ——— June 2026 ———
   {
+    id: 'fb-playbook', type: 'essay', date: '2026-06-17',
+    title: 'How AI is Following (and Breaking) the Facebook Playbook',
+    desc: 'AI companies are using Facebook’s playbook to take control of how we think.',
+    href: SUBSTACK + '/p/how-ai-is-following-and-breaking',
+    image: img('https://substackcdn.com/image/fetch/$s_!hjeL!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F84eefd71-6873-4895-b6e7-99da78e4f12f_619x443.jpeg'),
+    tags: ['ai', 'society'],
+  },
+  {
     id: 'limitless', type: 'essay', date: '2026-06-13',
     title: 'limitless',
     desc: 'How hacking has taught me more about myself',
     href: SUBSTACK + '/p/limitless',
     image: img('https://substackcdn.com/image/fetch/$s_!cCcj!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F409b3a0c-8f05-4be1-8ce3-3d9ca6a39646_844x668.jpeg'),
     tags: ['hacking', 'personal'],
+  },
+  {
+    id: 'photo-webai-meetup', type: 'photo', date: '2026-06-12',
+    title: 'webAI founders meetup',
+    images: ['/media/webai-meetup-1.jpg', '/media/webai-meetup-2.jpg'],
+    tags: ['webAI', 'founders meetup'],
   },
   {
     id: 'meet', type: 'essay', date: '2026-06-10',

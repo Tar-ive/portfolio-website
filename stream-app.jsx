@@ -136,6 +136,24 @@ function ProjectItem({ item }) {
 }
 
 function PhotoItem({ item }) {
+  if (item.images && item.images.length) {
+    return (
+      <article className="sds-card st-item">
+        <div className="sds-card__body">
+          <ItemMeta item={item}></ItemMeta>
+          {item.title ? <span className="st-item__title">{item.title}</span> : null}
+          {item.desc ? <p className="st-item__desc">{item.desc}</p> : null}
+          <div className="st-gallery">
+            {item.images.map((src, i) => (
+              <a key={i} className="st-gallery__item" href={src} target="_blank" rel="noreferrer">
+                <img src={src} alt={item.title} loading="lazy"></img>
+              </a>
+            ))}
+          </div>
+        </div>
+      </article>
+    );
+  }
   return (
     <article className="sds-card st-item">
       <div className="sds-card__body">
@@ -325,7 +343,7 @@ function StreamApp() {
   }, [t]);
 
   const data = React.useMemo(
-    () => [...window.STREAM_DATA].filter((it) => it.type !== 'photo').sort((a, b) => b.date.localeCompare(a.date)),
+    () => [...window.STREAM_DATA].filter((it) => it.type !== 'photo' || (it.images && it.images.length)).sort((a, b) => b.date.localeCompare(a.date)),
     []
   );
 
