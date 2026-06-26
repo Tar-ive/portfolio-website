@@ -230,18 +230,22 @@
   }
   .st-item .sds-project__head { padding-right: 5.5rem; }
 
-  .st-card-with-badge .sds-card {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
-  }
-  .st-ph-badge {
-    padding: var(--space-3) var(--space-5) var(--space-4);
+  .st-item > .sds-project__links {
     border: var(--border-hairline);
     border-top: none;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
     background: var(--surface-card);
     box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: -1px;
+  }
+  .st-item > .sds-project__links + .st-item__floatdate { /* no change needed */ }
+  .st-item:has(> .sds-project__links) .sds-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
   }
 
   .st-item__xtext {
