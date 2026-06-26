@@ -3,7 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>saksham — the stream</title>
+<title>Saksham Adhikari — ML/AI Engineer | The Stream</title>
+<meta name="description" content="Saksham Adhikari — ML/AI engineer building recommendation systems, computer vision, and developer tools. TPU Cloud Researcher at Google. Builder of Promptetheus, Grants-MCP, TwoBot, and more.">
+<meta name="keywords" content="Saksham Adhikari, ML engineer, AI engineer, machine learning, recommendation systems, computer vision, Promptetheus, Grants-MCP, TwoBot, UC Berkeley, Google TPU, Texas State University">
+<meta name="author" content="Saksham Adhikari">
+<link rel="canonical" href="https://saksham.us/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saksham Adhikari — ML/AI Engineer | The Stream">
+<meta property="og:description" content="ML/AI engineer building recommendation systems, computer vision, and developer tools. TPU Cloud Researcher at Google. Builder of Promptetheus, Grants-MCP, and more.">
+<meta property="og:url" content="https://saksham.us/">
+<meta property="og:site_name" content="Saksham Adhikari">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@saksham_adh">
+<meta name="twitter:creator" content="@saksham_adh">
+<meta name="twitter:title" content="Saksham Adhikari — ML/AI Engineer | The Stream">
+<meta name="twitter:description" content="ML/AI engineer building recommendation systems, computer vision, and developer tools. Builder of Promptetheus, Grants-MCP, and more.">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saksham Adhikari",
+  "url": "https://saksham.us",
+  "jobTitle": "ML/AI Engineer",
+  "description": "ML/AI engineer building recommendation systems, computer vision, inference engineering, and developer tools.",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Texas State University"
+  },
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "Google",
+      "description": "TPU Cloud Student Researcher"
+    },
+    {
+      "@type": "Organization",
+      "name": "AskSLM",
+      "description": "AI Engineering Intern"
+    }
+  ],
+  "knowsAbout": ["Machine Learning", "Artificial Intelligence", "Recommendation Systems", "Computer Vision", "Inference Engineering", "FastAPI", "Next.js", "Python", "TypeScript"],
+  "sameAs": [
+    "https://x.com/saksham_adh",
+    "https://www.linkedin.com/in/adhsaksham/",
+    "https://github.com/Tar-ive",
+    "https://adhsaksham.substack.com"
+  ]
+}
+</script>
+
+<!-- Structured Data for Promptetheus project -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Promptetheus",
+  "description": "Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes.",
+  "url": "https://www.producthunt.com/products/promptethus",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "author": {
+    "@type": "Person",
+    "name": "Saksham Adhikari",
+    "url": "https://saksham.us"
+  },
+  "codeRepository": "https://github.com/obro79/promptetheus-service",
+  "datePublished": "2026-06-20"
+}
+</script>
+
 <link rel="stylesheet" href="_ds/saksham-design-system-f0fa3337-a9a5-4c81-a8b4-f630ece482c1/styles.css">
 <style>
   /* ——— Stream layout (st-*) — composes DS tokens ——— */
@@ -155,6 +229,24 @@
     color: var(--text-faint);
   }
   .st-item .sds-project__head { padding-right: 5.5rem; }
+
+  .st-item > .sds-project__links {
+    border: var(--border-hairline);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: -1px;
+  }
+  .st-item > .sds-project__links + .st-item__floatdate { /* no change needed */ }
+  .st-item:has(> .sds-project__links) .sds-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
 
   .st-item__xtext {
     font-size: var(--text-md);

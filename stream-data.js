@@ -10,6 +10,27 @@ const img = (u) => u; // substackcdn URLs already sized w_320
 window.STREAM_DATA = [
   // ——— June 2026 ———
   {
+    id: 'promptetheus-launch', type: 'project', date: '2026-06-20',
+    title: 'Promptetheus',
+    desc: 'Recursive self-improving tracing stack for AI agents — built at UC Berkeley AI Hackathon (Jun 20). 24 GitHub stars · 3 Product Hunt upvotes.',
+    github: 'https://github.com/obro79/promptetheus-service',
+    live: 'https://www.producthunt.com/products/promptethus',
+    tags: ['UC Berkeley', 'AI agents', 'observability'],
+    status: 'currently building',
+    meta: {
+      productHunt: 'https://www.producthunt.com/products/promptethus?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-promptetheus',
+      productHuntBadge: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1177526&theme=light&t=1782456964976',
+    },
+  },
+  {
+    id: 'speed-moat', type: 'essay', date: '2026-06-26',
+    title: 'speed is a moat',
+    desc: 'You are the bottleneck. On inference speed, fast mode, and why the companies that solve latency win.',
+    href: 'https://substack.com/@adhsaksham/note/p-203638310',
+    image: img('https://substackcdn.com/image/fetch/$s_!J4-1!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F056a632c-e2a8-4cfe-94f3-80160998ce4a_554x554.jpeg'),
+    tags: ['inference', 'agents'],
+  },
+  {
     id: 'fb-playbook', type: 'essay', date: '2026-06-17',
     title: 'How AI is Following (and Breaking) the Facebook Playbook',
     desc: 'AI companies are using Facebook’s playbook to take control of how we think.',

@@ -1,0 +1,21 @@
+# Saksham Adhikari — saksham.us
+
+> ML/AI Engineer building recommendation systems, computer vision, inference engineering, and developer tools.
+
+## About
+
+Saksham Adhikari is a Nepal-born, Texas-based ML/AI engineer and Computer Information Systems student at Texas State University (4.0 GPA). He is a TPU Cloud Student Researcher at Google and AI Engineering Intern at AskSLM. He builds tools at the intersection of AI observability, recommendation systems, and open-source developer infrastructure.
+
+## Current Projects
+
+- **Promptetheus**: Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes. Built at the UC Berkeley AI Hackathon (June 2026). [Product Hunt](https://www.producthunt.com/products/promptethus) · [GitHub](https://github.com/obro79/promptetheus-service)
+- **TwoBot**: A two-tower GenRecSys with on-device curator agents (MLX) and a live force-directed graph of 1,300 simulation nodes. [GitHub](https://github.com/Tar-ive/twobot)
+- **Grants-MCP**: MCP ecosystem for government grant discovery — AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP. [GitHub](https://github.com/Tar-ive/grants-mcp)
+
+## Links
+
+- Website: https://saksham.us
+- GitHub: https://github.com/Tar-ive
+- LinkedIn: https://www.linkedin.com/in/adhsaksham/
+- X/Twitter: https://x.com/saksham_adh
+- Substack: https://adhsaksham.substack.com

@@ -117,6 +117,7 @@ function WinItem({ item }) {
 }
 
 function ProjectItem({ item }) {
+  const hasBadge = item.meta && item.meta.productHuntBadge;
   return (
     <article className="st-item">
       {item.video ? <div className="st-media"><ItemVideo item={item} className=""></ItemVideo></div> : null}
@@ -126,10 +127,25 @@ function ProjectItem({ item }) {
         description={item.desc}
         tags={item.tags || []}
         status={item.status}
-          github={item.github}
-          live={item.live}
+          github={hasBadge ? null : item.github}
+          live={hasBadge ? null : item.live}
         ></ProjectCard>
       </div>
+      {hasBadge ? (
+        <div className="sds-project__links" style={{ padding: '0 var(--space-5) var(--space-4)', marginTop: 'calc(-1 * var(--space-2))' }}>
+          {item.github ? <Button variant="outline" size="sm" href={item.github} target="_blank">GitHub</Button> : null}
+          {item.live ? <Button variant="ghost" size="sm" href={item.live} target="_blank">Live ↗</Button> : null}
+          <a href={item.meta.productHunt} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto' }}>
+            <img
+              src={item.meta.productHuntBadge}
+              alt="Promptetheus on Product Hunt"
+              width="120"
+              height="26"
+              style={{ display: 'block' }}
+            ></img>
+          </a>
+        </div>
+      ) : null}
       <div className="st-item__floatdate">{fmtDate(item.date, item.dateApprox)}</div>
     </article>
   );
