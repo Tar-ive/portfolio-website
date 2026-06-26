@@ -10,6 +10,36 @@ const img = (u) => u; // substackcdn URLs already sized w_320
 window.STREAM_DATA = [
   // ——— June 2026 ———
   {
+    id: 'promptetheus-launch', type: 'project', date: '2026-06-20',
+    title: 'Promptetheus',
+    desc: 'Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes. 24 GitHub stars, launched on Product Hunt.',
+    github: 'https://github.com/obro79/promptetheus-service',
+    live: 'https://www.producthunt.com/products/promptethus',
+    tags: ['FastAPI', 'Next.js', 'Supabase', 'Redis', 'MCP'],
+    status: 'currently building',
+    meta: {
+      productHunt: 'https://www.producthunt.com/products/promptethus',
+      productHuntBadge: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1177526&theme=light&t=1782456964976',
+      githubStars: 24,
+      productHuntUpvotes: 3,
+    },
+  },
+  {
+    id: 'win-berkeley-hackathon', type: 'win', date: '2026-06-20',
+    title: 'UC Berkeley AI Hackathon 2026 — Promptetheus',
+    desc: 'Built Promptetheus at the Berkeley AI Hackathon developer-tool track. Incident response for production AI agents: observe, detect, replay, attribute, fix, prevent. Team: Kuldeep D., Owen F., Kusum S., Saksham A.',
+    href: 'https://www.youtube.com/watch?v=s41WnOceXRM',
+    hrefLabel: 'watch the launch video',
+    tags: ['UC Berkeley', 'AI agents', 'developer tools'],
+  },
+  {
+    id: 'promptetheus-blog', type: 'essay', date: '2026-06-20',
+    title: 'Promptetheus — Building Incident Response for AI Agents',
+    desc: 'Our experience building a recursive self-improving tracing stack at the UC Berkeley AI Hackathon.',
+    href: 'https://substack.com/@adhsaksham/note/p-203638310',
+    tags: ['hackathon', 'agents', 'observability'],
+  },
+  {
     id: 'fb-playbook', type: 'essay', date: '2026-06-17',
     title: 'How AI is Following (and Breaking) the Facebook Playbook',
     desc: 'AI companies are using Facebook’s playbook to take control of how we think.',

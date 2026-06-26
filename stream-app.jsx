@@ -130,6 +130,24 @@ function ProjectItem({ item }) {
           live={item.live}
         ></ProjectCard>
       </div>
+      {item.meta && item.meta.productHuntBadge ? (
+        <div style={{ marginTop: 'var(--space-3)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+          <a href={item.meta.productHunt} target="_blank" rel="noopener noreferrer">
+            <img
+              src={item.meta.productHuntBadge}
+              alt="Promptetheus on Product Hunt"
+              width="250"
+              height="54"
+              style={{ display: 'block' }}
+            ></img>
+          </a>
+          {item.meta.githubStars ? (
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+              {item.meta.githubStars} GitHub stars · {item.meta.productHuntUpvotes} PH upvotes
+            </span>
+          ) : null}
+        </div>
+      ) : null}
       <div className="st-item__floatdate">{fmtDate(item.date, item.dateApprox)}</div>
     </article>
   );
