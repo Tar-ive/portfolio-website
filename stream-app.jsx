@@ -120,7 +120,7 @@ function ProjectItem({ item }) {
   return (
     <article className="st-item">
       {item.video ? <div className="st-media"><ItemVideo item={item} className=""></ItemVideo></div> : null}
-      <div className={item.video ? 'st-joined' : ''}>
+      <div className={(item.video ? 'st-joined' : '') + (item.meta && item.meta.productHuntBadge ? ' st-card-with-badge' : '')}>
         <ProjectCard
         title={item.title}
         description={item.desc}
@@ -129,20 +129,20 @@ function ProjectItem({ item }) {
           github={item.github}
           live={item.live}
         ></ProjectCard>
+        {item.meta && item.meta.productHuntBadge ? (
+          <div className="st-ph-badge">
+            <a href={item.meta.productHunt} target="_blank" rel="noopener noreferrer">
+              <img
+                src={item.meta.productHuntBadge}
+                alt="Promptetheus on Product Hunt"
+                width="120"
+                height="26"
+                style={{ display: 'block' }}
+              ></img>
+            </a>
+          </div>
+        ) : null}
       </div>
-      {item.meta && item.meta.productHuntBadge ? (
-        <div style={{ marginTop: 'var(--space-2)', display: 'inline-block' }}>
-          <a href={item.meta.productHunt} target="_blank" rel="noopener noreferrer">
-            <img
-              src={item.meta.productHuntBadge}
-              alt="Promptetheus on Product Hunt"
-              width="150"
-              height="32"
-              style={{ display: 'block' }}
-            ></img>
-          </a>
-        </div>
-      ) : null}
       <div className="st-item__floatdate">{fmtDate(item.date, item.dateApprox)}</div>
     </article>
   );
