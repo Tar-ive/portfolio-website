@@ -438,8 +438,8 @@ window.STREAM_DATA = [
   },
   {
     id: 'work-bcrc', type: 'work', date: '2025-05-15', display: 'may 2025',
-    title: 'Breast Cancer Research Center — Software Development Intern',
-    desc: 'May–Jul 2025 · Austin. Semantically indexed ~130k cancer-care records; grew test coverage on an agentic healthcare stack from 78% to 91%.',
+    title: 'Breast Cancer Resource Center (BCRC) — Software Engineer Intern',
+    desc: 'May–Aug 2025 · Austin. Semantically indexed ~130k cancer-care records; grew test coverage on an agentic healthcare stack from 78% to 91%.',
   },
   {
     id: 'work-thrc', type: 'work', date: '2025-03-20', display: 'mar 2025',
