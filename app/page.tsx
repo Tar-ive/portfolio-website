@@ -73,10 +73,10 @@ const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
 export default function Portfolio() {
 
   const achievements = [
-    "TPU Cloud Student Researcher at <strong>Google</strong> - optimizing next-gen AI hardware architectures",
+    "Inference Engineer at <strong>AskSLM</strong> - building next-generation small language model inference",
     "<strong>4.0 GPA</strong> Computer Information Systems student at Texas State University with full Merit Scholarship", 
     "Co-author of 2 research publications with novel AI/ML methodologies in healthcare and protein science",
-    "Vice President at <strong>ACM AI @ TXST</strong> - leading 70+ member tech community",
+    "TPU Cloud Researcher at <strong>Google</strong> - optimized next-gen AI hardware architectures",
     "Currently building <a href='https://grants-mcp-website.vercel.app/' class='text-blue-600 hover:underline'>Grants-MCP</a> and <a href='https://github.com/Tar-ive/QuantaFold' class='text-blue-600 hover:underline'>QuantaFold</a> protein classification system",
     "Selected for poster presentation at <strong>SC25</strong> (International Conference for High Performance Computing)"
   ]
@@ -157,21 +157,50 @@ export default function Portfolio() {
 
       {/* Experience Section */}
       <section className="container px-4 py-12 mx-auto">
-        <h2 className="text-xl font-bold mb-8">Current Professional Experience</h2>
+        <h2 className="text-xl font-bold mb-8">Professional Experience</h2>
         <div className="space-y-6">
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>TPU Cloud Student Researcher</CardTitle>
-                <Badge>August 2025 - Present</Badge>
+                <CardTitle>Inference Engineer</CardTitle>
+                <Badge>Dec 2025 - Present</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">AskSLM</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Data and AI Researcher</CardTitle>
+                <Badge>Mar 2025 - Jan 2026</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Translational Health Research Center</p>
+              <ul className="mt-2 space-y-2">
+                <li>• Engineered HIPAA-compliant Python NLP pipeline analyzing 619 patient interactions</li>
+                <li>• Reduced data processing time by 40% managing 30k+ patient data points</li>
+                <li>• Delivered project 200% under budget using cost-optimized AWS SageMaker</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>TPU Cloud Researcher</CardTitle>
+                <Badge>Aug 2025 - Oct 2025</Badge>
               </div>
             </CardHeader>
             <CardContent>
               <p className="font-medium">Google</p>
               <ul className="mt-2 space-y-2">
-                <li>• Leading advanced TPU optimization research on Google Cloud TPU v6e architecture</li>
-                <li>• Contributing to open-source vllm project with architecture-adaptive attention backends</li>
-                <li>• Architecting multi-agent RL systems for power grid intelligence with 618-dimensional state space</li>
+                <li>• Led advanced TPU optimization research on Google Cloud TPU v6e architecture</li>
+                <li>• Contributed to open-source vllm project with architecture-adaptive attention backends</li>
+                <li>• Architected multi-agent RL systems for power grid intelligence with 618-dimensional state space</li>
               </ul>
             </CardContent>
           </Card>
@@ -180,7 +209,7 @@ export default function Portfolio() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle>Student Programmer</CardTitle>
-                <Badge>July 2025 - Present</Badge>
+                <Badge>Jul 2025 - Present</Badge>
               </div>
             </CardHeader>
             <CardContent>
@@ -196,17 +225,120 @@ export default function Portfolio() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Research Assistant</CardTitle>
-                <Badge>November 2024 - Present</Badge>
+                <CardTitle>Software Engineer Intern</CardTitle>
+                <Badge>May 2025 - Aug 2025</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="font-medium">Translational Health Research Center</p>
-              <ul className="mt-2 space-y-2">
-                <li>• Engineered HIPAA-compliant Python NLP pipeline analyzing 619 patient interactions</li>
-                <li>• Reduced data processing time by 40% managing 30k+ patient data points</li>
-                <li>• Delivered project 200% under budget using cost-optimized AWS SageMaker</li>
-              </ul>
+              <p className="font-medium">Breast Cancer Resource Center (BCRC)</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Vice President</CardTitle>
+                <Badge>Dec 2024 - Aug 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">ACM AI @ TXST</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Founder</CardTitle>
+                <Badge>Dec 2024 - May 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Obvius</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Fellow</CardTitle>
+                <Badge>Aug 2024 - Feb 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">AI4ALL</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Resident Assistant</CardTitle>
+                <Badge>Aug 2024 - Mar 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Texas State University - Department of Housing and Residential Life</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Extern Ambassador</CardTitle>
+                <Badge>Sep 2024 - Jan 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Extern</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>AI Intern</CardTitle>
+                <Badge>Sep 2024 - Jan 2025</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Intern Nepal</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Business Development and Sales Extern</CardTitle>
+                <Badge>Jul 2024 - Aug 2024</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Thematic</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Conference Assistant</CardTitle>
+                <Badge>May 2024 - Aug 2024</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Texas State University - Department of Housing and Residential Life</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle>Data Science Intern</CardTitle>
+                <Badge>Mar 2023 - Jun 2023</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="font-medium">Dursikshya Education Network Pvt Ltd</p>
             </CardContent>
           </Card>
         </div>

@@ -8,6 +8,7 @@ import { Phone, Mail, Linkedin, Github, Download, GraduationCap, Briefcase, Awar
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
+
 // Import PDF viewer component
 const PDFViewer = dynamic(() => import('@/components/mdx/pdf-viewer'), {
   ssr: false,
@@ -66,7 +67,7 @@ export default function AboutPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold">Current Position</h3>
-              <p className="text-sm text-muted-foreground">TPU Cloud Student Researcher at Google</p>
+              <p className="text-sm text-muted-foreground">Inference Engineer at AskSLM</p>
             </div>
             <div>
               <h3 className="font-semibold">Education</h3>

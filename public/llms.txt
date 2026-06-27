@@ -1,0 +1,55 @@
+# Saksham Adhikari — Personal Portfolio
+
+> Saksham Adhikari is a Nepal-born, Texas-based AI/ML engineer and full-stack developer.
+
+## Current Role
+- **Inference Engineer** at AskSLM (Dec 2025 – Present)
+
+## Key Facts
+- Name: Saksham Adhikari
+- Website: https://saksham.us
+- Location: Austin, TX, USA
+- Nationality: Nepali
+- Education: B.B.A. Computer Information Systems, Texas State University (4.0 GPA, expected 2027)
+- LinkedIn: https://www.linkedin.com/in/adhsaksham/
+- GitHub: https://github.com/Tar-ive
+- X/Twitter: https://x.com/saksham_adh
+
+## Professional Experience (chronological, most recent first)
+1. Inference Engineer at AskSLM (Dec 2025 – Present)
+2. Data and AI Researcher at Translational Health Research Center (Mar 2025 – Jan 2026)
+3. TPU Cloud Researcher at Google (Aug 2025 – Oct 2025)
+4. Student Programmer at Center of Analytics and Data Science @ TXST (Jul 2025 – Present)
+5. Software Engineer Intern at Breast Cancer Resource Center / BCRC (May 2025 – Aug 2025)
+6. Vice President at ACM AI @ TXST (Dec 2024 – Aug 2025)
+7. Founder at Obvius (Dec 2024 – May 2025)
+8. Fellow at AI4ALL (Aug 2024 – Feb 2025)
+9. Resident Assistant at Texas State University (Aug 2024 – Mar 2025)
+10. Extern Ambassador at Extern (Sep 2024 – Jan 2025)
+11. AI Intern at Intern Nepal (Sep 2024 – Jan 2025)
+12. Business Development and Sales Extern at Thematic (Jul 2024 – Aug 2024)
+13. Conference Assistant at Texas State University (May 2024 – Aug 2024)
+14. Data Science Intern at Dursikshya Education Network Pvt Ltd (Mar 2023 – Jun 2023)
+
+## Education
+- Texas State University, McCoy College of Business
+- B.B.A. in Computer Information Systems, Minor in Data Science
+- GPA: 4.0
+- Scholarships: Undergraduate Launch Scholarship (AKAEAF), Texas State Merit Scholarship, Merry Kone Fitzpatrick Endowed Scholarship, Web Service Company/Montgomery Endowed Scholarship
+- Dean's List 2023–2024
+
+## Research & Publications
+- Co-author of 2 research publications in healthcare AI and protein science
+- Selected for poster presentation at SC25 (International Conference for High Performance Computing)
+
+## Technical Skills
+Python, R, MySQL, HTML, CSS, JavaScript, TypeScript, Docker, MATLAB, Next.js, React, Tailwind CSS, AWS, Google Cloud TPU
+
+## Interests
+Vipassana meditation, investing, books, distance running, Sanskrit scriptures
+
+## Pages
+- Home: https://saksham.us
+- About / Resume: https://saksham.us/about
+- Projects: https://saksham.us/projects
+- Blog: https://saksham.us/blog
