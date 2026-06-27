@@ -426,9 +426,9 @@ window.STREAM_DATA = [
     tags: ['volunteer', 'upcoming'],
   },
   {
-    id: 'work-askslm', type: 'work', date: '2025-11-15', display: 'nov 2025',
-    title: 'AskSLM — AI Engineering Intern',
-    desc: 'Austin · current. Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
+    id: 'work-askslm', type: 'work', date: '2025-12-01', display: 'dec 2025',
+    title: 'AskSLM — Inference Engineer',
+    desc: 'Dec 2025–present · Austin. Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
     tags: ['current'],
   },
   {
@@ -456,19 +456,53 @@ window.STREAM_DATA = [
   {
     id: 'work-acm', type: 'work', date: '2024-12-15', display: 'dec 2024',
     title: 'ACM AI @ TXST — Vice President',
-    desc: 'Current. Leading a 70+ member club building full-stack apps — campus marketplace, and an ML professor-recommendation bot with an 87% positive rate across 484 interactions.',
-    tags: ['current'],
+    desc: 'Dec 2024–Aug 2025. Leading a 70+ member club building full-stack apps — campus marketplace, and an ML professor-recommendation bot with an 87% positive rate across 484 interactions.',
   },
   {
-    id: 'work-ai4all', type: 'work', date: '2024-09-15', display: 'sep 2024',
+    id: 'work-obvius', type: 'work', date: '2024-12-01', display: 'dec 2024',
+    title: 'Obvius — Founder',
+    desc: 'Dec 2024–May 2025. Founded and led product development for an AI-driven platform.',
+  },
+  {
+    id: 'work-ai4all', type: 'work', date: '2024-08-15', display: 'aug 2024',
     title: 'AI4All Ignite — Machine Learning Fellow',
-    desc: 'Sep 2024–Feb 2025 · remote. Led a 5-person team training an SVM for early Alzheimer’s detection (Darwin dataset); shipped the app and a 91%-accuracy poster.',
+    desc: 'Aug 2024–Feb 2025 · remote. Led a 5-person team training an SVM for early Alzheimer’s detection (Darwin dataset); shipped the app and a 91%-accuracy poster.',
     href: 'https://ai4all.streamlit.app',
+  },
+  {
+    id: 'work-extern', type: 'work', date: '2024-09-01', display: 'sep 2024',
+    title: 'Extern — Extern Ambassador',
+    desc: 'Sep 2024–Jan 2025. Represented Extern externship programs, connecting students with industry micro-internship opportunities.',
+  },
+  {
+    id: 'work-intern-nepal', type: 'work', date: '2024-09-01', display: 'sep 2024',
+    title: 'Intern Nepal — AI Intern',
+    desc: 'Sep 2024–Jan 2025. Worked on AI/ML projects contributing to Nepal\'s growing tech ecosystem.',
+  },
+  {
+    id: 'work-ra', type: 'work', date: '2024-08-15', display: 'aug 2024',
+    title: 'Texas State University — Resident Assistant',
+    desc: 'Aug 2024–Mar 2025. Department of Housing and Residential Life. Supported 50+ residents, managed community programming and crisis response.',
+  },
+  {
+    id: 'work-thematic', type: 'work', date: '2024-07-01', display: 'jul 2024',
+    title: 'Thematic — Business Development and Sales Extern',
+    desc: 'Jul–Aug 2024. Business development externship at thematic.co, driving outreach and partnership strategies.',
+  },
+  {
+    id: 'work-conference', type: 'work', date: '2024-05-15', display: 'may 2024',
+    title: 'Texas State University — Conference Assistant',
+    desc: 'May–Aug 2024. Department of Housing and Residential Life. Coordinated logistics for summer conference operations on campus.',
   },
   {
     id: 'work-sxsw', type: 'work', date: '2024-03-10', display: 'mar 2024',
     title: 'SXSW — Volunteer',
     tags: ['volunteer'],
+  },
+  {
+    id: 'work-dursikshya', type: 'work', date: '2023-03-01', display: 'mar 2023',
+    title: 'Dursikshya Education Network — Data Science Intern',
+    desc: 'Mar–Jun 2023 · Kathmandu, Nepal. Applied data science techniques to educational data, supporting analytics and reporting initiatives.',
   },
 
   // ——— Papers ———
