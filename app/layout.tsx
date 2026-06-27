@@ -138,7 +138,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <head>
-        <link rel="canonical" href="https://saksham.us" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
