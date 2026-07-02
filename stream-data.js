@@ -13,7 +13,7 @@ window.STREAM_DATA = [
     id: 'rent-agent', type: 'project', date: '2026-06-27',
     title: 'Rent Agent',
     desc: 'Text a maintenance issue → agent logs into RentCafe, submits the work order, screenshots confirmation. Pest control on weekly cron.',
-    image: 'https://raw.githubusercontent.com/Tar-ive/rent-agent/main/docs/demo.gif',
+    demo: 'https://raw.githubusercontent.com/Tar-ive/rent-agent/main/docs/demo.gif',
     github: 'https://github.com/Tar-ive/rent-agent',
     tags: ['automation', 'playwright', 'telegram', 'agents'],
     status: 'running in production',

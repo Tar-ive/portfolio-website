@@ -118,10 +118,12 @@ function WinItem({ item }) {
 
 function ProjectItem({ item }) {
   const hasBadge = item.meta && item.meta.productHuntBadge;
+  const hasMedia = item.video || item.demo;
   return (
     <article className="st-item">
       {item.video ? <div className="st-media"><ItemVideo item={item} className=""></ItemVideo></div> : null}
-      <div className={item.video ? 'st-joined' : ''}>
+      {item.demo ? <div className="st-media"><img src={item.demo} alt={item.title} style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'contain', display: 'block', background: 'var(--color-surface-alt, #1a1a2e)' }}></img></div> : null}
+      <div className={hasMedia ? 'st-joined' : ''}>
         <ProjectCard
         title={item.title}
         description={item.desc}
