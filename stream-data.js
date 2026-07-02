@@ -10,6 +10,14 @@ const img = (u) => u; // substackcdn URLs already sized w_320
 window.STREAM_DATA = [
   // ——— June 2026 ———
   {
+    id: 'rent-agent', type: 'project', date: '2026-06-27',
+    title: 'Rent Agent',
+    desc: 'Telegram bot + Playwright agent that files apartment work orders — text "leaky faucet in kitchen" and it logs into RentCafe (past Cloudflare + email OTP), fills the form, submits, and sends back a confirmation screenshot. Pest control re-submits every Monday on a cron job.',
+    github: 'https://github.com/Tar-ive/rent-agent',
+    tags: ['automation', 'playwright', 'telegram', 'agents'],
+    status: 'running in production',
+  },
+  {
     id: 'promptetheus-launch', type: 'project', date: '2026-06-20',
     title: 'Promptetheus',
     desc: 'Recursive self-improving tracing stack for AI agents — built at UC Berkeley AI Hackathon (Jun 20). 24 GitHub stars · 3 Product Hunt upvotes.',

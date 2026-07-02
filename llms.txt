@@ -28,6 +28,7 @@ Texas State University — B.B.A. Computer Information Systems, 4.0 GPA. Full-tu
 
 ## Current Projects
 
+- **Rent Agent**: Telegram bot + Playwright agent that files apartment work orders automatically — handles Cloudflare, email OTP, and RentCafe portal login. Pest control re-submits every Monday on a cron job. Running in production. [GitHub](https://github.com/Tar-ive/rent-agent)
 - **Promptetheus**: Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes. Built at the UC Berkeley AI Hackathon (June 2026). [Product Hunt](https://www.producthunt.com/products/promptethus) · [GitHub](https://github.com/obro79/promptetheus-service)
 - **TwoBot**: A two-tower GenRecSys with on-device curator agents (MLX) and a live force-directed graph of 1,300 simulation nodes. [GitHub](https://github.com/Tar-ive/twobot)
 - **Grants-MCP**: MCP ecosystem for government grant discovery — AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP. [GitHub](https://github.com/Tar-ive/grants-mcp)
@@ -39,7 +40,7 @@ Texas State University — B.B.A. Computer Information Systems, 4.0 GPA. Full-tu
 
 ## Skills
 
-Machine Learning, Inference Engineering, Computer Vision, Recommendation Systems, LLM Optimization, NVIDIA Jetson/DeepStream, vLLM, llama.cpp, Python, TypeScript, FastAPI, Next.js, React, TensorFlow, PyTorch, MLX
+Machine Learning, Inference Engineering, Computer Vision, Recommendation Systems, LLM Optimization, NVIDIA Jetson/DeepStream, vLLM, llama.cpp, Playwright, Browser Automation, Browserbase, Python, TypeScript, FastAPI, Next.js, React, TensorFlow, PyTorch, MLX
 
 ## Links
 
