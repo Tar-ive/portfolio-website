@@ -125,6 +125,7 @@ function ProjectItem({ item }) {
         <ProjectCard
         title={item.title}
         description={item.desc}
+        image={item.image}
         tags={item.tags || []}
         status={item.status}
           github={hasBadge ? null : item.github}
