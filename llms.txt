@@ -1,24 +1,21 @@
 # Saksham Adhikari — saksham.us
 
-> Inference Engineer at AskSLM. ML/AI engineer building real-time CV/VLM pipelines, recommendation systems, and developer tools. Former TPU Cloud Researcher at Google.
+> Machine Learning Engineer Intern at AskSLM. Data scientist and ML Engineer building real-time CV/VLM pipelines, recommendation systems, and developer tools. Former TPU Cloud Researcher at Google.
 
 ## About
 
-Saksham Adhikari is a Nepal-born, Texas-based ML/AI engineer and Computer Information Systems student at Texas State University (4.0 GPA). He is an Inference Engineer at AskSLM and was a TPU Cloud Student Researcher at Google. He builds tools at the intersection of AI observability, recommendation systems, and open-source developer infrastructure.
+Saksham Adhikari is a Nepal-born, Texas-based ML/DS Engineer and Computer Information Systems student at Texas State University (4.0 GPA). He is a Machine Learning Engineer Intern at AskSLM and was a TPU Cloud Student Researcher at Google. He builds tools at the intersection of AI observability, recommendation systems, and open-source developer infrastructure.
 
 ## Work Experience
 
-- **Inference Engineer** at AskSLM (Dec 2025–present). Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection; llama.cpp inference optimization.
+- **Machine Learning Engineer Intern** at AskSLM (Nov 2025–present). Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection; llama.cpp inference optimization.
 - **Data and AI Researcher** at Translational Health Research Center (Mar 2025–Jan 2026). 11-month part-time research role.
 - **TPU Cloud Student Researcher** at Google (Aug–Oct 2025). Turned vLLM community signals into concrete inference-stack fixes for research scientists' TPU workloads.
 - **Software Engineer Intern** at Breast Cancer Resource Center (May–Aug 2025). Semantically indexed ~130k cancer-care records; grew test coverage on an agentic healthcare stack from 78% to 91%.
 - **Vice President** at ACM AI @ TXST (Dec 2024–Aug 2025). Led a 70+ member club building full-stack apps.
 - **Founder** at Obvius (Dec 2024–May 2025). Founded and led product development for an AI-driven platform.
 - **Machine Learning Fellow** at AI4ALL Ignite (Aug 2024–Feb 2025). Led a 5-person team training an SVM for early Alzheimer's detection.
-- **Resident Assistant** at Texas State University (Aug 2024–Mar 2025). Department of Housing and Residential Life.
-- **Extern Ambassador** at Extern (Sep 2024–Jan 2025). Connecting students with industry micro-internship opportunities.
 - **AI Intern** at Intern Nepal (Sep 2024–Jan 2025). AI/ML projects contributing to Nepal's tech ecosystem.
-- **Business Development and Sales Extern** at Thematic (Jul–Aug 2024). Outreach and partnership strategies at thematic.co.
 - **Conference Assistant** at Texas State University (May–Aug 2024). Department of Housing and Residential Life.
 - **Data Science Intern** at Dursikshya Education Network (Mar–Jun 2023). Kathmandu, Nepal.
 
@@ -28,6 +25,7 @@ Texas State University — B.B.A. Computer Information Systems, 4.0 GPA. Full-tu
 
 ## Current Projects
 
+- **Giftmaxxing**: AI-powered iOS app that helps people become thoughtful gift givers. Built with Kusum Bhattarai Sharma. Maxi, the in-app assistant, curates context-aware gift recommendations on AWS. Best Monetizable B2C App at the Vercel v0 × AWS H0 hackathon (~10,000 participants, $6,000+ in prizes); now live on the App Store. [App Store](https://apps.apple.com/us/app/giftmaxxing/id6788124639)
 - **Rent Agent**: Telegram bot + Playwright agent that files apartment work orders automatically — handles Cloudflare, email OTP, and RentCafe portal login. Pest control re-submits every Monday on a cron job. Running in production. [GitHub](https://github.com/Tar-ive/rent-agent)
 - **Promptetheus**: Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes. Built at the UC Berkeley AI Hackathon (June 2026). [Product Hunt](https://www.producthunt.com/products/promptethus) · [GitHub](https://github.com/obro79/promptetheus-service)
 - **TwoBot**: A two-tower GenRecSys with on-device curator agents (MLX) and a live force-directed graph of 1,300 simulation nodes. [GitHub](https://github.com/Tar-ive/twobot)
@@ -35,6 +33,7 @@ Texas State University — B.B.A. Computer Information Systems, 4.0 GPA. Full-tu
 
 ## Publications
 
+- Associations of cognitive function with recent and cumulative per- and polyfluoroalkyl substances exposure in firefighters (co-author, Environmental Epidemiology, Aug 2026). Data science modeling of PFAS–cognition associations using OLS, PCA, and Random Forest. [Paper](https://www.ovid.com/jnls/environepidem/fulltext/10.1097/ee9.0000000000000522~associations-of-cognitive-function-with-recent-and)
 - QuantaFold: Scaling Protein Language Model Fine-tuning to 5,000 Families (lead author, SC25 poster)
 - Exploring rural women's healthcare access through social vulnerability profiles (co-author)
 

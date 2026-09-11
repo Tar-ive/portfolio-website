@@ -8,6 +8,42 @@ const SUBSTACK = 'https://adhsaksham.substack.com';
 const img = (u) => u; // substackcdn URLs already sized w_320
 
 window.STREAM_DATA = [
+  // ——— August 2026 ———
+  {
+    id: 'work-hotchips', type: 'work', date: '2026-08-24', display: 'aug 2026',
+    title: 'Hot Chips — Volunteer',
+    desc: 'Volunteered at the Hot Chips conference.',
+    tags: ['volunteer'],
+  },
+  {
+    id: 'photo-hotchips', type: 'photo', date: '2026-08-24',
+    title: 'Hot Chips',
+    desc: 'Volunteer crew dinner, an HBM talk, and Costco logistics.',
+    images: ['/media/hotchips-dinner.jpg', '/media/hotchips-talk.jpg', '/media/hotchips-costco.jpg'],
+    tags: ['Hot Chips', 'volunteer'],
+  },
+  {
+    id: 'paper-pfas-cognition', type: 'paper', date: '2026-08-15', dateApprox: true,
+    title: 'Associations of cognitive function with recent and cumulative per- and polyfluoroalkyl substances exposure in firefighters',
+    desc: 'Co-author. Data science modeling of PFAS chemical exposure and cognition in firefighters — OLS, PCA, and Random Forest. Cumulative PFOS associated with slower processing speed; recent × cumulative interaction. Environmental Epidemiology.',
+    href: 'https://www.ovid.com/jnls/environepidem/fulltext/10.1097/ee9.0000000000000522~associations-of-cognitive-function-with-recent-and',
+    hrefLabel: 'read the paper',
+    image: '/media/pfas-cognition-s1.jpg',
+    tags: ['co-author', 'PFAS', 'OLS', 'PCA', 'Random Forest'],
+  },
+
+  // ——— July 2026 ———
+  {
+    id: 'win-giftmaxxing', type: 'win', date: '2026-07-15', dateApprox: true,
+    title: 'Giftmaxxing — from hackathon win to the App Store',
+    desc: 'Built with Kusum Bhattarai Sharma. Maxi, an AI gift concierge, compresses inspiration → curation → purchase so nobody has to freeze in the “what do I even get them?” loop. At H0: Hack the Zero Stack (Vercel v0 × AWS, ~10,000 participants) we won Best Monetizable B2C App and $6,000+ in prizes, then spent the following weeks shipping production off feedback from AWS engineers, judges, and fellow hackers.',
+    href: 'https://apps.apple.com/us/app/giftmaxxing/id6788124639',
+    hrefLabel: 'get it on the app store',
+    images: ['/media/giftmaxxing-winner.jpg', '/media/giftmaxxing-maxi.jpg'],
+    tags: ['v0', 'AWS', 'App Store'],
+    logos: ['v0', 'aws'],
+  },
+
   // ——— June 2026 ———
   {
     id: 'rent-agent', type: 'project', date: '2026-06-27',
@@ -164,10 +200,11 @@ window.STREAM_DATA = [
   {
     id: 'twobot', type: 'project', date: '2026-05-30',
     title: 'TwoBot',
-    desc: 'A two-tower GenRecSys: on-device curator agents (MLX) evaluate candidates and write personalized surfacing notes, with a live force-directed graph of 1,300 simulation nodes.',
+    desc: 'A two-tower GenRecSys: on-device curator agents (MLX) evaluate candidates and write personalized surfacing notes. Live A/B of recency baseline vs two-tower + MMR on a 1,300-node simulation.',
     github: 'https://github.com/Tar-ive/twobot',
     video: '/media/video-1.mp4',
     videoAspect: '16 / 9',
+    image: '/media/twobot-ab.jpg',
     tags: ['recsys', 'mlx', 'agents'],
     status: 'currently building',
   },
@@ -187,6 +224,7 @@ window.STREAM_DATA = [
     href: SUBSTACK + '/p/how-i-won-2-tracks-in-an-nvdia-hackathon',
     hrefLabel: 'read the write-up',
     tags: ['voice agents', 'W&B', 'LomanAI'],
+    logos: ['nvidia'],
   },
   {
     id: 'photo-nov25', type: 'photo', date: '2025-11-01',
@@ -248,7 +286,7 @@ window.STREAM_DATA = [
     id: 'win-tpu', type: 'win', date: '2025-08-20', display: 'aug 2025',
     title: 'TPU Cloud Research Program — Google',
     desc: 'Selected for Google’s TPU Cloud research program.',
-    tags: ['google'],
+    logos: ['google'],
   },
   {
     id: 'grants-mcp', type: 'project', date: '2025-08-15', dateApprox: true,
@@ -306,6 +344,7 @@ window.STREAM_DATA = [
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7465758282662641664/',
     hrefLabel: 'view on linkedin',
     tags: ['YOLO', 'MLX', 'webAI'],
+    logos: ['webai'],
   },
   {
     id: 'x-dontgetup', type: 'x', date: '2026-05-25',
@@ -429,21 +468,17 @@ window.STREAM_DATA = [
 
   // ——— Work ———
   {
-    id: 'work-hotchips', type: 'work', date: '2027-08-15', display: 'aug 2027',
-    title: 'Hot Chips — Volunteer',
-    desc: 'Upcoming — volunteering at the Hot Chips conference.',
-    tags: ['volunteer', 'upcoming'],
-  },
-  {
-    id: 'work-askslm', type: 'work', date: '2025-12-01', display: 'dec 2025',
-    title: 'AskSLM — Inference Engineer',
-    desc: 'Dec 2025–present · Austin. Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
+    id: 'work-askslm', type: 'work', date: '2025-11-01', display: 'nov 2025',
+    title: 'AskSLM — Machine Learning Engineer Intern',
+    desc: 'Nov 2025–present · Austin. Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
     tags: ['current'],
+    logos: ['askslm'],
   },
   {
     id: 'work-google', type: 'work', date: '2025-08-20', display: 'aug 2025',
     title: 'Google — TPU Cloud Student Researcher',
     desc: 'Aug–Oct 2025 · remote. Turned vLLM community signals into concrete inference-stack fixes for research scientists’ TPU workloads.',
+    logos: ['google'],
   },
   {
     id: 'work-bcrc', type: 'work', date: '2025-05-15', display: 'may 2025',
@@ -454,6 +489,7 @@ window.STREAM_DATA = [
     id: 'work-thrc', type: 'work', date: '2025-03-20', display: 'mar 2025',
     title: 'Translational Health Research Center — Data and AI Researcher',
     desc: 'Mar 2025–Jan 2026 · part-time · 11 mos.',
+    logos: ['thrc'],
   },
   {
     id: 'work-debate', type: 'work', date: '2025-03-01', display: 'mar 2025',
@@ -466,6 +502,7 @@ window.STREAM_DATA = [
     id: 'work-acm', type: 'work', date: '2024-12-15', display: 'dec 2024',
     title: 'ACM AI @ TXST — Vice President',
     desc: 'Dec 2024–Aug 2025. Leading a 70+ member club building full-stack apps — campus marketplace, and an ML professor-recommendation bot with an 87% positive rate across 484 interactions.',
+    logos: ['acm'],
   },
   {
     id: 'work-obvius', type: 'work', date: '2024-12-01', display: 'dec 2024',
@@ -477,26 +514,12 @@ window.STREAM_DATA = [
     title: 'AI4All Ignite — Machine Learning Fellow',
     desc: 'Aug 2024–Feb 2025 · remote. Led a 5-person team training an SVM for early Alzheimer’s detection (Darwin dataset); shipped the app and a 91%-accuracy poster.',
     href: 'https://ai4all.streamlit.app',
-  },
-  {
-    id: 'work-extern', type: 'work', date: '2024-09-01', display: 'sep 2024',
-    title: 'Extern — Extern Ambassador',
-    desc: 'Sep 2024–Jan 2025. Represented Extern externship programs, connecting students with industry micro-internship opportunities.',
+    logos: ['ai4all'],
   },
   {
     id: 'work-intern-nepal', type: 'work', date: '2024-09-01', display: 'sep 2024',
     title: 'Intern Nepal — AI Intern',
     desc: 'Sep 2024–Jan 2025. Worked on AI/ML projects contributing to Nepal\'s growing tech ecosystem.',
-  },
-  {
-    id: 'work-ra', type: 'work', date: '2024-08-15', display: 'aug 2024',
-    title: 'Texas State University — Resident Assistant',
-    desc: 'Aug 2024–Mar 2025. Department of Housing and Residential Life. Supported 50+ residents, managed community programming and crisis response.',
-  },
-  {
-    id: 'work-thematic', type: 'work', date: '2024-07-01', display: 'jul 2024',
-    title: 'Thematic — Business Development and Sales Extern',
-    desc: 'Jul–Aug 2024. Business development externship at thematic.co, driving outreach and partnership strategies.',
   },
   {
     id: 'work-conference', type: 'work', date: '2024-05-15', display: 'may 2024',
@@ -563,3 +586,133 @@ window.STREAM_DATA = [
     tags: ['gold', 'nepal'],
   },
 ];
+
+// Presentation variants — ids must exist in STREAM_DATA.
+window.STREAM_PRESENTATION = {
+  stats: [
+    { n: '6', label: 'hackathon wins', big: true },
+    { n: 'ML Engineer Intern', label: '@AskSLM', logo: 'askslm' },
+    { n: 'AI Fellow', label: 'at AI4ALL', logo: 'ai4all' },
+    { n: 'Vice President', label: '@ACM AI @ TXST', logo: 'acm' },
+  ],
+  featured: ['win-giftmaxxing', 'twobot', 'paper-pfas-cognition', 'win-webai', 'work-askslm'],
+  lanes: [
+    {
+      key: 'inference',
+      label: 'inference & systems',
+      blurb: 'Serving models under latency and hardware constraints — Jetson, TPU, vLLM, llama.cpp.',
+      ids: ['work-askslm', 'work-google', 'promptetheus-launch', 'speed-moat'],
+    },
+    {
+      key: 'recsys',
+      label: 'recommendation systems',
+      blurb: 'Two-tower retrieval, on-device curators, and product ranking that has to ship.',
+      ids: ['twobot', 'win-giftmaxxing', 'tiktok', 'm-instagram'],
+    },
+    {
+      key: 'vision',
+      label: 'computer vision',
+      blurb: 'Real-time CV/VLM pipelines and on-device detectors, not just notebooks.',
+      ids: ['work-askslm', 'win-webai', 'cv-reflections'],
+    },
+    {
+      key: 'data',
+      label: 'data at scale',
+      blurb: 'Epidemiology, grants, biomedical records, HPC training — modeling messy high-volume data.',
+      ids: ['paper-pfas-cognition', 'grants-mcp', 'work-bcrc', 'quantafold', 'paper-ruralwomen'],
+    },
+  ],
+};
+
+window.STREAM_BIO = 'ML engineer — inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.';
+
+// Gemini-style pairwise readings. Same work, two write-ups. The chosen arm
+// rewrites that item, then the lens below rewrites the rest of the site.
+window.STREAM_ONBOARD = {
+  rounds: [
+    {
+      id: 'askslm',
+      itemId: 'work-askslm',
+      kicker: 'same role · two readings',
+      arms: [
+        {
+          key: 'systems',
+          logo: 'askslm',
+          eyebrow: 'AskSLM · current',
+          title: 'ML Engineer Intern — on-device CV',
+          body: 'Real-time CV/VLM on Jetson Thor. llama.cpp so the model fits the hardware.',
+          long: 'Nov 2025–present · Austin. Real-time CV and VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
+          tags: ['Jetson', 'DeepStream', 'llama.cpp'],
+        },
+        {
+          key: 'impact',
+          logo: 'askslm',
+          eyebrow: 'AskSLM · current',
+          title: 'Private vision, where the camera is',
+          body: 'Threat detection that runs next to the camera, not in someone else’s cloud.',
+          long: 'Nov 2025–present · Austin. I help a local-AI company put threat detection on county hardware — the model runs next to the camera, and it has to work at 2am.',
+          tags: ['on-device', 'public safety'],
+        },
+      ],
+    },
+    {
+      id: 'giftmaxxing',
+      itemId: 'win-giftmaxxing',
+      kicker: 'same project · two readings',
+      arms: [
+        {
+          key: 'product',
+          image: '/media/giftmaxxing-maxi.jpg',
+          logos: ['v0', 'aws'],
+          eyebrow: 'Giftmaxxing · App Store',
+          title: 'Maxi, an AI gift concierge',
+          body: 'Inspiration → curation → purchase. Now on the App Store.',
+          long: 'Built with Kusum Bhattarai Sharma. Maxi compresses inspiration → curation → purchase so nobody freezes in the “what do I even get them?” loop. Best Monetizable B2C App at H0 (Vercel v0 × AWS, ~10,000 participants), then shipped to the App Store.',
+          tags: ['App Store', 'B2C'],
+        },
+        {
+          key: 'craft',
+          image: '/media/giftmaxxing-winner.jpg',
+          logos: ['v0', 'aws'],
+          eyebrow: 'Giftmaxxing · shipped',
+          title: 'Rank, then close the loop',
+          body: 'Retrieve candidates, rerank for the recipient, complete the purchase.',
+          long: 'A recsys-shaped concierge: retrieve candidates, rerank for the recipient, and close the purchase. Won Best Monetizable B2C at Vercel v0 × AWS (~10,000 participants), then productionized off feedback from AWS engineers and judges.',
+          tags: ['recsys', 'v0 × AWS'],
+        },
+      ],
+    },
+  ],
+  // Each combination of picks is a lens: bio, featured order, and three
+  // items promoted out of the chronology into "picked for you".
+  lenses: {
+    systems: {
+      label: 'systems lens',
+      why: 'you picked the hardware read twice',
+      bio: 'ML engineer — inference, on-device vision, and ranking systems. I put models on hardware and publish the receipts.',
+      featured: ['work-askslm', 'win-giftmaxxing', 'paper-pfas-cognition', 'win-webai', 'twobot'],
+      picks: ['work-google', 'promptetheus-launch', 'quantafold'],
+    },
+    product: {
+      label: 'product lens',
+      why: 'you picked the shipped-product read twice',
+      bio: 'I ship AI people actually use — a gift concierge on the App Store, and on-device vision for public safety.',
+      featured: ['win-giftmaxxing', 'work-askslm', 'win-webai', 'twobot', 'paper-pfas-cognition'],
+      picks: ['rent-agent', 'grants-mcp', 'promptetheus-launch'],
+    },
+    shipping: {
+      label: 'build-and-ship lens',
+      why: 'hardware read for the role, ranking read for the product',
+      bio: 'On-device vision at AskSLM, and ranking systems that have to work for a stranger on a phone.',
+      featured: ['work-askslm', 'win-giftmaxxing', 'twobot', 'win-webai', 'paper-pfas-cognition'],
+      picks: ['rent-agent', 'work-google', 'grants-mcp'],
+    },
+    impact: {
+      label: 'impact lens',
+      why: 'you picked the people-first read twice',
+      bio: 'I build AI where the stakes are real — public safety on-device, cancer-care records, rural health data.',
+      featured: ['win-giftmaxxing', 'work-askslm', 'paper-pfas-cognition', 'win-webai', 'twobot'],
+      picks: ['work-bcrc', 'paper-ruralwomen', 'win-nvidia'],
+    },
+  },
+};
