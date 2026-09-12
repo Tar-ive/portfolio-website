@@ -627,9 +627,8 @@ function OnboardFlow({ onDone }) {
         </p>
       </header>
       <div className="st-on__main">
-        <p className="st-on__kicker">{round.kicker}</p>
         <h1 className="st-on__prompt">Which one lands?</h1>
-        <p className="st-on__lede">Same work, two write-ups. Pick one and the site rebuilds around your taste.</p>
+        <p className="st-on__lede">Live A/B test — pick one so my agent can generate a website tailored to your taste.</p>
         <div className="st-on__pair">
           {shown.map((arm, i) => (
             <OnboardArm

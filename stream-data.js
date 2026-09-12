@@ -633,7 +633,6 @@ window.STREAM_ONBOARD = {
     {
       id: 'askslm',
       itemId: 'work-askslm',
-      kicker: 'same role · two readings',
       arms: [
         {
           key: 'systems',
@@ -658,7 +657,6 @@ window.STREAM_ONBOARD = {
     {
       id: 'giftmaxxing',
       itemId: 'win-giftmaxxing',
-      kicker: 'same project · two readings',
       arms: [
         {
           key: 'product',
