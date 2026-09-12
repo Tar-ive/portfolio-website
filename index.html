@@ -662,7 +662,7 @@
   html.st-onboarding { overflow: hidden; }
   .st-on {
     min-height: 100vh;
-    max-width: 56rem;
+    max-width: 64rem;
     margin: 0 auto;
     padding: var(--space-6) var(--space-5);
     display: grid;
@@ -720,8 +720,8 @@
   }
   .st-on__lede {
     margin: 0;
-    max-width: 38rem;
-    font-size: var(--text-sm);
+    max-width: 46rem;
+    font-size: var(--text-md);
     color: var(--text-muted);
     line-height: var(--leading-normal);
     text-wrap: pretty;
@@ -757,7 +757,7 @@
     align-items: center;
     justify-content: center;
     margin: var(--space-4) var(--space-4) 0;
-    height: 170px;
+    height: 220px;
     border-radius: var(--radius-sm);
     overflow: hidden;
     background: var(--surface-tint);
@@ -782,7 +782,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding: var(--space-4);
+    padding: var(--space-5) var(--space-4) var(--space-4);
   }
   .st-on__eyebrow {
     display: flex;
@@ -796,7 +796,7 @@
   }
   .st-on__title {
     font-family: var(--font-display);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: var(--weight-semibold);
     letter-spacing: var(--tracking-tight);
     line-height: var(--leading-snug);
@@ -804,11 +804,10 @@
     text-wrap: pretty;
   }
   .st-on__body {
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
     color: var(--text-muted);
     line-height: var(--leading-normal);
     text-wrap: pretty;
-    max-width: 34ch;
   }
   .st-on__tags {
     display: flex;
@@ -818,13 +817,13 @@
   }
   .st-on__tags span {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: var(--text-xs);
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: var(--text-faint);
     border: var(--border-hairline);
     border-radius: var(--radius-sm);
-    padding: 0.15rem 0.4rem;
+    padding: 0.2rem 0.5rem;
   }
   .st-on__foot {
     display: flex;
@@ -988,9 +987,15 @@
     .st-stats { grid-template-columns: 1fr 1fr; }
     .st-featured { column-count: 1; }
     .st-lane__items { grid-template-columns: 1fr; }
+    /* stacked pairs run past the fold, so the scroll lock has to lift */
+    html.st-onboarding { overflow: auto; }
     .st-on__pair { grid-template-columns: 1fr; }
-    .st-on { padding: var(--space-5) var(--space-4); }
+    .st-on { padding: var(--space-5) var(--space-4); min-height: 0; }
     .st-on__prompt { font-size: var(--text-xl); }
+    .st-on__lede { font-size: var(--text-base); }
+    .st-on__media { height: 180px; }
+    .st-on__title { font-size: var(--text-lg); }
+    .st-on__body { font-size: var(--text-base); }
     .st-lens__picks { grid-template-columns: 1fr; }
   }
 </style>
