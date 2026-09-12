@@ -1,17 +1,17 @@
-// stream-data.js — content for The Stream.
+// stream-data.js: content for The Stream.
 // Sources: Substack export (uploads/Substack….md) + CV (uploads/Saksham_CV….md).
 // Each item: { id, type, date (YYYY-MM-DD), title, desc, href, image, tags, meta }
 // type: essay | win | project | photo | sutra | take
-// NOTE: dates for wins/projects without exact dates are month-level guesses — edit freely.
+// NOTE: dates for wins/projects without exact dates are month-level guesses; edit freely.
 
 const SUBSTACK = 'https://adhsaksham.substack.com';
 const img = (u) => u; // substackcdn URLs already sized w_320
 
 window.STREAM_DATA = [
-  // ——— August 2026 ———
+  // --- August 2026 ---
   {
     id: 'work-hotchips', type: 'work', date: '2026-08-24', display: 'aug 2026',
-    title: 'Hot Chips — Volunteer',
+    title: 'Hot Chips: Volunteer',
     desc: 'Volunteered at the Hot Chips conference.',
     tags: ['volunteer'],
   },
@@ -25,17 +25,17 @@ window.STREAM_DATA = [
   {
     id: 'paper-pfas-cognition', type: 'paper', date: '2026-08-15', dateApprox: true,
     title: 'Associations of cognitive function with recent and cumulative per- and polyfluoroalkyl substances exposure in firefighters',
-    desc: 'Co-author. Data science modeling of PFAS chemical exposure and cognition in firefighters — OLS, PCA, and Random Forest. Cumulative PFOS associated with slower processing speed; recent × cumulative interaction. Environmental Epidemiology.',
+    desc: 'Co-author. Data science modeling of PFAS chemical exposure and cognition in firefighters using OLS, PCA, and Random Forest. Cumulative PFOS associated with slower processing speed; recent × cumulative interaction. Environmental Epidemiology.',
     href: 'https://www.ovid.com/jnls/environepidem/fulltext/10.1097/ee9.0000000000000522~associations-of-cognitive-function-with-recent-and',
     hrefLabel: 'read the paper',
     image: '/media/pfas-cognition-s1.jpg',
     tags: ['co-author', 'PFAS', 'OLS', 'PCA', 'Random Forest'],
   },
 
-  // ——— July 2026 ———
+  // --- July 2026 ---
   {
     id: 'win-giftmaxxing', type: 'win', date: '2026-07-15', dateApprox: true,
-    title: 'Giftmaxxing — from hackathon win to the App Store',
+    title: 'Giftmaxxing: from hackathon win to the App Store',
     desc: 'Built with Kusum Bhattarai Sharma. Maxi, an AI gift concierge, compresses inspiration → curation → purchase so nobody has to freeze in the “what do I even get them?” loop. At H0: Hack the Zero Stack (Vercel v0 × AWS, ~10,000 participants) we won Best Monetizable B2C App and $6,000+ in prizes, then spent the following weeks shipping production off feedback from AWS engineers, judges, and fellow hackers.',
     href: 'https://apps.apple.com/us/app/giftmaxxing/id6788124639',
     hrefLabel: 'get it on the app store',
@@ -44,7 +44,7 @@ window.STREAM_DATA = [
     logos: ['v0', 'aws'],
   },
 
-  // ——— June 2026 ———
+  // --- June 2026 ---
   {
     id: 'rent-agent', type: 'project', date: '2026-06-27',
     title: 'Rent Agent',
@@ -57,7 +57,7 @@ window.STREAM_DATA = [
   {
     id: 'promptetheus-launch', type: 'project', date: '2026-06-20',
     title: 'Promptetheus',
-    desc: 'Recursive self-improving tracing stack for AI agents — built at UC Berkeley AI Hackathon (Jun 20). 24 GitHub stars · 3 Product Hunt upvotes.',
+    desc: 'Recursive self-improving tracing stack for AI agents, built at UC Berkeley AI Hackathon (Jun 20). 24 GitHub stars · 3 Product Hunt upvotes.',
     github: 'https://github.com/obro79/promptetheus-service',
     live: 'https://www.producthunt.com/products/promptethus',
     tags: ['UC Berkeley', 'AI agents', 'observability'],
@@ -105,7 +105,7 @@ window.STREAM_DATA = [
     image: img('https://substackcdn.com/image/fetch/$s_!SiRh!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F49d65552-105d-4e47-a9a2-f8257062708f_928x1695.png'),
     tags: ['systems', 'webrtc'],
   },
-  // ——— June 2026 ———
+  // --- June 2026 ---
   {
     id: 'base-thought', type: 'essay', date: '2026-05-30',
     title: 'base_thought',
@@ -117,7 +117,7 @@ window.STREAM_DATA = [
   {
     id: 'genrec', type: 'essay', date: '2026-05-24',
     title: 'How to Build A Generative Recommendation System',
-    desc: 'A Twitter clone for agents — generating content for humans on the fly.',
+    desc: 'A Twitter clone for agents, generating content for humans on the fly.',
     href: SUBSTACK + '/p/how-to-build-a-generative-recommendation',
     image: img('https://substackcdn.com/image/fetch/$s_!wMGv!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22e9767e-12ee-4d64-a797-8db5ae071d38_3840x2221.png'),
     tags: ['recsys', 'agents'],
@@ -125,7 +125,7 @@ window.STREAM_DATA = [
   {
     id: 'sutra-pangu', type: 'sutra', date: '2026-05-20',
     devanagari: 'पुरुषस्य दर्शनार्थं कैवल्यार्थं तथा प्रधानस्य ।\nपङ्ग्वन्धवदुभयोरपि संयोगस्तत्कृतः सर्गः ॥',
-    translation: 'Like the lame man and the blind man joining — one sees, the other carries — spirit and matter cooperate, and from that union the world proceeds.',
+    translation: 'Like the lame man and the blind man joining, one sees while the other carries: spirit and matter cooperate, and from that union the world proceeds.',
     source: 'sāṅkhya kārikā · 21',
     take: 'The cleanest frame I know for human–AI systems: the model carries, the human sees.',
   },
@@ -154,7 +154,7 @@ window.STREAM_DATA = [
     tags: ['rl', 'philosophy'],
   },
 
-  // ——— April 2026 ———
+  // --- April 2026 ---
   {
     id: 'fire-equations', type: 'essay', date: '2026-04-27',
     title: 'The Fire in the Equations',
@@ -166,28 +166,28 @@ window.STREAM_DATA = [
   {
     id: 'agents-thoughts', type: 'essay', date: '2026-04-25',
     title: 'some thoughts on agents',
-    desc: 'From Copilot to Cursor — what the agent wave actually changed.',
+    desc: 'From Copilot to Cursor: what the agent wave actually changed.',
     href: SUBSTACK + '/p/some-thoughts-on-agents',
     image: img('https://substackcdn.com/image/fetch/$s_!yxtu!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F142e528f-fb03-4fed-9601-318d32872d26_1536x1024.heic'),
     tags: ['agents'],
   },
   {
     id: 'take-satyam', type: 'take', date: '2026-04-12',
-    text: 'satyaṃ jñānam anantaṃ brahma — truth, knowledge, without end. Verifiability work is just engineering toward the first two words.',
+    text: 'satyaṃ jñānam anantaṃ brahma: truth, knowledge, without end. Verifiability work is just engineering toward the first two words.',
     source: 'taittirīya upaniṣad · 2.1',
   },
 
-  // ——— March 2026 ———
+  // --- March 2026 ---
   {
     id: 'win-dataport', type: 'win', date: '2026-03-01', dateApprox: true,
-    title: 'Data Portability Hackathon — Winner',
+    title: 'Data Portability Hackathon: Winner',
     desc: 'UT Law Data Portability Track winner + 3rd overall. A personalized game that helps people with ADHD run a congruent daily life.',
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7443301667917365249/',
     hrefLabel: 'view on linkedin',
     tags: ['UT Law track', '3rd overall'],
   },
 
-  // ——— February 2026 ———
+  // --- February 2026 ---
   {
     id: 'openclaw', type: 'essay', date: '2026-02-26',
     title: 'How to Use OpenClaw to Get Context Aware Personalized Job Updates',
@@ -196,7 +196,7 @@ window.STREAM_DATA = [
     image: img('https://substackcdn.com/image/fetch/$s_!IzYL!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed3edd30-6cd0-4040-ae2d-a795f95b7acd_894x558.png'),
     tags: ['recsys', 'agents'],
   },
-  // ——— January 2026 ———
+  // --- January 2026 ---
   {
     id: 'twobot', type: 'project', date: '2026-05-30',
     title: 'TwoBot',
@@ -211,15 +211,15 @@ window.STREAM_DATA = [
   {
     id: 'sutra-nasmi', type: 'sutra', date: '2026-01-08',
     devanagari: 'एवं तत्त्वाभ्यासान्नास्मि न मे नाहमित्यपरिशेषम् ।\nअविपर्ययाद्विशुद्धं केवलमुत्पद्यते ज्ञानम् ॥',
-    translation: '"I am not, nothing is mine, there is no I" — from sustained practice with the tattvas arises knowledge that is complete, pure, and alone.',
+    translation: '"I am not, nothing is mine, there is no I": from sustained practice with the tattvas arises knowledge that is complete, pure, and alone.',
     source: 'sāṅkhya kārikā · 64',
     take: 'Ego-ablation as a training objective. The oldest regularizer.',
   },
 
-  // ——— November 2025 ———
+  // --- November 2025 ---
   {
     id: 'win-nvidia', type: 'win', date: '2025-11-01',
-    title: 'AITX × NVIDIA Hackathon — Winner, 2 tracks',
+    title: 'AITX × NVIDIA Hackathon: Winner, 2 tracks',
     desc: 'Weights & Biases Track + LomanAI Track. Hyper-personalized real-time voice agents with 3 layers of authentication for bulk food orders.',
     href: SUBSTACK + '/p/how-i-won-2-tracks-in-an-nvdia-hackathon',
     hrefLabel: 'read the write-up',
@@ -241,10 +241,10 @@ window.STREAM_DATA = [
     tags: ['lead author', 'SC25', 'HPC'],
   },
 
-  // ——— October 2025 ———
+  // --- October 2025 ---
   {
     id: 'win-datathon', type: 'win', date: '2025-02-15', display: 'feb 2025',
-    title: 'TXST Datathon — 1st Place',
+    title: 'TXST Datathon: 1st Place',
     desc: 'Greedy parking-space optimizer and TensorFlow ML model for strategic campus parking.',
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7297066335698591744/',
     hrefLabel: 'view on linkedin',
@@ -252,11 +252,11 @@ window.STREAM_DATA = [
   },
   {
     id: 'win-novohacks', type: 'win', date: '2024-11-15', display: 'nov 2024',
-    title: 'Novo Hacks — Best Design',
+    title: 'Novo Hacks: Best Design',
     tags: ['design'],
   },
 
-  // ——— September 2025 ———
+  // --- September 2025 ---
   {
     id: 'deepmind', type: 'essay', date: '2025-09-13',
     title: 'DeepMind Philosophy',
@@ -281,23 +281,23 @@ window.STREAM_DATA = [
     tags: ['energy', 'first principles'],
   },
 
-  // ——— August 2025 ———
+  // --- August 2025 ---
   {
     id: 'win-tpu', type: 'win', date: '2025-08-20', display: 'aug 2025',
-    title: 'TPU Cloud Research Program — Google',
+    title: 'TPU Cloud Research Program at Google',
     desc: 'Selected for Google’s TPU Cloud research program.',
     logos: ['google'],
   },
   {
     id: 'grants-mcp', type: 'project', date: '2025-08-15', dateApprox: true,
     title: 'Grants-MCP',
-    desc: 'MCP ecosystem for government grant discovery — AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP.',
+    desc: 'MCP ecosystem for government grant discovery, with AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP.',
     github: 'https://github.com/Tar-ive/grants-mcp',
     live: 'https://glama.ai/mcp/servers/@Tar-ive/grants-mcp',
     tags: ['mcp', 'python', 'typescript'],
   },
 
-  // ——— January 2025 ———
+  // --- January 2025 ---
   {
     id: 'tiktok', type: 'essay', date: '2025-01-12',
     title: "The Secret Sauce Behind TikTok's Algorithm: A Deep Dive into Hashing",
@@ -315,7 +315,7 @@ window.STREAM_DATA = [
     tags: ['recsys', 'economics'],
   },
 
-  // ——— X posts (pasted export, Jun 2026) ———
+  // --- X posts (pasted export, Jun 2026) ---
   {
     id: 'x-openai', type: 'x', date: '2026-05-31',
     text: "I'd switch from Claude in an instant if @OpenAI only had this.",
@@ -324,7 +324,7 @@ window.STREAM_DATA = [
   {
     id: 'codex-ext', type: 'project', date: '2026-05-31',
     title: 'codex cli extension',
-    desc: 'Extension built around the Codex CLI — demo below.',
+    desc: 'Extension built around the Codex CLI. Demo below.',
     video: '/media/video-2.mp4',
     videoAspect: '16 / 9',
     tags: ['codex', 'cli'],
@@ -337,8 +337,8 @@ window.STREAM_DATA = [
   },
   {
     id: 'win-webai', type: 'win', date: '2026-05-25',
-    title: '“Don’t Get Up” — webAI hackathon win',
-    desc: 'Rage-baits you out of bed. YOLO models running on MLX — the future of alarm clocks, built in 36 hours.',
+    title: '“Don’t Get Up”: webAI hackathon win',
+    desc: 'Rage-baits you out of bed. YOLO models running on MLX: the future of alarm clocks, built in 36 hours.',
     video: '/media/video-3.mp4',
     videoAspect: '960 / 624',
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7465758282662641664/',
@@ -370,7 +370,7 @@ window.STREAM_DATA = [
   },
   {
     id: 'win-mcp-hacknight', type: 'win', date: '2025-10-29',
-    title: 'World Wild Web MCP Server Hack Night — 3rd place',
+    title: 'World Wild Web MCP Server Hack Night: 3rd place',
     desc: 'An MCP server on Cloudflare + Fiberplane that talks to Bluesky, grabs stock posts, analyzes sentiment, and says buy or sell.',
     href: 'https://x.com/i/web/status/1983593740594798766',
     hrefLabel: 'view on X',
@@ -389,18 +389,18 @@ window.STREAM_DATA = [
   },
   {
     id: 'x-residency', type: 'x', date: '2025-10-25',
-    text: 'Sleeping at a stranger’s house after 8 hours of coding on an air mattress during the @aitxcommunity hackathon — building in public for @enter_delta and @theresidency.',
+    text: 'Sleeping at a stranger’s house after 8 hours of coding on an air mattress during the @aitxcommunity hackathon. Building in public for @enter_delta and @theresidency.',
     href: 'https://x.com/i/web/status/1982009439923093580',
   },
 
-  // ——— X posts — link-only (text to be filled in) ———
+  // --- X posts, link-only (text to be filled in) ---
   { id: 'x-oct26', type: 'x', date: '2025-10-26', linkOnly: true, href: 'https://x.com/saksham_adh/status/1982489137111560450' },
   { id: 'x-sep16', type: 'x', date: '2025-09-16', linkOnly: true, href: 'https://x.com/saksham_adh/status/1968088565490860533' },
   { id: 'x-sep10', type: 'x', date: '2025-09-10', linkOnly: true, href: 'https://x.com/saksham_adh/status/1965671633781400045' },
   { id: 'x-feb18', type: 'x', date: '2025-02-18', linkOnly: true, href: 'https://x.com/saksham_adh/status/1891981939482976661' },
   { id: 'x-jan16', type: 'x', date: '2025-01-16', linkOnly: true, href: 'https://x.com/saksham_adh/status/1879941672999743631' },
   { id: 'x-dec19', type: 'x', date: '2024-12-19', linkOnly: true, href: 'https://x.com/saksham_adh/status/1869668823571591582' },
-  // ——— Medium essays (2024) ———
+  // --- Medium essays (2024) ---
   {
     id: 'm-replit', type: 'essay', date: '2024-11-12', source: 'medium',
     title: 'How the Replit Agent Might Work',
@@ -452,7 +452,7 @@ window.STREAM_DATA = [
   {
     id: 'm-ami', type: 'essay', date: '2024-08-04', source: 'medium',
     title: 'what is AMI and how I learn about it.',
-    desc: 'Artificial Machine Intelligence — a branch of AI, and how I study it.',
+    desc: 'Artificial Machine Intelligence: a branch of AI, and how I study it.',
     href: 'https://medium.com/@adhsaksham27/what-is-ami-and-how-i-learn-about-it-4b80a6ee50d2',
     image: 'https://miro.medium.com/v2/resize:fill:320:214/1*qOovULmCnjxzW9KZ5Soc3A.png',
     tags: ['notes'],
@@ -466,78 +466,78 @@ window.STREAM_DATA = [
     tags: ['philosophy'],
   },
 
-  // ——— Work ———
+  // --- Work ---
   {
     id: 'work-askslm', type: 'work', date: '2025-11-01', display: 'nov 2025',
-    title: 'AskSLM — Machine Learning Engineer Intern',
+    title: 'AskSLM: Machine Learning Engineer Intern',
     desc: 'Nov 2025–present · Austin. Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
     tags: ['current'],
     logos: ['askslm'],
   },
   {
     id: 'work-google', type: 'work', date: '2025-08-20', display: 'aug 2025',
-    title: 'Google — TPU Cloud Student Researcher',
+    title: 'Google: TPU Cloud Student Researcher',
     desc: 'Aug–Oct 2025 · remote. Turned vLLM community signals into concrete inference-stack fixes for research scientists’ TPU workloads.',
     logos: ['google'],
   },
   {
     id: 'work-bcrc', type: 'work', date: '2025-05-15', display: 'may 2025',
-    title: 'Breast Cancer Resource Center (BCRC) — Software Engineer Intern',
+    title: 'Breast Cancer Resource Center (BCRC): Software Engineer Intern',
     desc: 'May–Aug 2025 · Austin. Semantically indexed ~130k cancer-care records; grew test coverage on an agentic healthcare stack from 78% to 91%.',
   },
   {
     id: 'work-thrc', type: 'work', date: '2025-03-20', display: 'mar 2025',
-    title: 'Translational Health Research Center — Data and AI Researcher',
+    title: 'Translational Health Research Center: Data and AI Researcher',
     desc: 'Mar 2025–Jan 2026 · part-time · 11 mos.',
     logos: ['thrc'],
   },
   {
     id: 'work-debate', type: 'work', date: '2025-03-01', display: 'mar 2025',
-    title: 'AI Ethics Debate — ACM AI @ TXST',
+    title: 'AI Ethics Debate: ACM AI @ TXST',
     desc: 'Organized a 50-person debate across faculty, industry, and Texas government on the environmental impacts of AI; raised $1.7k in sponsorships.',
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7301004748164411392/',
     tags: ['event'],
   },
   {
     id: 'work-acm', type: 'work', date: '2024-12-15', display: 'dec 2024',
-    title: 'ACM AI @ TXST — Vice President',
-    desc: 'Dec 2024–Aug 2025. Leading a 70+ member club building full-stack apps — campus marketplace, and an ML professor-recommendation bot with an 87% positive rate across 484 interactions.',
+    title: 'ACM AI @ TXST: Vice President',
+    desc: 'Dec 2024–Aug 2025. Leading a 70+ member club building full-stack apps: a campus marketplace, and an ML professor-recommendation bot with an 87% positive rate across 484 interactions.',
     logos: ['acm'],
   },
   {
     id: 'work-obvius', type: 'work', date: '2024-12-01', display: 'dec 2024',
-    title: 'Obvius — Founder',
+    title: 'Obvius: Founder',
     desc: 'Dec 2024–May 2025. Founded and led product development for an AI-driven platform.',
   },
   {
     id: 'work-ai4all', type: 'work', date: '2024-08-15', display: 'aug 2024',
-    title: 'AI4All Ignite — Machine Learning Fellow',
+    title: 'AI4All Ignite: Machine Learning Fellow',
     desc: 'Aug 2024–Feb 2025 · remote. Led a 5-person team training an SVM for early Alzheimer’s detection (Darwin dataset); shipped the app and a 91%-accuracy poster.',
     href: 'https://ai4all.streamlit.app',
     logos: ['ai4all'],
   },
   {
     id: 'work-intern-nepal', type: 'work', date: '2024-09-01', display: 'sep 2024',
-    title: 'Intern Nepal — AI Intern',
+    title: 'Intern Nepal: AI Intern',
     desc: 'Sep 2024–Jan 2025. Worked on AI/ML projects contributing to Nepal\'s growing tech ecosystem.',
   },
   {
     id: 'work-conference', type: 'work', date: '2024-05-15', display: 'may 2024',
-    title: 'Texas State University — Conference Assistant',
+    title: 'Texas State University: Conference Assistant',
     desc: 'May–Aug 2024. Department of Housing and Residential Life. Coordinated logistics for summer conference operations on campus.',
   },
   {
     id: 'work-sxsw', type: 'work', date: '2024-03-10', display: 'mar 2024',
-    title: 'SXSW — Volunteer',
+    title: 'SXSW: Volunteer',
     tags: ['volunteer'],
   },
   {
     id: 'work-dursikshya', type: 'work', date: '2023-03-01', display: 'mar 2023',
-    title: 'Dursikshya Education Network — Data Science Intern',
+    title: 'Dursikshya Education Network: Data Science Intern',
     desc: 'Mar–Jun 2023 · Kathmandu, Nepal. Applied data science techniques to educational data, supporting analytics and reporting initiatives.',
   },
 
-  // ——— Papers ———
+  // --- Papers ---
   {
     id: 'paper-grantmatch', type: 'paper', date: '2025-07-23',
     title: 'Intelligent Grant Matching Engine: A Comprehensive Technical Whitepaper',
@@ -548,13 +548,13 @@ window.STREAM_DATA = [
   {
     id: 'paper-ruralwomen', type: 'paper', date: '2025-07-01', display: '2025',
     title: 'Exploring rural women’s healthcare access through social vulnerability profiles: a cluster analysis of regional survey data in Texas',
-    desc: 'Co-author. Unsupervised vulnerability profiling identified 7 distinct subgroups of rural women — stronger predictors of healthcare access than race or insurance status. Insights drove activation programs in the most vulnerable counties.',
+    desc: 'Co-author. Unsupervised vulnerability profiling identified 7 distinct subgroups of rural women, which predict healthcare access better than race or insurance status. Insights drove activation programs in the most vulnerable counties.',
     href: 'https://www.researchgate.net/publication/403284768_Profiles_of_Non-medical_Drivers_and_Health_Burden_Associated_With_Care_Seeking_Among_Rural_Women',
     hrefLabel: 'read on researchgate',
     tags: ['co-author'],
   },
 
-  // ——— Scholarships & awards ———
+  // --- Scholarships & awards ---
   {
     id: 'win-merit', type: 'win', date: '2023-08-15', display: 'aug 2023',
     title: 'Texas State Merit Scholar',
@@ -581,13 +581,13 @@ window.STREAM_DATA = [
   },
   {
     id: 'win-olympiad', type: 'win', date: '2022-06-01', display: '2022',
-    title: 'National Economics Olympiad — Gold Medalist, Business Case Analysis',
+    title: 'National Economics Olympiad: Gold Medalist, Business Case Analysis',
     desc: 'Kathmandu, Nepal. Pitched a business plan to sell Himalayan fresh water à la Fiji and raised funding from FMCG companies.',
     tags: ['gold', 'nepal'],
   },
 ];
 
-// Presentation variants — ids must exist in STREAM_DATA.
+// Presentation variants; ids must exist in STREAM_DATA.
 window.STREAM_PRESENTATION = {
   stats: [
     { n: '6', label: 'hackathon wins', big: true },
@@ -600,7 +600,7 @@ window.STREAM_PRESENTATION = {
     {
       key: 'inference',
       label: 'inference & systems',
-      blurb: 'Serving models under latency and hardware constraints — Jetson, TPU, vLLM, llama.cpp.',
+      blurb: 'Serving models under latency and hardware constraints: Jetson, TPU, vLLM, llama.cpp.',
       ids: ['work-askslm', 'work-google', 'promptetheus-launch', 'speed-moat'],
     },
     {
@@ -618,13 +618,13 @@ window.STREAM_PRESENTATION = {
     {
       key: 'data',
       label: 'data at scale',
-      blurb: 'Epidemiology, grants, biomedical records, HPC training — modeling messy high-volume data.',
+      blurb: 'Epidemiology, grants, biomedical records, HPC training: modeling messy high-volume data.',
       ids: ['paper-pfas-cognition', 'grants-mcp', 'work-bcrc', 'quantafold', 'paper-ruralwomen'],
     },
   ],
 };
 
-window.STREAM_BIO = 'ML engineer — inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.';
+window.STREAM_BIO = 'ML engineer working on inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.';
 
 // Gemini-style pairwise readings. Same work, two write-ups. The chosen arm
 // rewrites that item, then the lens below rewrites the rest of the site.
@@ -638,7 +638,7 @@ window.STREAM_ONBOARD = {
           key: 'systems',
           logo: 'askslm',
           eyebrow: 'AskSLM · current',
-          title: 'ML Engineer Intern — on-device CV',
+          title: 'ML Engineer Intern, on-device CV',
           body: 'Real-time CV/VLM on Jetson Thor. llama.cpp so the model fits the hardware.',
           long: 'Nov 2025–present · Austin. Real-time CV and VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement; llama.cpp inference optimization.',
           tags: ['Jetson', 'DeepStream', 'llama.cpp'],
@@ -649,7 +649,7 @@ window.STREAM_ONBOARD = {
           eyebrow: 'AskSLM · current',
           title: 'Private vision, where the camera is',
           body: 'Threat detection that runs next to the camera, not in someone else’s cloud.',
-          long: 'Nov 2025–present · Austin. I help a local-AI company put threat detection on county hardware — the model runs next to the camera, and it has to work at 2am.',
+          long: 'Nov 2025–present · Austin. I help a local-AI company put threat detection on county hardware. The model runs next to the camera, and it has to work at 2am.',
           tags: ['on-device', 'public safety'],
         },
       ],
@@ -687,14 +687,14 @@ window.STREAM_ONBOARD = {
     systems: {
       label: 'systems lens',
       why: 'you picked the hardware read twice',
-      bio: 'ML engineer — inference, on-device vision, and ranking systems. I put models on hardware and publish the receipts.',
+      bio: 'ML engineer working on inference, on-device vision, and ranking systems. I put models on hardware and publish the receipts.',
       featured: ['work-askslm', 'win-giftmaxxing', 'paper-pfas-cognition', 'win-webai', 'twobot'],
       picks: ['work-google', 'promptetheus-launch', 'quantafold'],
     },
     product: {
       label: 'product lens',
       why: 'you picked the shipped-product read twice',
-      bio: 'I ship AI people actually use — a gift concierge on the App Store, and on-device vision for public safety.',
+      bio: 'I ship AI people actually use: a gift concierge on the App Store, and on-device vision for public safety.',
       featured: ['win-giftmaxxing', 'work-askslm', 'win-webai', 'twobot', 'paper-pfas-cognition'],
       picks: ['rent-agent', 'grants-mcp', 'promptetheus-launch'],
     },
@@ -708,7 +708,7 @@ window.STREAM_ONBOARD = {
     impact: {
       label: 'impact lens',
       why: 'you picked the people-first read twice',
-      bio: 'I build AI where the stakes are real — public safety on-device, cancer-care records, rural health data.',
+      bio: 'I build AI where the stakes are real: public safety on-device, cancer-care records, rural health data.',
       featured: ['win-giftmaxxing', 'work-askslm', 'paper-pfas-cognition', 'win-webai', 'twobot'],
       picks: ['work-bcrc', 'paper-ruralwomen', 'win-nvidia'],
     },

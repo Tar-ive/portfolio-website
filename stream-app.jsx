@@ -1,4 +1,4 @@
-// stream-app.jsx — The Stream: identity rail + mixed chronological feed.
+// stream-app.jsx: The Stream, identity rail + mixed chronological feed.
 // Uses Saksham DS components from window.SakshamDesignSystem_f0fa33.
 
 const SDS = window.SakshamDesignSystem_f0fa33;
@@ -281,7 +281,7 @@ function TakeItem({ item }) {
   );
 }
 
-// X's /i/web/status/ links don't resolve in the embed widget — normalize
+// X's /i/web/status/ links don't resolve in the embed widget, so normalize
 // every post URL to the canonical twitter.com/<user>/status/<id> form.
 function canonicalTweetUrl(href) {
   const m = href.match(/status\/(\d+)/);
@@ -322,7 +322,7 @@ function XItem({ item, theme, xembed }) {
     return (
       <article className="st-item st-item--take">
         <div className="st-item__main">
-          <a className="st-item__cta" href={item.href} target="_blank" rel="noreferrer">a post from this day — view on X ↗</a>
+          <a className="st-item__cta" href={item.href} target="_blank" rel="noreferrer">a post from this day · view on X ↗</a>
         </div>
         <span className="st-item__date">{fmtDate(item.date, item.dateApprox)}</span>
       </article>
@@ -486,7 +486,7 @@ function applyReadings(data, picks) {
       : it.images;
     return {
       ...it,
-      title: `${it.title.split(' — ')[0]} — ${arm.title}`,
+      title: `${it.title.split(': ')[0]}: ${arm.title}`,
       desc: arm.long || arm.body,
       image: arm.image || it.image,
       images,
@@ -606,10 +606,9 @@ function OnboardFlow({ onDone }) {
   }, [step, composing, flash, picks]);
 
   if (composing) {
-    const lens = window.STREAM_ONBOARD.lenses[lensKey(picks)];
     return (
       <section className="st-on st-on--compose" aria-live="polite">
-        <p className="st-on__kicker"><span className="st-on__dot"></span> composing · {lens ? lens.label : 'default'}</p>
+        <p className="st-on__kicker"><span className="st-on__dot"></span> composing your version</p>
         <h1 className="st-on__prompt">Rewriting the stream around your reads.</h1>
       </section>
     );
@@ -628,7 +627,7 @@ function OnboardFlow({ onDone }) {
       </header>
       <div className="st-on__main">
         <h1 className="st-on__prompt">Which one lands?</h1>
-        <p className="st-on__lede">Live A/B test — pick one so my agent can generate a website tailored to your taste.</p>
+        <p className="st-on__lede">Live A/B test. Pick one so my agent can generate a website tailored to your taste.</p>
         <div className="st-on__pair">
           {shown.map((arm, i) => (
             <OnboardArm
@@ -661,11 +660,11 @@ function LensBand({ lens, picked, log, sid, onRecompose }) {
   return (
     <section className="st-lens" aria-label="How this page was composed">
       <header className="st-lens__head">
-        <p className="st-lens__kicker"><span className="st-on__dot"></span> {lens.label}</p>
+        <p className="st-lens__kicker"><span className="st-on__dot"></span> tailored to your picks</p>
         <button type="button" className="st-on__redo" onClick={onRecompose}>redo the reads</button>
       </header>
       <p className="st-lens__why">
-        {lens.why} — so the order, the words, and these three below changed.
+        {lens.why}, so the order, the words, and these three below changed.
       </p>
       {picked.length ? (
         <div className="st-lens__picks">
@@ -705,7 +704,7 @@ function LensBand({ lens, picked, log, sid, onRecompose }) {
             );
           })}
           <li className="st-lens__note">
-            session {sid || '—'} · no network call, no cookie — this stays in localStorage. <code>saksham.ab()</code> in the console prints it.
+            session {sid || 'none'} · no network call, no cookie. This stays in localStorage. <code>saksham.ab()</code> in the console prints it.
           </li>
         </ol>
       ) : null}
@@ -816,7 +815,7 @@ function Rail({ filter, setFilter, counts, theme, onTheme, layout, onLayout, bio
       {layout === 'stream' ? (
         <SutraQuote
           devanagari="दृष्टमनुमानमाप्तवचनं च"
-          translation="Perception, inference, and trusted testimony — the three means of valid knowledge."
+          translation="Perception, inference, and trusted testimony: the three means of valid knowledge."
           source="sāṅkhya kārikā · 4"
           className="st-rail__sutra"
         ></SutraQuote>
@@ -844,7 +843,7 @@ function Rail({ filter, setFilter, counts, theme, onTheme, layout, onLayout, bio
           { kind: 'github', href: 'https://github.com/Tar-ive', label: 'GitHub' },
           { kind: 'substack', href: 'https://adhsaksham.substack.com', label: 'Substack' },
         ]}></SocialLinks>
-        <Button variant="outline" size="sm" href="https://adhsaksham.substack.com" target="_blank">subscribe — anumāna ↗</Button>
+        <Button variant="outline" size="sm" href="https://adhsaksham.substack.com" target="_blank">subscribe · anumāna ↗</Button>
         <button className="st-theme" onClick={onTheme} title="Toggle light / dark">
           {theme === 'dark' ? '☾ puruṣa' : '☀ prakṛti'}
         </button>
@@ -879,7 +878,6 @@ function StreamApp() {
     document.documentElement.classList.toggle('dark', t.theme === 'dark');
     document.documentElement.classList.toggle('st-compact', t.density === 'compact');
     document.documentElement.classList.toggle('st-nothumbs', !t.thumbs);
-    document.documentElement.classList.toggle('st-onboarding', showOnboard);
   }, [t, showOnboard]);
 
   const raw = React.useMemo(

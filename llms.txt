@@ -1,4 +1,4 @@
-# Saksham Adhikari — saksham.us
+# Saksham Adhikari · saksham.us
 
 > Machine Learning Engineer Intern at AskSLM. Data scientist and ML Engineer building real-time CV/VLM pipelines, recommendation systems, and developer tools. Former TPU Cloud Researcher at Google.
 
@@ -21,15 +21,15 @@ Saksham Adhikari is a Nepal-born, Texas-based ML/DS Engineer and Computer Inform
 
 ## Education
 
-Texas State University — B.B.A. Computer Information Systems, 4.0 GPA. Full-tuition Merit Scholar.
+Texas State University: B.B.A. Computer Information Systems, 4.0 GPA. Full-tuition Merit Scholar.
 
 ## Current Projects
 
 - **Giftmaxxing**: AI-powered iOS app that helps people become thoughtful gift givers. Built with Kusum Bhattarai Sharma. Maxi, the in-app assistant, curates context-aware gift recommendations on AWS. Best Monetizable B2C App at the Vercel v0 × AWS H0 hackathon (~10,000 participants, $6,000+ in prizes); now live on the App Store. [App Store](https://apps.apple.com/us/app/giftmaxxing/id6788124639)
-- **Rent Agent**: Telegram bot + Playwright agent that files apartment work orders automatically — handles Cloudflare, email OTP, and RentCafe portal login. Pest control re-submits every Monday on a cron job. Running in production. [GitHub](https://github.com/Tar-ive/rent-agent)
-- **Promptetheus**: Recursive self-improving tracing stack for AI agents — incident response that captures failures, detects root causes, and auto-generates fixes. Built at the UC Berkeley AI Hackathon (June 2026). [Product Hunt](https://www.producthunt.com/products/promptethus) · [GitHub](https://github.com/obro79/promptetheus-service)
+- **Rent Agent**: Telegram bot + Playwright agent that files apartment work orders automatically, handling Cloudflare, email OTP, and RentCafe portal login. Pest control re-submits every Monday on a cron job. Running in production. [GitHub](https://github.com/Tar-ive/rent-agent)
+- **Promptetheus**: Recursive self-improving tracing stack for AI agents: incident response that captures failures, detects root causes, and auto-generates fixes. Built at the UC Berkeley AI Hackathon (June 2026). [Product Hunt](https://www.producthunt.com/products/promptethus) · [GitHub](https://github.com/obro79/promptetheus-service)
 - **TwoBot**: A two-tower GenRecSys with on-device curator agents (MLX) and a live force-directed graph of 1,300 simulation nodes. [GitHub](https://github.com/Tar-ive/twobot)
-- **Grants-MCP**: MCP ecosystem for government grant discovery — AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP. [GitHub](https://github.com/Tar-ive/grants-mcp)
+- **Grants-MCP**: MCP ecosystem for government grant discovery, with AI assistants querying 180k+ live grants. 389+ downloads on PulseMCP. [GitHub](https://github.com/Tar-ive/grants-mcp)
 
 ## Publications
 
