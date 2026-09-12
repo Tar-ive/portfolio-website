@@ -522,7 +522,7 @@ function OnboardArm({ arm, letter, selected, onPick }) {
       aria-pressed={selected}
     >
       {arm.image ? (
-        <span className="st-on__media">
+        <span className="st-on__media st-on__media--photo">
           <img src={arm.image} alt=""></img>
         </span>
       ) : (

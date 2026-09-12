@@ -662,7 +662,7 @@
   html.st-onboarding { overflow: hidden; }
   .st-on {
     min-height: 100vh;
-    max-width: 64rem;
+    max-width: 58rem;
     margin: 0 auto;
     padding: var(--space-6) var(--space-5);
     display: grid;
@@ -757,20 +757,23 @@
     align-items: center;
     justify-content: center;
     margin: var(--space-4) var(--space-4) 0;
-    height: 220px;
+    height: 300px;
     border-radius: var(--radius-sm);
     overflow: hidden;
     background: var(--surface-tint);
   }
+  /* the round-two shots are portrait, so contain them whole rather than crop */
   .st-on__media img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center;
     display: block;
     border-radius: 0;
   }
-  .st-on__media--brand { background: #0b1c33; padding: var(--space-4); }
+  /* portrait screenshots need the height; the brand lockup does not */
+  .st-on__media--photo { height: 420px; }
+  .st-on__media--brand { height: 240px; background: #0b1c33; padding: var(--space-4); }
   .st-on__media--brand .st-logo {
     --st-logo: auto;
     width: 100%;
@@ -993,7 +996,8 @@
     .st-on { padding: var(--space-5) var(--space-4); min-height: 0; }
     .st-on__prompt { font-size: var(--text-xl); }
     .st-on__lede { font-size: var(--text-base); }
-    .st-on__media { height: 180px; }
+    .st-on__media--photo { height: 340px; }
+    .st-on__media--brand { height: 200px; }
     .st-on__title { font-size: var(--text-lg); }
     .st-on__body { font-size: var(--text-base); }
     .st-lens__picks { grid-template-columns: 1fr; }
