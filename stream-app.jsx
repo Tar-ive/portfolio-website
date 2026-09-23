@@ -409,7 +409,7 @@ function ProofCard({ item }) {
           {title}
           <span className="st-item__date">{itemDate(item)}</span>
         </div>
-        {item.desc && window.STREAM_ONBOARD.rounds.some((r) => r.itemId === item.id) ? (
+        {item.desc ? (
           <p className="st-item__desc st-proofcard__desc">{item.desc}</p>
         ) : null}
       </div>
@@ -417,297 +417,120 @@ function ProofCard({ item }) {
   );
 }
 
-const ONBOARD_STORE = 'stream-onboard-v1';
-const ONBOARD_LOG = 'stream-onboard-log-v1';
+// GitHub contributions, read live from the public contributions mirror of the
+// GraphQL calendar. No token, no backend: the browser asks on every load.
+const GH_USER = 'Tar-ive';
+const GH_ENDPOINT = `https://github-contributions-api.jogruber.de/v4/${GH_USER}?y=last`;
+const GH_DAYS = ['Sun', '', 'Tue', '', 'Thu', '', 'Sat'];
+const GH_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const GH_BLANK = Array.from({ length: 53 }, () => new Array(7).fill(null));
 
-function loadOnboard() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(ONBOARD_STORE) || 'null');
-    if (raw && typeof raw === 'object') return raw;
-  } catch (e) {}
-  return { done: false, picks: null, skipped: false };
-}
+const ghDay = (date) => new Date(`${date}T00:00:00Z`).getUTCDay();
 
-function saveOnboard(state) {
-  try { localStorage.setItem(ONBOARD_STORE, JSON.stringify(state)); } catch (e) {}
-}
-
-// Exposure/choice events, the shape an experiment pipeline would receive.
-// This site has no backend, so the log stays in localStorage on this device.
-function loadAbLog() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(ONBOARD_LOG) || 'null');
-    if (Array.isArray(raw)) return raw;
-  } catch (e) {}
-  return [];
-}
-
-function logAbEvents(events) {
-  const next = loadAbLog().concat(events).slice(-200);
-  try { localStorage.setItem(ONBOARD_LOG, JSON.stringify(next)); } catch (e) {}
-  return next;
-}
-
-function newSessionId() {
-  return Math.random().toString(36).slice(2, 8);
-}
-
-// Console hook: saksham.ab() to read the log, saksham.ab(true) to clear it.
-window.saksham = Object.assign(window.saksham || {}, {
-  ab(clear) {
-    if (clear) {
-      localStorage.removeItem(ONBOARD_LOG);
-      localStorage.removeItem(ONBOARD_STORE);
-      return [];
+// Calendar columns are weeks; a day lands on its own weekday row, so a year
+// that starts mid-week keeps the leading cells empty instead of shifting.
+function ghWeeks(days) {
+  const weeks = [];
+  let week = new Array(7).fill(null);
+  days.forEach((d) => {
+    week[ghDay(d.date)] = d;
+    if (ghDay(d.date) === 6) {
+      weeks.push(week);
+      week = new Array(7).fill(null);
     }
-    return loadAbLog();
-  },
-});
-
-function forceOnboard() {
-  try { return new URLSearchParams(window.location.search).has('onboard'); }
-  catch (e) { return false; }
+  });
+  if (week.some(Boolean)) weeks.push(week);
+  return weeks;
 }
 
-function armFor(round, key) {
-  return round.arms.find((a) => a.key === key);
-}
-
-function applyReadings(data, picks) {
-  if (!picks) return data;
-  const rounds = window.STREAM_ONBOARD.rounds;
-  return data.map((it) => {
-    const round = rounds.find((r) => r.itemId === it.id);
-    if (!round) return it;
-    const arm = armFor(round, picks[round.id]);
-    if (!arm) return it;
-    const images = arm.image
-      ? [arm.image].concat((it.images || []).filter((src) => src !== arm.image))
-      : it.images;
-    return {
-      ...it,
-      title: `${it.title.split(': ')[0]}: ${arm.title}`,
-      desc: arm.long || arm.body,
-      image: arm.image || it.image,
-      images,
-    };
+function ghMonthLabels(weeks) {
+  let prev = -1;
+  return weeks.map((w) => {
+    const first = w.find(Boolean);
+    if (!first) return null;
+    const m = new Date(`${first.date}T00:00:00Z`).getUTCMonth();
+    if (m === prev) return null;
+    prev = m;
+    return GH_MONTHS[m];
   });
 }
 
-function lensKey(picks) {
-  const ask = picks && picks.askslm;
-  const gift = picks && picks.giftmaxxing;
-  if (!ask || !gift) return null;
-  if (ask === 'systems' && gift === 'craft') return 'systems';
-  if (ask === 'impact' && gift === 'product') return 'product';
-  if (ask === 'systems') return 'shipping';
-  return 'impact';
-}
-
-function composeSite(picks) {
-  const key = lensKey(picks);
-  const lens = key && window.STREAM_ONBOARD.lenses[key];
-  if (!lens) {
-    return { featured: window.STREAM_PRESENTATION.featured, bio: window.STREAM_BIO, picks: [], lens: null };
-  }
-  return { featured: lens.featured, bio: lens.bio, picks: lens.picks, lens: { key, ...lens } };
-}
-
-function OnboardArm({ arm, letter, selected, onPick }) {
-  return (
-    <button
-      type="button"
-      className={`st-on__arm${selected ? ' st-on__arm--on' : ''}`}
-      onClick={() => onPick(arm.key)}
-      aria-pressed={selected}
-    >
-      {arm.image ? (
-        <span className="st-on__media st-on__media--photo">
-          <img src={arm.image} alt=""></img>
-        </span>
-      ) : (
-        <span className="st-on__media st-on__media--brand">
-          <LogoMark k={arm.logo} size="hero"></LogoMark>
-        </span>
-      )}
-      <span className="st-on__copy">
-        <span className="st-on__eyebrow">
-          {arm.logos ? <LogoRow keys={arm.logos} size="sm"></LogoRow> : null}
-          {letter} · {arm.eyebrow}
-        </span>
-        <strong className="st-on__title">{arm.title}</strong>
-        <span className="st-on__body">{arm.body}</span>
-        <span className="st-on__tags">
-          {arm.tags.map((t) => <span key={t}>{t}</span>)}
-        </span>
-      </span>
-    </button>
-  );
-}
-
-function OnboardFlow({ onDone }) {
-  const rounds = window.STREAM_ONBOARD.rounds;
-  const [step, setStep] = React.useState(0);
-  const [picks, setPicks] = React.useState({});
-  const [flash, setFlash] = React.useState(null);
-  const [composing, setComposing] = React.useState(false);
-  const [sid] = React.useState(newSessionId);
-  const [order] = React.useState(() => rounds.map(() => (Math.random() < 0.5 ? [0, 1] : [1, 0])));
-  const shownAt = React.useRef(Date.now());
-  const round = rounds[step];
-  const shown = round ? order[step].map((i) => round.arms[i]) : [];
-  const letters = ['A', 'B'];
-
-  React.useEffect(() => { shownAt.current = Date.now(); }, [step]);
-
-  const finish = (nextPicks, skipped) => {
-    if (skipped) {
-      logAbEvents([{ sid, event: 'abandon', round: round ? round.id : null, t: Date.now() }]);
-      onDone({ picks: null, skipped: true });
-      return;
-    }
-    setComposing(true);
-    window.setTimeout(() => onDone({ picks: nextPicks, skipped: false, sid }), 1000);
-  };
-
-  const choose = (key) => {
-    if (!round || composing || flash) return;
-    const next = { ...picks, [round.id]: key };
-    const slot = shown.findIndex((a) => a.key === key);
-    logAbEvents([{
-      sid,
-      event: 'choice',
-      round: round.id,
-      unit: round.itemId,
-      chosen: key,
-      rejected: round.arms.find((a) => a.key !== key).key,
-      slot: letters[slot],
-      ms: Date.now() - shownAt.current,
-      t: Date.now(),
-    }]);
-    setPicks(next);
-    setFlash(key);
-    window.setTimeout(() => {
-      setFlash(null);
-      if (step + 1 < rounds.length) setStep(step + 1);
-      else finish(next, false);
-    }, 360);
-  };
+function GitHubActivity() {
+  const [gh, setGh] = React.useState({ status: 'loading', days: [], total: 0, at: '' });
 
   React.useEffect(() => {
-    const onKey = (e) => {
-      if (composing || flash || !round) return;
-      if (e.key === 'Escape') finish(picks, true);
-      if (e.key === '1' || e.key === 'ArrowLeft') choose(shown[0].key);
-      if (e.key === '2' || e.key === 'ArrowRight') choose(shown[1].key);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [step, composing, flash, picks]);
+    let live = true;
+    fetch(GH_ENDPOINT)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((json) => {
+        if (!live) return;
+        const days = Array.isArray(json.contributions) ? json.contributions : [];
+        const total = (json.total && json.total.lastYear) || days.reduce((n, d) => n + (d.count || 0), 0);
+        setGh({
+          status: days.length ? 'ok' : 'error',
+          days,
+          total,
+          at: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        });
+      })
+      .catch(() => { if (live) setGh({ status: 'error', days: [], total: 0, at: '' }); });
+    return () => { live = false; };
+  }, []);
 
-  if (composing) {
-    return (
-      <section className="st-on st-on--compose" aria-live="polite">
-        <p className="st-on__kicker"><span className="st-on__dot"></span> composing your version</p>
-        <h1 className="st-on__prompt">Rewriting the stream around your reads.</h1>
-      </section>
-    );
-  }
+  const weeks = React.useMemo(() => (gh.days.length ? ghWeeks(gh.days) : GH_BLANK), [gh.days]);
+  const months = React.useMemo(() => ghMonthLabels(weeks), [weeks]);
+  const ok = gh.status === 'ok';
 
   return (
-    <section className="st-on" aria-label="Choose a reading">
-      <header className="st-on__head">
-        <a className="sds-nav__mark st-rail__mark" href="#" onClick={(e) => { e.preventDefault(); finish(picks, true); }}>
-          <span className="danda">॥</span><span>saksham</span>
-        </a>
-        <p className="st-on__live">
-          <span className="st-on__dot"></span>
-          {step + 1} / {rounds.length} · logged on this device
-        </p>
-      </header>
-      <div className="st-on__main">
-        <h1 className="st-on__prompt">Which one lands?</h1>
-        <p className="st-on__lede">Live A/B test. Pick one so my agent can generate a website tailored to your taste.</p>
-        <div className="st-on__pair">
-          {shown.map((arm, i) => (
-            <OnboardArm
-              key={arm.key}
-              arm={arm}
-              letter={letters[i]}
-              selected={flash === arm.key || picks[round.id] === arm.key}
-              onPick={choose}
-            ></OnboardArm>
-          ))}
+    <section className="st-gh" aria-label="GitHub activity">
+      <p className="st-gh__cmd"><span className="st-gh__prompt">$</span> git log --contributions</p>
+      <h2 className="st-gh__head">GitHub Activity</h2>
+      <div className="st-gh__card">
+        <div className="st-gh__top">
+          <div>
+            <p className="st-gh__total">
+              {ok ? `${gh.total.toLocaleString()} contributions` : gh.status === 'loading' ? 'reading the calendar' : 'contributions'}
+            </p>
+            <p className="st-gh__sub">github.com/{GH_USER} · the last year</p>
+            <a className="st-gh__link" href={`https://github.com/${GH_USER}`} target="_blank" rel="noreferrer">&gt; github</a>
+          </div>
+          <p className={`st-gh__live${ok ? '' : ' st-gh__live--off'}`}>
+            <span className="st-dot"></span>
+            {ok ? 'LIVE' : gh.status === 'loading' ? 'FETCHING' : 'OFFLINE'}
+          </p>
+        </div>
+        {gh.status === 'error' ? (
+          <p className="st-gh__err">GitHub did not answer this time. The graph is on the profile.</p>
+        ) : (
+          <div className="st-gh__scroll">
+            <div className="st-gh__cal">
+              <div className="st-gh__months">
+                {months.map((m, i) => <span key={i}>{m}</span>)}
+              </div>
+              <div className="st-gh__daylabels">
+                {GH_DAYS.map((d, i) => <span key={i}>{d}</span>)}
+              </div>
+              <div className="st-gh__grid">
+                {weeks.map((w, wi) => w.map((d, di) => (
+                  <span
+                    key={`${wi}-${di}`}
+                    className={`st-gh__cell st-gh__cell--l${d ? d.level : 0}${d ? '' : ' st-gh__cell--none'}`}
+                    title={d ? `${d.count} on ${d.date}` : undefined}
+                  ></span>
+                )))}
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="st-gh__foot">
+          <span>{ok ? `updated ${gh.at}` : gh.status === 'loading' ? 'updating' : 'last fetch failed'}</span>
+          <span className="st-gh__legend">
+            Less
+            {[0, 1, 2, 3, 4].map((l) => <i key={l} className={`st-gh__cell st-gh__cell--l${l}`}></i>)}
+            More
+          </span>
         </div>
       </div>
-      <div className="st-on__foot">
-        <span>keys 1 / 2</span>
-        <button type="button" className="st-on__skip" onClick={() => finish(picks, true)}>skip</button>
-      </div>
-    </section>
-  );
-}
-
-function LensBand({ lens, picked, log, sid, onRecompose }) {
-  const [open, setOpen] = React.useState(false);
-  if (!lens) return null;
-  const rounds = window.STREAM_ONBOARD.rounds;
-  const all = log.filter((e) => e.event === 'choice');
-  const choices = sid ? all.filter((e) => e.sid === sid) : all;
-  const sessions = new Set(all.map((e) => e.sid)).size;
-  const last = {};
-  choices.forEach((e) => { last[e.round] = e; });
-  return (
-    <section className="st-lens" aria-label="How this page was composed">
-      <header className="st-lens__head">
-        <p className="st-lens__kicker"><span className="st-on__dot"></span> tailored to your picks</p>
-        <button type="button" className="st-on__redo" onClick={onRecompose}>redo the reads</button>
-      </header>
-      <p className="st-lens__why">
-        {lens.why}, so the order, the words, and these three below changed.
-      </p>
-      {picked.length ? (
-        <div className="st-lens__picks">
-          {picked.map((it) => {
-            const href = it.href || it.github || it.live;
-            const Tag = href ? 'a' : 'div';
-            return (
-              <Tag
-                key={it.id}
-                className="st-lens__pick"
-                href={href}
-                target={href ? '_blank' : undefined}
-                rel={href ? 'noreferrer' : undefined}
-              >
-                <span className="st-lens__picktitle">{it.title}</span>
-                <span className="st-item__date">{itemDate(it)}</span>
-              </Tag>
-            );
-          })}
-        </div>
-      ) : null}
-      <button type="button" className="st-on__redo" onClick={() => setOpen(!open)}>
-        {open ? 'hide' : 'show'} what got logged · {all.length} choices over {sessions} {sessions === 1 ? 'session' : 'sessions'}
-      </button>
-      {open ? (
-        <ol className="st-lens__log">
-          {rounds.map((r) => {
-            const e = last[r.id];
-            if (!e) return null;
-            return (
-              <li key={r.id}>
-                <span>unit {r.itemId}</span>
-                <span>chose {e.chosen} over {e.rejected}</span>
-                <span>slot {e.slot}</span>
-                <span>{(e.ms / 1000).toFixed(1)}s</span>
-              </li>
-            );
-          })}
-          <li className="st-lens__note">
-            session {sid || 'none'} · no network call, no cookie. This stays in localStorage. <code>saksham.ab()</code> in the console prints it.
-          </li>
-        </ol>
-      ) : null}
     </section>
   );
 }
@@ -747,11 +570,10 @@ function ChronoFeed({ items, theme, xembed }) {
   );
 }
 
-function StackFeed({ byId, data, filter, theme, xembed, featuredIds, excludeIds }) {
+function StackFeed({ byId, data, filter, theme, xembed }) {
   const P = window.STREAM_PRESENTATION;
-  const ids = featuredIds || P.featured;
-  const featured = ids.map((id) => byId[id]).filter(Boolean);
-  const hidden = new Set(ids.concat(excludeIds || []));
+  const featured = P.featured.map((id) => byId[id]).filter(Boolean);
+  const hidden = new Set(P.featured);
   const active = FILTERS.find((f) => f.key === filter);
   const signal = (t) => t === 'work' || t === 'project' || t === 'paper' || t === 'win' || t === 'photo';
   const rest = data.filter((it) => !hidden.has(it.id) && (filter === 'all' ? signal(it.type) : active.match(it.type)));
@@ -803,14 +625,17 @@ function LanesFeed({ byId }) {
   );
 }
 
-function Rail({ filter, setFilter, counts, theme, onTheme, layout, onLayout, bio }) {
+function Rail({ filter, setFilter, counts, theme, onTheme, layout, onLayout }) {
   return (
     <aside className="st-rail">
       <a className="sds-nav__mark st-rail__mark" href="#">
         <span className="danda">॥</span><span>saksham</span>
       </a>
+      <p className="st-rail__status">
+        <span className="st-dot"></span>incoming to calhacks
+      </p>
       <p className="st-rail__bio">
-        {bio || window.STREAM_BIO}
+        {window.STREAM_BIO}
       </p>
       {layout === 'stream' ? (
         <SutraQuote
@@ -869,23 +694,18 @@ function usePrefs(defaults) {
 function StreamApp() {
   const [t, setTweak] = usePrefs(window.STREAM_TWEAK_DEFAULTS);
   const [filter, setFilter] = React.useState('all');
-  const [gate, setGate] = React.useState(loadOnboard);
-  const [abLog, setAbLog] = React.useState(loadAbLog);
   const layout = t.layout || 'stream';
-  const showOnboard = forceOnboard() || !gate.done;
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', t.theme === 'dark');
     document.documentElement.classList.toggle('st-compact', t.density === 'compact');
     document.documentElement.classList.toggle('st-nothumbs', !t.thumbs);
-  }, [t, showOnboard]);
+  }, [t]);
 
-  const raw = React.useMemo(
+  const data = React.useMemo(
     () => [...window.STREAM_DATA].filter((it) => it.type !== 'photo' || (it.images && it.images.length)).sort((a, b) => b.date.localeCompare(a.date)),
     []
   );
-  const composed = React.useMemo(() => composeSite(gate.picks), [gate]);
-  const data = React.useMemo(() => applyReadings(raw, gate.picks), [raw, gate]);
 
   const byId = React.useMemo(() => {
     const m = {};
@@ -899,30 +719,8 @@ function StreamApp() {
     return c;
   }, [data]);
 
-  const pickedIds = composed.picks || [];
-  const picked = pickedIds.map((id) => byId[id]).filter(Boolean);
   const active = FILTERS.find((f) => f.key === filter);
-  const pickedSet = new Set(pickedIds);
-  const shown = data.filter((it) => active.match(it.type) && !pickedSet.has(it.id));
-
-  const closeOnboard = ({ picks, skipped, sid }) => {
-    const next = { done: true, picks: skipped ? null : picks, skipped: Boolean(skipped), sid, at: Date.now() };
-    saveOnboard(next);
-    setGate(next);
-    setAbLog(logAbEvents([{ sid, event: 'compose', lens: lensKey(picks), t: Date.now() }]));
-    try {
-      const u = new URL(window.location.href);
-      if (u.searchParams.has('onboard')) {
-        u.searchParams.delete('onboard');
-        window.history.replaceState({}, '', u);
-      }
-    } catch (e) {}
-    window.scrollTo(0, 0);
-  };
-
-  if (showOnboard) {
-    return <OnboardFlow onDone={closeOnboard}></OnboardFlow>;
-  }
+  const shown = data.filter((it) => active.match(it.type));
 
   return (
     <React.Fragment>
@@ -931,24 +729,12 @@ function StreamApp() {
           filter={filter} setFilter={setFilter} counts={counts}
           theme={t.theme} onTheme={() => setTweak('theme', t.theme === 'dark' ? 'light' : 'dark')}
           layout={layout} onLayout={(v) => setTweak('layout', v)}
-          bio={composed.bio}
         ></Rail>
         <main className="st-feed">
-          <LensBand
-            lens={composed.lens}
-            picked={picked}
-            log={abLog}
-            sid={gate.sid}
-            onRecompose={() => {
-              const next = { done: false, picks: null, skipped: false };
-              saveOnboard(next);
-              setGate(next);
-            }}
-          ></LensBand>
+          <GitHubActivity></GitHubActivity>
           {layout === 'stack' ? (
             <StackFeed
               byId={byId} data={data} filter={filter} theme={t.theme} xembed={t.xembed}
-              featuredIds={composed.featured} excludeIds={pickedIds}
             ></StackFeed>
           ) : null}
           {layout === 'lanes' ? (

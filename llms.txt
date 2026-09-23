@@ -6,6 +6,11 @@
 
 Saksham Adhikari is a Nepal-born, Texas-based ML/DS Engineer and Computer Information Systems student at Texas State University (4.0 GPA). He is a Machine Learning Engineer Intern at AskSLM and was a TPU Cloud Student Researcher at Google. He builds tools at the intersection of AI observability, recommendation systems, and open-source developer infrastructure.
 
+## Now
+
+- Incoming to Cal Hacks.
+- Live GitHub contribution graph on saksham.us, read from the public contributions calendar for github.com/Tar-ive.
+
 ## Work Experience
 
 - **Machine Learning Engineer Intern** at AskSLM (Nov 2025–present). Real-time CV + VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection; llama.cpp inference optimization.
