@@ -25,6 +25,7 @@ export const hero = {
   cta: {
     primary: { text: "Get in touch", href: "#contact" },
     secondary: { text: "Read my Substack", href: "https://adhsaksham.substack.com" },
+    resume: { text: "Resume", href: "/resume.pdf" },
   },
 };
 
@@ -557,5 +558,5 @@ export const education: {
 
 export const footer = {
   note: "Copyright 2026 @ Tar-ive",
-  streamLabel: "the stream",
+  backToTop: "back to top",
 };

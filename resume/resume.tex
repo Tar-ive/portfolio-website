@@ -1,0 +1,238 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xurl}
+
+% Guarded so the file builds under both pdflatex (which gets the ATS-friendly
+% glyph map) and xelatex/tectonic (which has no \pdfgentounicode primitive).
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+\fi
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections
+\titleformat{\section}{
+  \vspace{-6pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeEdu}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#3} & #2 \\
+      \textit{\small#1} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \normalsize #1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{
+  \resumeItem{#1}\vspace{-3pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-6pt}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+    \textbf{\Huge \bfseries Saksham Adhikari} \\ \vspace{1pt}
+    \small
+    737-315-1963 $|$
+    \href{mailto:adhsaksham27@gmail.com}{adhsaksham27@gmail.com} $|$
+    \href{https://www.linkedin.com/in/adhsaksham/}{linkedin.com/in/adhsaksham} $|$
+    \href{https://github.com/Tar-ive}{github.com/Tar-ive}
+\end{center}
+
+%-----------EDUCATION-----------
+
+\section{\texorpdfstring{\MakeUppercase{Education}}{EDUCATION}}
+\resumeSubHeadingListStart
+
+\resumeEdu
+  {Texas State University}{San Marcos, TX}
+  {B.S. in Computer Information Systems, AI Concentration, GPA: 3.83/4.0}{May 2027}
+
+\resumeItemListStart
+  \resumeItem{\textbf{Coursework:} Data Structures \& Algorithms, Database Systems, Machine Learning, Data Mining in R}
+  \resumeItem{\textbf{Achievements:} \textbf{6x Hackathon Winner}; Most Commercializable Hack -- AWS Hackathon; Winner -- AITX NVIDIA Hackathon; \textbf{Gold Medal}, Nepal Economics Olympiad; \textbf{\$48k} in scholarships; Google TPU Student Researcher Grant}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+
+\section{\texorpdfstring{\MakeUppercase{Professional Experience}}{PROFESSIONAL EXPERIENCE}}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {AskSLM}{May 2026 -- Aug 2026}
+  {Machine Learning Engineer Intern}{Austin, TX}
+\resumeItemListStart
+  \resumeItem{Quantized custom-trained \textbf{LLaVA} vision models for \textbf{edge devices}, monitoring weight clustering and achieving a \textbf{3x} increase in image-to-text sequence recognition throughput}
+  \resumeItem{Enhanced internal Retrieval-Augmented Generation (\textbf{RAG}) pipeline by implementing \textbf{Reciprocal Rank Fusion}, boosting retrieval precision and achieving a \textbf{3\%} improvement in \textbf{Mean Reciprocal Rank (MRR)}}
+  \resumeItem{Engineered real-time video analytics pipelines via \textbf{DeepStream SDK}, optimizing frame-rate throughput and end-to-end inference latency using \textbf{Harbor} for systematic evaluation}
+\resumeItemListEnd
+
+\resumeSubheading
+  {AskSLM}{Jan 2026 -- May 2026}
+  {Software Engineer Intern}{Austin, TX}
+\resumeItemListStart
+  \resumeItem{Fine-tuned a \textbf{LLaMA 8B} model with \textbf{3,000} curated QA pairs from internal documentation, integrating a \textbf{RAG} architecture for factual grounding and securely deploying via \textbf{mTLS} encryption}
+  \resumeItem{Migrated and optimized the internal \textbf{vLLM} serving stack to fit \textbf{NVIDIA DGX Spark VRAM constraints}, redesigning inference configuration to achieve a \textbf{2.4x throughput increase} while operating within hardware memory limits}
+  \resumeItem{Integrated the \textbf{RAG} agent with \textbf{Slack} for daily utilization on NVIDIA \textbf{DGX Spark} devices, reducing developer documentation search time by \textbf{30\%}}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Translational Health Research Center}{Jul 2025 -- Nov 2025}
+  {Research Assistant}{San Marcos, TX}
+\resumeItemListStart
+  \resumeItem{Co-authored \textbf{2} published papers, building a data pipeline that reconciled U.S. Census datasets containing \textbf{$\sim$1.2M} rows}
+  \resumeItem{Identified \textbf{7} underserved geographic clusters and modeled disease spread across \textbf{260,000} patients using multivariate and \textbf{Graph Neural Network} models; presented findings to non-technical partners}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Breast Cancer Resource Center}{May 2025 -- Jul 2025}
+  {Software Development Intern}{Austin, TX}
+\resumeItemListStart
+  \resumeItem{Built a \textbf{React} patient-facing \textbf{chat agent} backed by a \textbf{RAG} pipeline, reducing caregiver workload by \textbf{20\%} while improving response grounding and hallucination reduction}
+  \resumeItem{Improved CSV processing speeds from \textbf{1900ms} to \textbf{1200ms} using asynchronous \textbf{coroutines}, enabling faster billing calculations while adhering to internal compliance requirements}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Texas State Center for Analytics and Data Science}{Dec 2024 -- May 2025}
+  {Student Software Developer}{San Marcos, TX}
+\resumeItemListStart
+  \resumeItem{Built a hybrid \textbf{RAG} pipeline pairing \textbf{FAISS} dense vector search with cosine-similarity ranking for AI-driven grant proposal optimization, reducing faculty evaluation time by \textbf{80\%}}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+
+\section{\texorpdfstring{\MakeUppercase{Projects}}{PROJECTS}}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Giftmaxxing} $|$ \emph{Django, Swift, Terraform}}{2026}
+\resumeItemListStart
+  \resumeItem{Won \textbf{\$6k+} and the \textbf{Most Commercializable Hack} at the \textbf{AWS v0 Hackathon}, then iterated the application toward release}
+  \resumeItem{Engineered a \textbf{shopping agent} and trained a \textbf{two-tower ranking model} with real-time item retrieval}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://github.com/Exorust/TorchLeet}{TorchLeet}} $|$ \emph{PyTorch, Deep Neural Networks, Tensor Math}}{2026}
+\resumeItemListStart
+  \resumeItem{Core contributor to TorchLeet (\textbf{LeetCode for PyTorch, 2.5k stars}): \textbf{6} PRs merged across frontend fixes and technical answers}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP-----------
+
+\section{\texorpdfstring{\MakeUppercase{Leadership}}{LEADERSHIP}}
+
+\small
+\textbf{ACM AI @ TXST -- Vice President} \hfill December 2024 -- August 2025
+
+\vspace{-7pt}
+
+\begin{itemize}[leftmargin=0.15in, itemsep=0pt]
+  \item \small Grew the community of AI developers on campus to \textbf{100+} people and organized \textbf{10+} technical sessions on MCPs, CLI tools, and OpenClaw
+\end{itemize}
+
+\vspace{-14pt}
+
+%-----------TECHNICAL SKILLS-----------
+
+\section{\texorpdfstring{\MakeUppercase{Technical Skills}}{TECHNICAL SKILLS}}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}{: Python, Go, Swift, R, Bash, JavaScript, SQL} \\
+    \textbf{AI/ML}{: PyTorch, TensorFlow, Scikit-learn, LLMs, RAG, Fine-tuning (LoRA, QLoRA), Quantization, Distillation, RRF, FAISS} \\
+    \textbf{Systems \& Infra}{: Distributed Systems, Concurrency, GCP, AWS, Docker, Kubernetes, CI/CD, Linux, vLLM, DeepStream}
+  }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

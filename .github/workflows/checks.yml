@@ -18,32 +18,30 @@ jobs:
       - name: Install
         run: npm install --legacy-peer-deps
 
-      # --- the stream (public/, no build step) ---
-      - name: Parse stream-data.js
-        run: node --check public/stream-data.js
-
-      - name: Compile stream-app.jsx
-        run: npx --yes esbuild@0.23.1 public/stream-app.jsx --loader:.jsx=jsx --outfile=/tmp/stream-app.js
-
-      - name: Validate assets and data references
-        run: node scripts/check-site.mjs
-
-      # --- the Next app (/v3) ---
       - name: Typecheck
         run: npm run typecheck
 
       - name: Build
         run: npm run build
 
-      - name: Serve and smoke-test both pages
+      - name: Serve and smoke-test the site
         run: |
           npx next start -p 8765 &
           for i in $(seq 1 40); do
-            curl -fsS -o /dev/null "http://127.0.0.1:8765/v3" && break
+            curl -fsS -o /dev/null "http://127.0.0.1:8765/" && break
             sleep 1
           done
-          curl -fsS "http://127.0.0.1:8765/" | grep -q "stream-app.jsx" || { echo "/ is not serving the stream"; exit 1; }
-          for route in v3 stream-app.jsx stream-data.js robots.txt sitemap.xml llms.txt media/logos/askslm.png; do
+          curl -fsS "http://127.0.0.1:8765/" | grep -q "Saksham Adhikari" || { echo "/ is not serving the site"; exit 1; }
+          for route in resume.pdf media/saksham.jpg robots.txt sitemap.xml llms.txt; do
             curl -fsS -o /dev/null "http://127.0.0.1:8765/$route" || { echo "failed to serve $route"; exit 1; }
           done
+          test "$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:8765/v3")" = "308" \
+            || { echo "/v3 no longer redirects"; exit 1; }
           echo "all routes served"
+
+      # The retired stream still has to hang together in legacy/ so it can be revived.
+      - name: Validate the archived stream
+        run: |
+          node --check legacy/stream-data.js
+          npx --yes esbuild@0.23.1 legacy/stream-app.jsx --loader:.jsx=jsx --outfile=/tmp/stream-app.js
+          node scripts/check-site.mjs

@@ -16,10 +16,10 @@ import { footer, hero } from "@/content/v3";
 export const metadata: Metadata = {
   title: "Saksham Adhikari, Machine Learning Engineer",
   description: hero.tagline,
-  alternates: { canonical: "/v3" },
+  alternates: { canonical: "/" },
 };
 
-export default function V3Page() {
+export default function Home() {
   return (
     <>
       <Sky />
@@ -41,8 +41,11 @@ export default function V3Page() {
       <footer className="border-t border-line py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-5 font-mono text-xs text-faint sm:flex-row sm:px-8">
           <p>{footer.note}</p>
-          <a href="/" className="transition-colors hover:text-accent-600">
-            <span className="font-devanagari text-accent">॥</span> {footer.streamLabel}
+          <a
+            href="#home"
+            className="transition-colors hover:text-accent-600"
+          >
+            <span className="font-devanagari text-accent">॥</span> {footer.backToTop}
           </a>
         </div>
       </footer>

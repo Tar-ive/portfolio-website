@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // The original stream is a no-build static site living in public/. Next owns
-  // /v3 and any future route; "/" is rewritten to that untouched index.html so
-  // saksham.us keeps serving exactly what it served before.
-  async rewrites() {
-    return [{ source: "/", destination: "/index.html" }];
+  // /v3 was the page's address while it lived beside the old stream. It is the
+  // site now, so that path redirects home and any link to it still lands.
+  async redirects() {
+    return [{ source: "/v3", destination: "/", permanent: true }];
   },
 };
 
