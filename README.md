@@ -24,16 +24,16 @@ npm run check      # asset + data references in the archived stream
 | `app/globals.css` | design tokens, glass, sweep, bloom, sky |
 | `components/v3/` | nav, hero, metrics, timeline, decks, research, education, contact, sky, kites |
 | `public/media/saksham.jpg` | the hero portrait |
-| `public/resume.pdf` | the compiled resume, linked from the hero |
-| `resume/resume.tex` | its source |
+| `resume/resume.tex` | resume source — local only, not published with the site |
 | `legacy/` | the retired stream, kept so it can be revived |
 
 ## Resume
 
 ```bash
 cd resume && tectonic -X compile resume.tex --outdir .
-cp resume.pdf ../public/resume.pdf
 ```
+
+The PDF stays in `resume/`; the site does not serve it.
 
 It has to stay one page — the log line (`Output written on resume.xdv (1 page…)`)
 is the check. Margins are already thin; trim content before loosening them.

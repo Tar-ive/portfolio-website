@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, FileText, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 import { hero, socials } from "@/content/v3";
 
@@ -121,16 +121,6 @@ export function Hero() {
               >
                 <span className="font-devanagari text-accent">॥</span>
                 {hero.cta.secondary.text}
-              </a>
-
-              <a
-                href={hero.cta.resume.href}
-                target="_blank"
-                rel="noreferrer"
-                className="glass glass-hover sweep inline-flex items-center gap-2 rounded-xl px-6 py-3 font-mono text-sm text-body"
-              >
-                <FileText className="h-4 w-4 text-accent" />
-                {hero.cta.resume.text}
               </a>
             </motion.div>
 

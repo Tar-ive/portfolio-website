@@ -32,7 +32,7 @@ jobs:
             sleep 1
           done
           curl -fsS "http://127.0.0.1:8765/" | grep -q "Saksham Adhikari" || { echo "/ is not serving the site"; exit 1; }
-          for route in resume.pdf media/saksham.jpg robots.txt sitemap.xml llms.txt; do
+          for route in media/saksham.jpg robots.txt sitemap.xml llms.txt; do
             curl -fsS -o /dev/null "http://127.0.0.1:8765/$route" || { echo "failed to serve $route"; exit 1; }
           done
           test "$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:8765/v3")" = "308" \
