@@ -1,7 +1,6 @@
 // Verifies the static site can't ship a broken reference:
 //   - every /media and /_ds asset named in source exists on disk
-//   - every id used by presentation and lanes resolves to a real item
-//     in STREAM_DATA
+//   - every id used by the presentation resolves to a real item in STREAM_DATA
 // Run: node scripts/check-site.mjs
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -41,7 +40,6 @@ const requireIds = (list, where) => {
 };
 
 requireIds(STREAM_PRESENTATION?.featured, 'STREAM_PRESENTATION.featured');
-(STREAM_PRESENTATION?.lanes || []).forEach((lane) => requireIds(lane.ids, `lane "${lane.key}"`));
 
 if (problems.length) {
   console.error(`✗ ${problems.length} problem(s):`);

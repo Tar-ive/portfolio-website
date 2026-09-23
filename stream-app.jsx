@@ -353,12 +353,6 @@ function MonthMarker({ ym }) {
   );
 }
 
-const LAYOUTS = [
-  { key: 'stream', label: 'stream', hint: 'chronological diary' },
-  { key: 'stack', label: 'stack', hint: 'proof first' },
-  { key: 'lanes', label: 'lanes', hint: 'by craft' },
-];
-
 function groupByMonth(items) {
   const groups = [];
   items.forEach((it) => {
@@ -535,24 +529,6 @@ function GitHubActivity() {
   );
 }
 
-function ViewSwitch({ layout, onLayout }) {
-  return (
-    <nav className="st-viewswitch" aria-label="Presentation">
-      <span className="st-rail__filterhead">view</span>
-      {LAYOUTS.map((v) => (
-        <button
-          key={v.key}
-          className={`st-view${layout === v.key ? ' st-view--on' : ''}`}
-          onClick={() => onLayout(v.key)}
-          title={v.hint}
-        >
-          {v.label}
-        </button>
-      ))}
-    </nav>
-  );
-}
-
 function ChronoFeed({ items, theme, xembed }) {
   const groups = groupByMonth(items);
   return (
@@ -579,19 +555,6 @@ function StackFeed({ byId, data, filter, theme, xembed }) {
   const rest = data.filter((it) => !hidden.has(it.id) && (filter === 'all' ? signal(it.type) : active.match(it.type)));
   return (
     <React.Fragment>
-      <div className="st-stats">
-        {P.stats.map((s) => {
-          return (
-            <div className={`st-stat${s.big ? ' st-stat--big' : ''}`} key={s.label}>
-              <span className="st-stat__n">{s.n}</span>
-              <span className="st-stat__org">
-                {s.logo ? <LogoMark k={s.logo} size="hero"></LogoMark> : null}
-                <span className="st-stat__l">{s.label}</span>
-              </span>
-            </div>
-          );
-        })}
-      </div>
       <h2 className="st-sectionhead">selected work</h2>
       <div className="st-featured">
         {featured.map((it) => <ProofCard key={it.id} item={it}></ProofCard>)}
@@ -604,63 +567,28 @@ function StackFeed({ byId, data, filter, theme, xembed }) {
   );
 }
 
-function LanesFeed({ byId }) {
-  const P = window.STREAM_PRESENTATION;
-  return (
-    <div className="st-lanes">
-      {P.lanes.map((lane) => (
-        <section className="st-lane" key={lane.key}>
-          <header className="st-lane__head">
-            <h2>{lane.label}</h2>
-            <p>{lane.blurb}</p>
-          </header>
-          <div className="st-lane__items">
-            {lane.ids.map((id) => byId[id]).filter(Boolean).map((it) => (
-              <ProofCard key={it.id} item={it}></ProofCard>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
-function Rail({ filter, setFilter, counts, theme, onTheme, layout, onLayout }) {
+function Rail({ filter, setFilter, counts, theme, onTheme }) {
   return (
     <aside className="st-rail">
       <a className="sds-nav__mark st-rail__mark" href="#">
         <span className="danda">॥</span><span>saksham</span>
       </a>
-      <p className="st-rail__status">
-        <span className="st-dot"></span>incoming to calhacks
-      </p>
       <p className="st-rail__bio">
         {window.STREAM_BIO}
       </p>
-      {layout === 'stream' ? (
-        <SutraQuote
-          devanagari="दृष्टमनुमानमाप्तवचनं च"
-          translation="Perception, inference, and trusted testimony: the three means of valid knowledge."
-          source="sāṅkhya kārikā · 4"
-          className="st-rail__sutra"
-        ></SutraQuote>
-      ) : null}
-      <ViewSwitch layout={layout} onLayout={onLayout}></ViewSwitch>
-      {layout !== 'lanes' ? (
-        <nav className="st-rail__filters" aria-label="Filter the stream">
-          <span className="st-rail__filterhead">filter</span>
-          {FILTERS.map((f) => (
-            <button
-              key={f.key}
-              className={`st-filter${filter === f.key ? ' st-filter--on' : ''}`}
-              onClick={() => setFilter(f.key)}
-            >
-              <span>{f.label}</span>
-              <span className="st-filter__n">{counts[f.key]}</span>
-            </button>
-          ))}
-        </nav>
-      ) : null}
+      <nav className="st-rail__filters" aria-label="Filter the stream">
+        <span className="st-rail__filterhead">filter</span>
+        {FILTERS.map((f) => (
+          <button
+            key={f.key}
+            className={`st-filter${filter === f.key ? ' st-filter--on' : ''}`}
+            onClick={() => setFilter(f.key)}
+          >
+            <span>{f.label}</span>
+            <span className="st-filter__n">{counts[f.key]}</span>
+          </button>
+        ))}
+      </nav>
       <div className="st-rail__foot">
         <SocialLinks links={[
           { kind: 'x', href: 'https://x.com/saksham_adh', label: 'X' },
@@ -694,7 +622,6 @@ function usePrefs(defaults) {
 function StreamApp() {
   const [t, setTweak] = usePrefs(window.STREAM_TWEAK_DEFAULTS);
   const [filter, setFilter] = React.useState('all');
-  const layout = t.layout || 'stream';
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', t.theme === 'dark');
@@ -719,30 +646,16 @@ function StreamApp() {
     return c;
   }, [data]);
 
-  const active = FILTERS.find((f) => f.key === filter);
-  const shown = data.filter((it) => active.match(it.type));
-
   return (
     <React.Fragment>
-      <div className={`st-page st-page--${layout}`}>
+      <div className="st-page st-page--stack">
         <Rail
           filter={filter} setFilter={setFilter} counts={counts}
           theme={t.theme} onTheme={() => setTweak('theme', t.theme === 'dark' ? 'light' : 'dark')}
-          layout={layout} onLayout={(v) => setTweak('layout', v)}
         ></Rail>
         <main className="st-feed">
           <GitHubActivity></GitHubActivity>
-          {layout === 'stack' ? (
-            <StackFeed
-              byId={byId} data={data} filter={filter} theme={t.theme} xembed={t.xembed}
-            ></StackFeed>
-          ) : null}
-          {layout === 'lanes' ? (
-            <LanesFeed byId={byId}></LanesFeed>
-          ) : null}
-          {layout === 'stream' ? (
-            <ChronoFeed items={shown} theme={t.theme} xembed={t.xembed}></ChronoFeed>
-          ) : null}
+          <StackFeed byId={byId} data={data} filter={filter} theme={t.theme} xembed={t.xembed}></StackFeed>
           <p className="st-end">॥ the stream began here ॥</p>
           <Footer note="Built slow, to last. No trackers, no noise."></Footer>
         </main>

@@ -8,6 +8,14 @@ const SUBSTACK = 'https://adhsaksham.substack.com';
 const img = (u) => u; // substackcdn URLs already sized w_320
 
 window.STREAM_DATA = [
+  // --- September 2026 ---
+  {
+    id: 'calhacks-incoming', type: 'work', date: '2026-09-23', display: 'incoming',
+    title: 'Cal Hacks',
+    desc: 'Incoming to Cal Hacks.',
+    tags: ['hackathon'],
+  },
+
   // --- August 2026 ---
   {
     id: 'work-hotchips', type: 'work', date: '2026-08-24', display: 'aug 2026',
@@ -589,39 +597,7 @@ window.STREAM_DATA = [
 
 // Presentation variants; ids must exist in STREAM_DATA.
 window.STREAM_PRESENTATION = {
-  stats: [
-    { n: '6', label: 'hackathon wins', big: true },
-    { n: 'ML Engineer Intern', label: '@AskSLM', logo: 'askslm' },
-    { n: 'AI Fellow', label: 'at AI4ALL', logo: 'ai4all' },
-    { n: 'Vice President', label: '@ACM AI @ TXST', logo: 'acm' },
-  ],
   featured: ['win-giftmaxxing', 'twobot', 'paper-pfas-cognition', 'win-webai', 'work-askslm'],
-  lanes: [
-    {
-      key: 'inference',
-      label: 'inference & systems',
-      blurb: 'Serving models under latency and hardware constraints: Jetson, TPU, vLLM, llama.cpp.',
-      ids: ['work-askslm', 'work-google', 'promptetheus-launch', 'speed-moat'],
-    },
-    {
-      key: 'recsys',
-      label: 'recommendation systems',
-      blurb: 'Two-tower retrieval, on-device curators, and product ranking that has to ship.',
-      ids: ['twobot', 'win-giftmaxxing', 'tiktok', 'm-instagram'],
-    },
-    {
-      key: 'vision',
-      label: 'computer vision',
-      blurb: 'Real-time CV/VLM pipelines and on-device detectors, not just notebooks.',
-      ids: ['work-askslm', 'win-webai', 'cv-reflections'],
-    },
-    {
-      key: 'data',
-      label: 'data at scale',
-      blurb: 'Epidemiology, grants, biomedical records, HPC training: modeling messy high-volume data.',
-      ids: ['paper-pfas-cognition', 'grants-mcp', 'work-bcrc', 'quantafold', 'paper-ruralwomen'],
-    },
-  ],
 };
 
 window.STREAM_BIO = 'ML engineer working on inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.';
