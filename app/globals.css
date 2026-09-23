@@ -27,6 +27,12 @@
   --accent-600: #93401d;
   --accent-700: #743114;
 
+  --sky-0: #a8d4f0;
+  --sky-1: #cfe6f6;
+  --sky-2: #eef1ee;
+  --sky-3: #fbf3e8;
+  --cloud: rgba(255, 255, 255, 0.92);
+
   --glass: rgba(251, 248, 241, 0.62);
   --glass-strong: rgba(251, 248, 241, 0.82);
   --glass-line: rgba(22, 19, 16, 0.08);
@@ -53,6 +59,12 @@
   --accent-500: #d77a4d;
   --accent-600: #e08f66;
   --accent-700: #eca984;
+
+  --sky-0: #0a1622;
+  --sky-1: #101d29;
+  --sky-2: #16191c;
+  --sky-3: #161310;
+  --cloud: rgba(120, 156, 186, 0.22);
 
   --glass: rgba(32, 28, 21, 0.55);
   --glass-strong: rgba(32, 28, 21, 0.78);
@@ -92,7 +104,7 @@
   }
 
   body {
-    background: var(--paper-0);
+    background: var(--sky-1);
     color: var(--ink-1);
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
@@ -280,6 +292,26 @@
 
   .wash-b {
     animation: drift-b 28s ease-in-out infinite;
+  }
+
+  /* Cloud banks crossing the sky, each at its own pace */
+  @keyframes cloud-cross {
+    from {
+      transform: translateX(-40vw);
+    }
+    to {
+      transform: translateX(140vw);
+    }
+  }
+
+  .cloud {
+    position: absolute;
+    left: 0;
+    border-radius: 9999px;
+    will-change: transform;
+    animation-name: cloud-cross;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   /* Skills belt */

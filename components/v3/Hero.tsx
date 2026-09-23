@@ -137,6 +137,15 @@ export function Hero() {
                 );
               })}
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+              className="mt-6 font-mono text-xs text-faint"
+            >
+              {hero.interactionHint}
+            </motion.p>
           </div>
         </div>
       </div>

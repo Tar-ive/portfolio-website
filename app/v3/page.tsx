@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 
-import { Background } from "@/components/v3/Background";
 import { Contact } from "@/components/v3/Contact";
 import { Education } from "@/components/v3/Education";
 import { ExperienceTimeline } from "@/components/v3/ExperienceTimeline";
 import { Hero } from "@/components/v3/Hero";
+import { Kites } from "@/components/v3/Kites";
 import { Metrics } from "@/components/v3/Metrics";
 import { NavBar } from "@/components/v3/NavBar";
 import { ProjectCarousel } from "@/components/v3/ProjectCarousel";
 import { Research } from "@/components/v3/Research";
+import { Sky } from "@/components/v3/Sky";
 import { footer, hero } from "@/content/v3";
 
 export const metadata: Metadata = {
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
 export default function V3Page() {
   return (
     <>
-      <Background />
+      <Sky />
+      <Kites />
       <NavBar />
 
       <main>

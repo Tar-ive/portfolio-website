@@ -149,10 +149,12 @@ function Contributions() {
         </p>
       ) : (
         <div className="no-scrollbar overflow-x-auto">
-          <div className="grid w-max grid-cols-[auto_auto] gap-x-3 gap-y-2">
+          {/* Columns are fractions, so the year stretches to whatever width
+              the card has instead of sitting at a fixed cell size. */}
+          <div className="grid min-w-[460px] grid-cols-[auto_1fr] gap-x-3 gap-y-2">
             <div
-              className="col-start-2 row-start-1 grid grid-flow-col font-mono text-[10px] text-faint"
-              style={{ gridAutoColumns: "10px" }}
+              className="col-start-2 row-start-1 grid font-mono text-[11px] text-faint"
+              style={{ gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))` }}
             >
               {months.map((m, i) => (
                 <span key={i} className="whitespace-nowrap">
@@ -162,8 +164,8 @@ function Contributions() {
             </div>
 
             <div
-              className="col-start-1 row-start-2 grid items-center gap-[2px] font-mono text-[9px] leading-none text-faint"
-              style={{ gridTemplateRows: "repeat(7, 8px)" }}
+              className="col-start-1 row-start-2 grid items-center gap-[3px] font-mono text-[11px] leading-none text-faint"
+              style={{ gridTemplateRows: "repeat(7, 1fr)" }}
             >
               {DAY_LABELS.map((d, i) => (
                 <span key={i}>{d}</span>
@@ -171,15 +173,19 @@ function Contributions() {
             </div>
 
             <div
-              className="col-start-2 row-start-2 grid grid-flow-col gap-[2px]"
-              style={{ gridTemplateRows: "repeat(7, 8px)", gridAutoColumns: "8px" }}
+              className="col-start-2 row-start-2 grid gap-[3px]"
+              style={{
+                gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))`,
+                gridTemplateRows: "repeat(7, auto)",
+                gridAutoFlow: "column",
+              }}
             >
               {weeks.map((week, wi) =>
                 week.map((day, di) => (
                   <span
                     key={`${wi}-${di}`}
                     title={day ? `${day.count} on ${day.date}` : undefined}
-                    className={`h-2 w-2 rounded-[2px] ${day ? LEVELS[day.level] : "bg-transparent"}`}
+                    className={`aspect-square w-full rounded-[3px] ${day ? LEVELS[day.level] : "bg-transparent"}`}
                   />
                 )),
               )}
@@ -199,7 +205,7 @@ function Contributions() {
         <span className="flex items-center gap-[3px]">
           Less
           {LEVELS.map((cls, i) => (
-            <i key={i} className={`mx-[1px] h-2 w-2 rounded-[2px] ${cls}`} />
+            <i key={i} className={`mx-[1px] h-2.5 w-2.5 rounded-[3px] ${cls}`} />
           ))}
           More
         </span>

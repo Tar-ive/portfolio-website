@@ -18,6 +18,7 @@ export const hero = {
   status: "incoming to Cal Hacks",
   tagline:
     "ML engineer working on inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.",
+  interactionHint: "the kites follow your cursor",
   cta: {
     primary: { text: "Get in touch", href: "#contact" },
     secondary: { text: "Read the stream", href: "/" },
@@ -364,12 +365,39 @@ export const publications: Publication[] = [
   },
 ];
 
-export const education = {
+export type Course = { code: string; title: string; note?: string };
+
+export const education: {
+  institution: string;
+  location: string;
+  degree: string;
+  gpa: string;
+  note: string;
+  coursework: Course[];
+  certifications: { title: string; note: string }[];
+  skills: string[];
+} = {
   institution: "Texas State University",
   location: "San Marcos, Texas",
   degree: "B.B.A. Computer Information Systems",
   gpa: "4.0 GPA",
   note: "Full-tuition Merit Scholar, one of 15 awarded schoolwide. AKAEF Undergraduate Launch Scholar and Merry Kone FitzPatrick Endowment Scholar.",
+  coursework: [
+    { code: "ISAN 3392", title: "Introduction to Machine Learning" },
+    { code: "ANLY 3339", title: "Data Mining and Visualization" },
+    { code: "ANLY 3334", title: "Statistical Modeling" },
+    { code: "ANLY 2333", title: "Business Statistics" },
+    { code: "ISAN 3382", title: "Computer Data Base Systems" },
+    { code: "ISAN 3374", title: "System Analysis and Design" },
+    { code: "ISAN 3305", title: "Business Programming I", note: "Python" },
+    { code: "ISAN 3325", title: "Business Programming II", note: "Python and Rust" },
+  ],
+  certifications: [
+    {
+      title: "Supervised Machine Learning: Regression and Classification",
+      note: "certificate",
+    },
+  ],
   skills: [
     "Inference engineering",
     "Computer vision",
