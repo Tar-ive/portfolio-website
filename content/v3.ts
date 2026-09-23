@@ -386,7 +386,7 @@ export const hackathons: Hackathon[] = [
   },
   {
     id: "nvidia",
-    title: "Voice agents for bulk orders",
+    title: "Loyaltie",
     event: "AITX × NVIDIA",
     award: "Winner, 2 tracks · Weights & Biases and LomanAI",
     summary:
@@ -418,7 +418,7 @@ export const hackathons: Hackathon[] = [
   },
   {
     id: "dataport",
-    title: "A game for a congruent day",
+    title: "Questline",
     event: "Data Portability Hackathon",
     award: "UT Law track winner · 3rd overall",
     summary:
