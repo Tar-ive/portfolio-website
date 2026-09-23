@@ -40,7 +40,7 @@ export function Education() {
       />
 
       <Reveal>
-        <div className="glass sweep mb-8 p-6 sm:p-8">
+        <div className="glass sweep p-6 sm:p-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
             <div className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-accent-050 text-accent-600">
               <GraduationCap className="h-6 w-6" />
@@ -68,32 +68,7 @@ export function Education() {
         </div>
       </Reveal>
 
-      <Reveal delay={0.08} className="mt-4">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {education.coursework.map((course) => (
-            <div key={course.code} className="glass glass-hover sweep p-4">
-              <p className="font-mono text-[11px] tracking-[0.12em] text-accent-600">
-                {course.code}
-              </p>
-              <p className="mt-1 text-sm leading-snug text-body">{course.title}</p>
-              {course.note ? (
-                <p className="mt-1 font-mono text-[11px] text-faint">in {course.note}</p>
-              ) : null}
-            </div>
-          ))}
-
-          {education.certifications.map((cert) => (
-            <div key={cert.title} className="glass glass-hover sweep p-4">
-              <p className="font-mono text-[11px] tracking-[0.12em] text-accent-600">
-                {cert.note}
-              </p>
-              <p className="mt-1 text-sm leading-snug text-body">{cert.title}</p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.12} className="mt-8">
+      <Reveal delay={0.1} className="mt-8">
         <SkillBelt />
       </Reveal>
     </Section>

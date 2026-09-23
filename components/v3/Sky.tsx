@@ -9,14 +9,14 @@
 // Delays are spread across each duration so the sky is already full of cloud
 // on the first frame instead of filling up over the next two minutes.
 const CLOUDS = [
-  { top: "2%", size: 50, blur: 50, opacity: 0.95, duration: 150, delay: -20 },
-  { top: "12%", size: 34, blur: 38, opacity: 0.85, duration: 110, delay: -70 },
-  { top: "22%", size: 62, blur: 60, opacity: 0.8, duration: 190, delay: -120 },
-  { top: "36%", size: 40, blur: 44, opacity: 0.75, duration: 130, delay: -35 },
-  { top: "48%", size: 70, blur: 70, opacity: 0.7, duration: 210, delay: -160 },
-  { top: "60%", size: 44, blur: 48, opacity: 0.6, duration: 160, delay: -95 },
-  { top: "72%", size: 56, blur: 64, opacity: 0.5, duration: 180, delay: -45 },
-  { top: "86%", size: 38, blur: 42, opacity: 0.45, duration: 120, delay: -105 },
+  { top: "1%", size: 52, blur: 56, opacity: 0.8, duration: 260, delay: -40 },
+  { top: "11%", size: 36, blur: 44, opacity: 0.7, duration: 200, delay: -130 },
+  { top: "21%", size: 64, blur: 68, opacity: 0.65, duration: 320, delay: -210 },
+  { top: "35%", size: 42, blur: 50, opacity: 0.6, duration: 230, delay: -60 },
+  { top: "47%", size: 72, blur: 78, opacity: 0.55, duration: 360, delay: -280 },
+  { top: "59%", size: 46, blur: 54, opacity: 0.48, duration: 270, delay: -165 },
+  { top: "71%", size: 58, blur: 70, opacity: 0.4, duration: 300, delay: -80 },
+  { top: "85%", size: 40, blur: 48, opacity: 0.35, duration: 220, delay: -190 },
 ];
 
 export function Sky() {

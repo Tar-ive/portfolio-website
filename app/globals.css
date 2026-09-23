@@ -297,10 +297,13 @@
   /* Cloud banks crossing the sky, each at its own pace */
   @keyframes cloud-cross {
     from {
-      transform: translateX(-40vw);
+      transform: translate3d(-45vw, 0, 0);
+    }
+    50% {
+      transform: translate3d(45vw, -1.5vh, 0);
     }
     to {
-      transform: translateX(140vw);
+      transform: translate3d(145vw, 0, 0);
     }
   }
 

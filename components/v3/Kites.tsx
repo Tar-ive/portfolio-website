@@ -15,20 +15,21 @@ type Kite = {
   vx: number;
   vy: number;
   size: number;
-  color: string;
-  bar: string;
+  dark: string;
+  light: string;
   slot: { x: number; y: number };
   phase: number;
 };
 
+// [sail, counter-sail] — the two tones each kite is quartered in.
 const COLORS: [string, string][] = [
-  ["#B14E24", "#F3DCCB"],
-  ["#D78F63", "#FBF8F1"],
-  ["#743114", "#F3DCCB"],
+  ["#B14E24", "#F7E3D2"],
   ["#C2683A", "#FBF8F1"],
-  ["#8E3C18", "#ECE5D6"],
-  ["#E0A075", "#FBF8F1"],
-  ["#A5451F", "#F3DCCB"],
+  ["#743114", "#EFD2BB"],
+  ["#D78F63", "#FBF8F1"],
+  ["#8E3C18", "#F3DCCB"],
+  ["#A5451F", "#FBF8F1"],
+  ["#E0A075", "#FFFFFF"],
 ];
 
 // Slots trail up and to the side, the way a real string of kites strings out.
@@ -45,44 +46,80 @@ const SLOTS = [
 function drawKite(ctx: CanvasRenderingContext2D, kite: Kite, t: number) {
   const angle = Math.atan2(kite.vy, kite.vx) + Math.PI / 2;
   const s = kite.size;
+  const top = -s * 1.3;
+  const bottom = s * 1.2;
+  const side = s * 0.85;
 
   ctx.save();
   ctx.translate(kite.x, kite.y);
   ctx.rotate(angle);
 
-  // tail, trailing straight out behind the kite with a slow wave
+  // Tail: a waving line hung with bows.
   ctx.beginPath();
-  ctx.moveTo(0, s * 1.15);
-  for (let i = 1; i <= 4; i++) {
-    const p = i / 4;
-    ctx.lineTo(Math.sin(t * 2.4 + kite.phase + i) * s * 0.42 * p, s * (1.15 + p * 2.1));
+  ctx.moveTo(0, bottom);
+  const tailPoints: [number, number][] = [];
+  for (let i = 1; i <= 5; i++) {
+    const p = i / 5;
+    const x = Math.sin(t * 2.2 + kite.phase + i * 0.9) * s * 0.5 * p;
+    const y = bottom + p * s * 2.6;
+    tailPoints.push([x, y]);
+    ctx.lineTo(x, y);
   }
-  ctx.strokeStyle = kite.color;
-  ctx.globalAlpha = 0.45;
-  ctx.lineWidth = Math.max(1, s * 0.09);
+  ctx.strokeStyle = kite.dark;
+  ctx.globalAlpha = 0.5;
+  ctx.lineWidth = Math.max(1, s * 0.08);
   ctx.lineCap = "round";
   ctx.stroke();
   ctx.globalAlpha = 1;
 
-  // the diamond
-  ctx.beginPath();
-  ctx.moveTo(0, -s * 1.25);
-  ctx.lineTo(s * 0.8, 0);
-  ctx.lineTo(0, s * 1.15);
-  ctx.lineTo(-s * 0.8, 0);
-  ctx.closePath();
-  ctx.fillStyle = kite.color;
-  ctx.fill();
+  // Bows along the tail.
+  tailPoints.forEach(([x, y], i) => {
+    if (i % 2) return;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(t + i);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, s * 0.26, s * 0.1, 0, 0, Math.PI * 2);
+    ctx.fillStyle = kite.light;
+    ctx.globalAlpha = 0.85;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  });
 
-  // spars
+  // Four panels, the way a kite icon quarters the sail: two dark, two light.
+  const panels: [number, number, number, number, string][] = [
+    [0, top, -side, 0, kite.dark],
+    [0, top, side, 0, kite.light],
+    [0, bottom, -side, 0, kite.light],
+    [0, bottom, side, 0, kite.dark],
+  ];
+
+  panels.forEach(([ax, ay, bx, by, fill]) => {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(ax, ay);
+    ctx.lineTo(bx, by);
+    ctx.closePath();
+    ctx.fillStyle = fill;
+    ctx.fill();
+  });
+
+  // Spars and outline.
   ctx.beginPath();
-  ctx.moveTo(0, -s * 1.25);
-  ctx.lineTo(0, s * 1.15);
-  ctx.moveTo(-s * 0.8, 0);
-  ctx.lineTo(s * 0.8, 0);
-  ctx.strokeStyle = kite.bar;
-  ctx.globalAlpha = 0.55;
-  ctx.lineWidth = Math.max(1, s * 0.07);
+  ctx.moveTo(0, top);
+  ctx.lineTo(side, 0);
+  ctx.lineTo(0, bottom);
+  ctx.lineTo(-side, 0);
+  ctx.closePath();
+  ctx.moveTo(0, top);
+  ctx.lineTo(0, bottom);
+  ctx.moveTo(-side, 0);
+  ctx.lineTo(side, 0);
+  ctx.strokeStyle = kite.dark;
+  ctx.globalAlpha = 0.85;
+  ctx.lineWidth = Math.max(1, s * 0.08);
+  ctx.lineJoin = "round";
   ctx.stroke();
   ctx.globalAlpha = 1;
 
@@ -122,9 +159,9 @@ export function Kites() {
       y: height * 0.38 + slot.y * scale,
       vx: 0,
       vy: 0,
-      size: (i === 0 ? 15 : 12 - i * 0.6) * scale,
-      color: COLORS[i % COLORS.length][0],
-      bar: COLORS[i % COLORS.length][1],
+      size: (i === 0 ? 17 : 14 - i * 0.7) * scale,
+      dark: COLORS[i % COLORS.length][0],
+      light: COLORS[i % COLORS.length][1],
       slot: { x: slot.x * scale, y: slot.y * scale },
       phase: i * 1.3,
     }));

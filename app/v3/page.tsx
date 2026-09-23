@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Contact } from "@/components/v3/Contact";
+import { CourseCylinder } from "@/components/v3/CourseCylinder";
 import { Education } from "@/components/v3/Education";
 import { ExperienceTimeline } from "@/components/v3/ExperienceTimeline";
 import { Hero } from "@/components/v3/Hero";
@@ -32,6 +33,7 @@ export default function V3Page() {
         <ProjectCarousel />
         <Research />
         <Education />
+        <CourseCylinder />
         <Contact />
       </main>
 
