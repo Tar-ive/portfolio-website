@@ -15,6 +15,8 @@ export const navigation = [
 export const hero = {
   name: "Saksham Adhikari",
   mark: "॥",
+  photo: "/media/saksham.jpg",
+  photoAlt: "Saksham Adhikari",
   status: "incoming to Cal Hacks",
   tagline:
     "ML engineer working on inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.",

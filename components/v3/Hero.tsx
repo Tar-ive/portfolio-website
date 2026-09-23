@@ -54,12 +54,19 @@ export function Hero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex-none"
           >
-            <div className="absolute inset-0 scale-125 rounded-full bg-accent-100 opacity-50 blur-2xl" />
-            <div className="glass sweep relative flex h-44 w-44 items-center justify-center rounded-full sm:h-52 sm:w-52">
-              <span className="font-devanagari text-7xl text-accent sm:text-8xl">
-                {hero.mark}
-              </span>
+            <div className="absolute inset-0 scale-125 rounded-full bg-accent-100 opacity-60 blur-2xl" />
+            <div className="relative h-48 w-48 overflow-hidden rounded-full border border-[var(--glass-line)] shadow-[var(--glass-shadow)] sm:h-60 sm:w-60">
+              <img
+                src={hero.photo}
+                alt={hero.photoAlt}
+                width={480}
+                height={480}
+                className="h-full w-full object-cover"
+              />
             </div>
+            <span className="glass absolute -bottom-1 left-1 flex h-12 w-12 items-center justify-center rounded-full font-devanagari text-2xl text-accent">
+              {hero.mark}
+            </span>
           </motion.div>
 
           <div className="flex-1 text-center xl:text-left">

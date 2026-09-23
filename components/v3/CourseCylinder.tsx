@@ -38,12 +38,13 @@ export function CourseCylinder() {
     target: trackRef,
     offset: ["start start", "end end"],
   });
-  // A course faces the viewer when the drum's rotation cancels its own angle,
-  // so the sweep runs from just before the first to just past the last.
+  // A course faces the viewer when the drum's rotation matches its own angle.
+  // The sweep runs from just before the first to just past the last, and the
+  // sign is what sends the courses up the screen as the page scrolls down.
   const rotateX = useTransform(
     scrollYProgress,
     [0, 1],
-    [SPACING, -(LAST + SPACING)],
+    [-SPACING, LAST + SPACING],
   );
 
   useEffect(() => {
@@ -103,7 +104,7 @@ export function CourseCylinder() {
                 key={item}
                 className="absolute left-0 top-0 w-full -translate-x-1/2 px-5 text-center font-display text-2xl font-semibold uppercase leading-tight tracking-wide text-display sm:text-3xl"
                 style={{
-                  transform: `translateY(-50%) rotateX(${i * SPACING}deg) translateZ(${radius}px)`,
+                  transform: `translateY(-50%) rotateX(${-i * SPACING}deg) translateZ(${radius}px)`,
                   backfaceVisibility: "hidden",
                   willChange: "transform",
                 }}
