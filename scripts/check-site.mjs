@@ -1,12 +1,13 @@
 // Verifies the static site can't ship a broken reference:
-//   - every /media and /_ds asset named in source exists on disk
+//   - every /media and /_ds asset named in public/ source exists on disk
 //   - every id used by the presentation resolves to a real item in STREAM_DATA
 // Run: node scripts/check-site.mjs
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 
-const root = process.cwd();
+// The stream is a no-build static site served straight out of public/.
+const root = path.join(process.cwd(), 'public');
 const sources = ['index.html', 'stream-app.jsx', 'stream-data.js', 'llms.txt', 'sitemap.xml'];
 const problems = [];
 

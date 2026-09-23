@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+/* Theme is toggled by a class on <html>, not only by the OS. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+ * Tokens — the same warm paper + sindoor vermillion the stream
+ * uses (_ds/tokens/colors.css), restated here for Tailwind v4.
+ * Light = prakṛti (paper). Dark = puruṣa (night).
+ * ============================================================ */
+:root {
+  --paper-0: #fbf8f1;
+  --paper-1: #f5f0e6;
+  --paper-2: #ece5d6;
+  --line-1: #e2dacaa8;
+  --line-2: #cdc3ac;
+
+  --ink-0: #161310;
+  --ink-1: #26221b;
+  --ink-2: #5c5544;
+  --ink-3: #8b826d;
+
+  --accent-050: #faefe7;
+  --accent-100: #f3dccb;
+  --accent-300: #d78f63;
+  --accent-500: #b14e24;
+  --accent-600: #93401d;
+  --accent-700: #743114;
+
+  --glass: rgba(251, 248, 241, 0.62);
+  --glass-strong: rgba(251, 248, 241, 0.82);
+  --glass-line: rgba(22, 19, 16, 0.08);
+  --glass-shadow: 0 8px 32px rgba(70, 52, 34, 0.14);
+  --sweep: rgba(255, 255, 255, 0.55);
+  --bloom: rgba(177, 78, 36, 0.5);
+}
+
+.dark {
+  --paper-0: #161310;
+  --paper-1: #201c15;
+  --paper-2: #2a251c;
+  --line-1: #38322580;
+  --line-2: #4d4533;
+
+  --ink-0: #f4eedf;
+  --ink-1: #e8e1d0;
+  --ink-2: #aba28b;
+  --ink-3: #837b66;
+
+  --accent-050: #2e1d12;
+  --accent-100: #452816;
+  --accent-300: #a85a31;
+  --accent-500: #d77a4d;
+  --accent-600: #e08f66;
+  --accent-700: #eca984;
+
+  --glass: rgba(32, 28, 21, 0.55);
+  --glass-strong: rgba(32, 28, 21, 0.78);
+  --glass-line: rgba(244, 238, 223, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --sweep: rgba(255, 255, 255, 0.14);
+  --bloom: rgba(215, 122, 77, 0.45);
+}
+
+@theme inline {
+  --color-page: var(--paper-0);
+  --color-tint: var(--paper-1);
+  --color-well: var(--paper-2);
+  --color-line: var(--line-1);
+  --color-line-strong: var(--line-2);
+
+  --color-display: var(--ink-0);
+  --color-body: var(--ink-1);
+  --color-muted: var(--ink-2);
+  --color-faint: var(--ink-3);
+
+  --color-accent-050: var(--accent-050);
+  --color-accent-100: var(--accent-100);
+  --color-accent-300: var(--accent-300);
+  --color-accent: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+
+  --font-display: var(--font-spectral), Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-devanagari: var(--font-tiro), serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--paper-0);
+    color: var(--ink-1);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--ink-0);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent-100);
+    color: var(--ink-0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------
+   * Glass — the reference's frosted panel, in paper and ink
+   * ---------------------------------------------------------- */
+  .glass {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid var(--glass-line);
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-strong {
+    background: var(--glass-strong);
+  }
+
+  /* Paper grain, so the glass reads as pressed pulp rather than plastic. */
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.7' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .dark .glass::before {
+    opacity: 0.07;
+  }
+
+  .glass-hover {
+    transition:
+      transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 200ms,
+      box-shadow 200ms;
+  }
+
+  .glass-hover:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--accent-500) 35%, transparent);
+    box-shadow: 0 14px 40px rgba(70, 52, 34, 0.2);
+  }
+
+  /* ------------------------------------------------------------
+   * Hover sweep — a gleam crossing the panel on hover
+   * ---------------------------------------------------------- */
+  .sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .sweep::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: -150%;
+    width: 150%;
+    z-index: 40;
+    transform: skewX(-30deg);
+    background: linear-gradient(
+      90deg,
+      transparent 10%,
+      var(--sweep) 50%,
+      transparent 90%
+    );
+    filter: blur(4px);
+    pointer-events: none;
+  }
+
+  .sweep:hover::after {
+    left: 150%;
+    transition: left 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ------------------------------------------------------------
+   * Radial bloom — a vermillion pulse from the center of a button
+   * ---------------------------------------------------------- */
+  @keyframes bloom {
+    0% {
+      transform: translate(-50%, -50%) scale(0.05);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(4);
+      opacity: 0;
+    }
+  }
+
+  .bloom {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bloom::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    padding-top: 50%;
+    border-radius: 50%;
+    background: var(--bloom);
+    filter: blur(20px);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .bloom:hover::before {
+    animation: bloom 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* ------------------------------------------------------------
+   * Drifting background wash, in place of the reference's sky
+   * ---------------------------------------------------------- */
+  @keyframes drift-a {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(6%, -4%, 0) scale(1.12);
+    }
+  }
+
+  @keyframes drift-b {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1.05);
+    }
+    50% {
+      transform: translate3d(-7%, 5%, 0) scale(1);
+    }
+  }
+
+  .wash {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    will-change: transform;
+  }
+
+  .wash-a {
+    animation: drift-a 22s ease-in-out infinite;
+  }
+
+  .wash-b {
+    animation: drift-b 28s ease-in-out infinite;
+  }
+
+  /* Skills belt */
+  @keyframes belt {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .belt-track {
+    display: flex;
+    width: max-content;
+    animation: belt 46s linear infinite;
+  }
+
+  .belt:hover .belt-track {
+    animation-play-state: paused;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
