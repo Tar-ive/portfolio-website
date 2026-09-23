@@ -11,15 +11,13 @@ import { Reveal, Section, SectionHead } from "@/components/v3/Section";
  * the message leaves from the visitor's own mail client.
  */
 export function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ subject: "", message: "" });
 
   const send = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Hello from ${form.name || "your site"}`;
-    const body = `${form.message}\n\n— ${form.name}${form.email ? ` (${form.email})` : ""}`;
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+      form.subject,
+    )}&body=${encodeURIComponent(form.message)}`;
   };
 
   const field =
@@ -33,31 +31,41 @@ export function Contact() {
         description={sections.contact.description}
       />
 
-      <div className="grid gap-4 lg:grid-cols-[1fr_1.2fr]">
-        <Reveal>
-          <div className="glass sweep flex h-full flex-col gap-4 p-6 sm:p-8">
-            <a
-              href={`mailto:${contact.email}`}
-              className="flex items-center gap-3 font-mono text-sm text-body transition-colors hover:text-accent-600"
-            >
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-accent-050 text-accent-600">
-                <Mail className="h-4 w-4" />
-              </span>
-              {contact.email}
-            </a>
+      <div className="grid gap-4 lg:grid-cols-[1fr_1.25fr]">
+        <div className="flex flex-col gap-4">
+          <Reveal>
+            <div className="glass glass-hover sweep p-6 sm:p-7">
+              <h3 className="font-display text-lg font-semibold text-accent-600">
+                {contact.seeking.title}
+              </h3>
+              <p className="mt-2 text-body">{contact.seeking.body}</p>
+            </div>
+          </Reveal>
 
-            <p className="flex items-center gap-3 font-mono text-sm text-muted">
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-accent-050 text-accent-600">
-                <MapPin className="h-4 w-4" />
-              </span>
-              {contact.location}
-            </p>
+          <Reveal delay={0.06}>
+            <div className="glass glass-hover sweep flex h-full flex-col p-6 sm:p-7">
+              <h3 className="font-display text-lg font-semibold text-accent-600">
+                Find me
+              </h3>
 
-            <div className="mt-2 border-t border-line pt-4">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-faint">
-                Elsewhere
+              <a
+                href={`mailto:${contact.email}`}
+                className="mt-4 flex items-center gap-3 font-mono text-sm text-body transition-colors hover:text-accent-600"
+              >
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-accent-050 text-accent-600">
+                  <Mail className="h-4 w-4" />
+                </span>
+                {contact.email}
+              </a>
+
+              <p className="mt-3 flex items-center gap-3 font-mono text-sm text-muted">
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-accent-050 text-accent-600">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                {contact.location}
               </p>
-              <div className="flex flex-col gap-2">
+
+              <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
                 {socials
                   .filter((s) => s.href.startsWith("http"))
                   .map((s) => (
@@ -83,50 +91,42 @@ export function Contact() {
                 </a>
               </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
         <Reveal delay={0.08}>
-          <form onSubmit={send} className="glass sweep flex h-full flex-col gap-4 p-6 sm:p-8">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block">
-                <span className="mb-2 block font-mono text-xs uppercase tracking-[0.16em] text-faint">
-                  Name
-                </span>
-                <input
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="your name"
-                  className={field}
-                />
-              </label>
+          <form onSubmit={send} className="glass sweep flex h-full flex-col gap-5 p-6 sm:p-8">
+            <h3 className="flex items-center gap-3 font-display text-xl font-semibold">
+              <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-accent-050 text-accent-600">
+                <Mail className="h-4 w-4" />
+              </span>
+              {contact.form.title}
+            </h3>
 
-              <label className="block">
-                <span className="mb-2 block font-mono text-xs uppercase tracking-[0.16em] text-faint">
-                  Email
-                </span>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="you@example.com"
-                  className={field}
-                />
-              </label>
-            </div>
+            <label className="block">
+              <span className="mb-2 block font-mono text-xs uppercase tracking-[0.16em] text-faint">
+                {contact.form.subjectLabel}
+              </span>
+              <input
+                required
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                placeholder={contact.form.subjectPlaceholder}
+                className={field}
+              />
+            </label>
 
             <label className="flex flex-1 flex-col">
               <span className="mb-2 block font-mono text-xs uppercase tracking-[0.16em] text-faint">
-                Message
+                {contact.form.messageLabel}
               </span>
               <textarea
                 required
-                rows={6}
+                rows={7}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                placeholder="what are you building?"
-                className={`${field} min-h-32 flex-1 resize-y`}
+                placeholder={contact.form.messagePlaceholder}
+                className={`${field} min-h-40 flex-1 resize-y`}
               />
             </label>
 
@@ -134,12 +134,12 @@ export function Contact() {
               type="submit"
               className="bloom group inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 font-mono text-sm text-page transition-colors hover:bg-accent-700"
             >
-              Send
               <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              {contact.form.button}
             </button>
 
-            <p className="font-mono text-[11px] text-faint">
-              This opens your own mail client. Nothing is posted to a server.
+            <p className="text-center font-mono text-[11px] leading-relaxed text-faint">
+              {contact.form.note}
             </p>
           </form>
         </Reveal>

@@ -40,10 +40,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${spectral.variable} ${plexMono.variable} ${tiro.variable}`}
     >
       <head>
-        {/* Theme before paint, so a dark-mode visitor never sees a paper flash. */}
+        {/* Theme before paint. Light is the default; only a visitor who has
+            chosen dark here gets dark. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('v3-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+            __html: `(function(){try{if(localStorage.getItem('v3-theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
           }}
         />
       </head>

@@ -8,7 +8,7 @@ import { Hero } from "@/components/v3/Hero";
 import { Kites } from "@/components/v3/Kites";
 import { Metrics } from "@/components/v3/Metrics";
 import { NavBar } from "@/components/v3/NavBar";
-import { ProjectCarousel } from "@/components/v3/ProjectCarousel";
+import { HackathonDeck, ProjectDeck } from "@/components/v3/Decks";
 import { Research } from "@/components/v3/Research";
 import { Sky } from "@/components/v3/Sky";
 import { footer, hero } from "@/content/v3";
@@ -30,7 +30,8 @@ export default function V3Page() {
         <Hero />
         <Metrics />
         <ExperienceTimeline />
-        <ProjectCarousel />
+        <ProjectDeck />
+        <HackathonDeck />
         <Research />
         <Education />
         <CourseCylinder />

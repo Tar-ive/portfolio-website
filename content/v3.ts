@@ -7,6 +7,7 @@
 export const navigation = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Hackathons", href: "#hackathons" },
   { label: "Research", href: "#research" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
@@ -17,13 +18,13 @@ export const hero = {
   mark: "॥",
   photo: "/media/saksham.jpg",
   photoAlt: "Saksham Adhikari",
-  status: "incoming to Cal Hacks",
+  status: "head down grinding",
   tagline:
-    "ML engineer working on inference, recsys, computer vision, and large-scale data. I ship models into production and publish the receipts.",
+    "Hi, Saksham here. I care about building AI that is reliable, measurable, and useful in the real world—from the model and mathematics underneath it to the infrastructure that makes it run.",
   interactionHint: "the kites follow your cursor",
   cta: {
     primary: { text: "Get in touch", href: "#contact" },
-    secondary: { text: "Read the stream", href: "/" },
+    secondary: { text: "Read my Substack", href: "https://adhsaksham.substack.com" },
   },
 };
 
@@ -38,6 +39,10 @@ export const sections = {
       "Inference on hardware, health data at scale, and the teams in between.",
   },
   projects: { title: "Projects" },
+  hackathons: {
+    title: "Hackathons",
+    description: "Six wins, and the things they turned into.",
+  },
   research: {
     title: "Research",
     description: "Papers where the modeling was mine to defend.",
@@ -68,6 +73,19 @@ export const contact = {
   email: "pqo14@txstate.edu",
   location: "Austin / San Marcos, Texas",
   substack: "https://adhsaksham.substack.com",
+  seeking: {
+    title: "Currently seeking",
+    body: "Open to 2027 new grad SWE, ML opportunities.",
+  },
+  form: {
+    title: "Slide a DM",
+    subjectLabel: "Subject",
+    subjectPlaceholder: "Exercise free will here",
+    messageLabel: "Message",
+    messagePlaceholder: "Tell me about your team, question, or endeavors",
+    button: "Send Message",
+    note: "This opens your default email client with the message prefilled. Nothing is stored or sent to a server.",
+  },
 };
 
 /** The GitHub calendar the stream already reads, reused here. */
@@ -123,31 +141,31 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    id: "askslm",
+    id: "askslm-mle",
     title: "Machine Learning Engineer Intern",
     company: "AskSLM",
     location: "Austin, TX",
-    period: "Nov 2025 — present",
+    period: "May 2026 — Aug 2026",
     type: "engineering",
     bullets: [
-      "Real-time CV and VLM pipelines on NVIDIA Jetson Thor (DeepStream) for threat detection with Texas county law enforcement.",
-      "llama.cpp inference optimization, so the model fits the hardware it has to run on.",
-      "The model runs next to the camera rather than in someone else's cloud, and it has to work at 2am.",
+      "Quantized custom-trained LLaVA vision models for edge devices, monitoring weight clustering for a 3x increase in image-to-text sequence recognition throughput.",
+      "Added Reciprocal Rank Fusion to the internal RAG pipeline, lifting retrieval precision for a 3% improvement in Mean Reciprocal Rank.",
+      "Engineered real-time video analytics pipelines on the DeepStream SDK, tuning frame-rate throughput and end-to-end inference latency with Harbor for systematic evaluation.",
     ],
-    technologies: ["Jetson Thor", "DeepStream", "llama.cpp", "VLM", "Python"],
+    technologies: ["LLaVA", "quantization", "DeepStream", "RAG", "Harbor"],
   },
   {
-    id: "google",
-    title: "TPU Cloud Student Researcher",
-    company: "Google",
-    location: "Remote",
-    period: "Aug — Oct 2025",
-    type: "research",
+    id: "askslm-swe",
+    title: "Software Engineer Intern",
+    company: "AskSLM",
+    location: "Austin, TX",
+    period: "Jan 2026 — May 2026",
+    type: "engineering",
     bullets: [
-      "Selected for Google's TPU Cloud research program.",
-      "Turned vLLM community signals into concrete inference-stack fixes for research scientists' TPU workloads.",
+      "Fine-tuned a LLaMA 8B model on 3,000 curated QA pairs drawn from internal documentation, with a RAG architecture for factual grounding, deployed securely over mTLS.",
+      "Integrated the RAG agent with Slack for daily use on NVIDIA DGX Spark devices, cutting developer documentation search time by 30%.",
     ],
-    technologies: ["vLLM", "TPU", "inference", "Python"],
+    technologies: ["LLaMA 8B", "RAG", "mTLS", "Slack", "DGX Spark"],
   },
   {
     id: "thrc",
@@ -162,6 +180,19 @@ export const experience: ExperienceEntry[] = [
       "Findings drove activation programs in the most vulnerable Texas counties.",
     ],
     technologies: ["OLS", "PCA", "Random Forest", "survey data", "Python"],
+  },
+  {
+    id: "google",
+    title: "TPU Cloud Student Researcher",
+    company: "Google",
+    location: "Remote",
+    period: "Aug — Oct 2025",
+    type: "research",
+    bullets: [
+      "Selected for Google's TPU Cloud research program.",
+      "Turned vLLM community signals into concrete inference-stack fixes for research scientists' TPU workloads.",
+    ],
+    technologies: ["vLLM", "TPU", "inference", "Python"],
   },
   {
     id: "bcrc",
@@ -325,6 +356,109 @@ export const projects: Project[] = [
   },
 ];
 
+export type Hackathon = {
+  id: string;
+  title: string;
+  event: string;
+  award: string;
+  summary: string;
+  tech: string[];
+  links: { label: string; href: string; kind: "primary" | "code" }[];
+};
+
+/** The six wins the metrics tile counts. */
+export const hackathons: Hackathon[] = [
+  {
+    id: "h0",
+    title: "Giftmaxxing",
+    event: "H0: Hack the Zero Stack · Vercel v0 × AWS",
+    award: "Best Monetizable B2C App · ~10,000 participants",
+    summary:
+      "An AI gift concierge built with Kusum Bhattarai Sharma. Won $6,000+ in prizes, then shipped to the App Store off feedback from AWS engineers and judges.",
+    tech: ["iOS", "AWS", "v0", "recsys"],
+    links: [
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/giftmaxxing/id6788124639",
+        kind: "primary",
+      },
+    ],
+  },
+  {
+    id: "nvidia",
+    title: "Voice agents for bulk orders",
+    event: "AITX × NVIDIA",
+    award: "Winner, 2 tracks · Weights & Biases and LomanAI",
+    summary:
+      "Hyper-personalized real-time voice agents with three layers of authentication for bulk food orders.",
+    tech: ["voice agents", "W&B", "real-time"],
+    links: [
+      {
+        label: "Write-up",
+        href: "https://adhsaksham.substack.com/p/how-i-won-2-tracks-in-an-nvdia-hackathon",
+        kind: "primary",
+      },
+    ],
+  },
+  {
+    id: "webai",
+    title: "Don't Get Up",
+    event: "webAI hackathon",
+    award: "Winner · built in 36 hours",
+    summary:
+      "An alarm clock that rage-baits you out of bed, with YOLO models running on MLX.",
+    tech: ["YOLO", "MLX", "on-device"],
+    links: [
+      {
+        label: "The demo",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7465758282662641664/",
+        kind: "primary",
+      },
+    ],
+  },
+  {
+    id: "dataport",
+    title: "A game for a congruent day",
+    event: "Data Portability Hackathon",
+    award: "UT Law track winner · 3rd overall",
+    summary:
+      "A personalized game that helps people with ADHD run a congruent daily life.",
+    tech: ["data portability", "product"],
+    links: [
+      {
+        label: "The demo",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7443301667917365249/",
+        kind: "primary",
+      },
+    ],
+  },
+  {
+    id: "datathon",
+    title: "Campus parking optimizer",
+    event: "TXST Datathon",
+    award: "1st place",
+    summary:
+      "A greedy parking-space optimizer and a TensorFlow model for strategic campus parking.",
+    tech: ["TensorFlow", "optimization"],
+    links: [
+      {
+        label: "The demo",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7297066335698591744/",
+        kind: "primary",
+      },
+    ],
+  },
+  {
+    id: "novohacks",
+    title: "Novo Hacks",
+    event: "Novo Hacks",
+    award: "Best Design",
+    summary: "Best Design, November 2024.",
+    tech: ["design"],
+    links: [],
+  },
+];
+
 export type Publication = {
   id: string;
   title: string;
@@ -422,6 +556,6 @@ export const education: {
 };
 
 export const footer = {
-  note: "Built slow, to last. No trackers, no noise.",
+  note: "Copyright 2026 @ Tar-ive",
   streamLabel: "the stream",
 };

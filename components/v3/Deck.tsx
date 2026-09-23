@@ -1,32 +1,57 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code2, ExternalLink, Trophy } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { projects, sections } from "@/content/v3";
 import { Reveal, Section, SectionHead } from "@/components/v3/Section";
 
 const GAP = 20;
-const TOTAL = projects.length;
+
+export type DeckCard = {
+  id: string;
+  title: string;
+  eyebrow?: string;
+  note?: string;
+  summary: string;
+  tech: string[];
+  links: { label: string; href: string; kind: "primary" | "code" }[];
+};
 
 /**
- * The reference's 3D deck: cards sit at a fixed span from the active one and
+ * The reference's 3D deck: cards sit a fixed span from the active one and
  * rotate away on the Y axis, with z-index falling off by distance. Wrapping
- * the delta makes the loop seamless in both directions.
+ * the delta makes the loop seamless in both directions. Projects and
+ * hackathons are the same object at different sizes, so they share it.
  */
-export function ProjectCarousel() {
+export function Deck({
+  id,
+  kicker,
+  title,
+  description,
+  items,
+  icon = "code",
+}: {
+  id: string;
+  kicker: string;
+  title: string;
+  description?: string;
+  items: DeckCard[];
+  icon?: "code" | "trophy";
+}) {
   const [index, setIndex] = useState(0);
   const [size, setSize] = useState({ width: 340, height: 440 });
+  const total = items.length;
+  const Icon = icon === "trophy" ? Trophy : Code2;
 
   useEffect(() => {
     const measure = () => {
       const w = window.innerWidth;
       if (w < 768) {
-        setSize({ width: Math.min(w * 0.84, 320), height: 460 });
+        setSize({ width: Math.min(w * 0.84, 320), height: 470 });
       } else if (w < 1024) {
-        setSize({ width: Math.max(w * 0.45, 300), height: 440 });
+        setSize({ width: Math.max(w * 0.45, 300), height: 450 });
       } else {
-        setSize({ width: Math.max(w * 0.26, 340), height: 430 });
+        setSize({ width: Math.max(w * 0.26, 340), height: 440 });
       }
     };
 
@@ -37,19 +62,22 @@ export function ProjectCarousel() {
 
   const span = useMemo(() => size.width + GAP * 2, [size.width]);
 
-  const wrap = useCallback((delta: number) => {
-    const half = TOTAL / 2;
-    if (delta > half) return delta - TOTAL;
-    if (delta < -half) return delta + TOTAL;
-    if (TOTAL % 2 === 0 && delta === half) return delta - TOTAL;
-    return delta;
-  }, []);
+  const wrap = useCallback(
+    (delta: number) => {
+      const half = total / 2;
+      if (delta > half) return delta - total;
+      if (delta < -half) return delta + total;
+      if (total % 2 === 0 && delta === half) return delta - total;
+      return delta;
+    },
+    [total],
+  );
 
-  const move = (step: number) => setIndex((prev) => (prev + step + TOTAL) % TOTAL);
+  const move = (step: number) => setIndex((prev) => (prev + step + total) % total);
 
   return (
-    <Section id="projects">
-      <SectionHead kicker="$ ls ~/projects" title={sections.projects.title} />
+    <Section id={id}>
+      <SectionHead kicker={kicker} title={title} description={description} />
 
       <Reveal>
         <div className="relative">
@@ -57,14 +85,14 @@ export function ProjectCarousel() {
             className="relative mx-auto flex items-center justify-center overflow-hidden"
             style={{ height: size.height + 40 }}
           >
-            {projects.map((project, i) => {
+            {items.map((item, i) => {
               const delta = wrap(i - index);
               const distance = Math.abs(delta);
               const active = delta === 0;
 
               return (
                 <div
-                  key={project.id}
+                  key={item.id}
                   className="absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     width: size.width,
@@ -72,7 +100,7 @@ export function ProjectCarousel() {
                     transform: `perspective(1200px) translateX(${delta * span}px) rotateY(${
                       active ? 0 : delta < 0 ? 40 : -40
                     }deg) scale(${active ? 1 : 0.94})`,
-                    zIndex: active ? TOTAL + 1 : TOTAL - distance,
+                    zIndex: active ? total + 1 : total - distance,
                     opacity: distance > 2 ? 0 : active ? 1 : 0.55,
                     pointerEvents: active ? "auto" : "none",
                   }}
@@ -84,20 +112,26 @@ export function ProjectCarousel() {
                     }`}
                   >
                     <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-050 text-accent-600">
-                      <Code2 className="h-5 w-5" />
+                      <Icon className="h-5 w-5" />
                     </div>
 
-                    <h3 className="font-display text-xl font-semibold">{project.title}</h3>
-                    {project.status ? (
-                      <p className="mt-1 font-mono text-xs text-accent-600">{project.status}</p>
+                    {item.eyebrow ? (
+                      <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-faint">
+                        {item.eyebrow}
+                      </p>
+                    ) : null}
+
+                    <h3 className="font-display text-xl font-semibold">{item.title}</h3>
+                    {item.note ? (
+                      <p className="mt-1 font-mono text-xs text-accent-600">{item.note}</p>
                     ) : null}
 
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                      {project.summary}
+                      {item.summary}
                     </p>
 
                     <div className="mb-4 flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
+                      {item.tech.map((tech) => (
                         <span
                           key={tech}
                           className="rounded-full border border-line bg-tint px-2.5 py-1 font-mono text-[11px] text-muted"
@@ -108,7 +142,7 @@ export function ProjectCarousel() {
                     </div>
 
                     <div className="flex flex-wrap gap-2">
-                      {project.links.map((link) => (
+                      {item.links.map((link) => (
                         <a
                           key={link.href}
                           href={link.href}
@@ -136,14 +170,14 @@ export function ProjectCarousel() {
 
             <button
               onClick={() => move(-1)}
-              aria-label="Previous project"
+              aria-label="Previous"
               className="glass absolute left-2 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full text-muted transition-colors hover:text-accent-600"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={() => move(1)}
-              aria-label="Next project"
+              aria-label="Next"
               className="glass absolute right-2 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full text-muted transition-colors hover:text-accent-600"
             >
               <ChevronRight className="h-4 w-4" />
@@ -151,11 +185,11 @@ export function ProjectCarousel() {
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-2">
-            {projects.map((project, i) => (
+            {items.map((item, i) => (
               <button
-                key={project.id}
+                key={item.id}
                 onClick={() => setIndex(i)}
-                aria-label={`Go to ${project.title}`}
+                aria-label={`Go to ${item.title}`}
                 className={`h-1.5 rounded-full transition-all ${
                   i === index ? "w-8 bg-accent" : "w-1.5 bg-line-strong hover:bg-accent-300"
                 }`}
