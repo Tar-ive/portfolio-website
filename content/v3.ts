@@ -281,22 +281,30 @@ export type Project = {
   status?: string;
 };
 
+/** The big one: shown above the deck, with its story. */
+export const featuredProject = {
+  id: "rewind",
+  title: "Rewind",
+  event: "TreeHacks 2026",
+  tagline: "The first productivity system built around disruption, not planning.",
+  image: "/media/rewind.png",
+  imageAlt: "Rewind's dashboard: a day of tasks rescheduled by priority, with agent activity alongside",
+  stat: { value: "6.1M", label: "adults in the U.S. are diagnosed with ADHD" },
+  story: [
+    "But diagnosis isn't the problem. Executive dysfunction because of ADHD means that even when you know exactly what you need to do, starting feels impossible. The planning isn't the problem, it's truly when the plan breaks.",
+    "Two members of our team live with ADHD. We've tried every productivity system: Notion databases, time-blocking on Google Calendar, even gamified to-do apps. They all share the same fatal flaw: they help you plan, but they abandon you the moment something goes wrong.",
+    "A meeting runs 15 minutes over. You space out for 10. By the time you've replanned, 45 minutes are gone, and your momentum with it.",
+    "That's the exact moment we're targeting: the 15 to 30 minutes after a disruption occurs, when the plan breaks and the user is silently stuck because they have no idea what to do next.",
+  ],
+  how: "Six agents run it like an operating system: a Context Sentinel watches calendar, email and Slack; a Disruption Detector grades what just broke; a three-tier Scheduler Kernel (long, medium and short term, on a modified multilevel feedback queue with bin-packing and task swapping) rebalances the day in seconds; an Energy Monitor matches tasks to how much focus you have left; a Profiler learns your patterns; and GhostWorker drafts the reschedule emails for you.",
+  tech: ["Fetch.ai uAgents", "Composio MCP", "FastAPI", "Redis", "Next.js", "Google Calendar", "Gmail", "Slack"],
+  links: [
+    { label: "Live demo", href: "https://rewind-tan.vercel.app/", kind: "primary" as const },
+    { label: "Devpost", href: "https://devpost.com/software/rewind-2fyn30", kind: "code" as const },
+  ],
+};
+
 export const projects: Project[] = [
-  {
-    id: "giftmaxxing",
-    title: "Giftmaxxing",
-    summary:
-      "An AI gift concierge that compresses inspiration → curation → purchase, so nobody freezes on what to get them. Best Monetizable B2C App at H0 (Vercel v0 × AWS, ~10,000 participants), then shipped to the App Store.",
-    tech: ["iOS", "AWS", "v0", "recsys"],
-    links: [
-      {
-        label: "App Store",
-        href: "https://apps.apple.com/us/app/giftmaxxing/id6788124639",
-        kind: "primary",
-      },
-    ],
-    status: "live on the App Store",
-  },
   {
     id: "twobot",
     title: "TwoBot",

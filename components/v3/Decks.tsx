@@ -1,6 +1,7 @@
 "use client";
 
 import { Deck, type DeckCard } from "@/components/v3/Deck";
+import { FeaturedProject } from "@/components/v3/FeaturedProject";
 import { hackathons, projects, sections } from "@/content/v3";
 
 const projectCards: DeckCard[] = projects.map((project) => ({
@@ -29,6 +30,7 @@ export function ProjectDeck() {
       kicker="$ ls ~/projects"
       title={sections.projects.title}
       items={projectCards}
+      lead={<FeaturedProject />}
     />
   );
 }

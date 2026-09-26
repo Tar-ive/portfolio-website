@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Code2, ExternalLink, Trophy } from "@/components/v3/icons";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { Reveal, Section, SectionHead } from "@/components/v3/Section";
 
@@ -30,6 +30,7 @@ export function Deck({
   description,
   items,
   icon = "code",
+  lead,
 }: {
   id: string;
   kicker: string;
@@ -37,6 +38,7 @@ export function Deck({
   description?: string;
   items: DeckCard[];
   icon?: "code" | "trophy";
+  lead?: ReactNode; // shown between the heading and the deck
 }) {
   const [index, setIndex] = useState(0);
   const [size, setSize] = useState({ width: 340, height: 440 });
@@ -78,6 +80,8 @@ export function Deck({
   return (
     <Section id={id}>
       <SectionHead kicker={kicker} title={title} description={description} />
+
+      {lead}
 
       <Reveal>
         <div className="relative">
