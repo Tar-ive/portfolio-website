@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Twitter } from "@/components/v3/icons";
+import { KiteHint } from "@/components/v3/KiteHint";
 
 import { hero, socials } from "@/content/v3";
 
@@ -148,12 +149,12 @@ export function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              className="mt-6 font-mono text-xs text-faint"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+              className="mt-6 text-sm text-muted"
             >
-              {hero.interactionHint}
+              <KiteHint copy={hero.interactionHint} />
             </motion.p>
           </div>
         </div>

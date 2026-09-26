@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Mail, MapPin, Send } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Send } from "@/components/v3/icons";
 import { useState } from "react";
 
 import { contact, sections, socials } from "@/content/v3";

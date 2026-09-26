@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, Moon, Sun, X } from "@/components/v3/icons";
+import { isPlainKey, toggleNight } from "@/components/v3/keys";
 import { useCallback, useEffect, useState } from "react";
 
 import { navigation, socials } from "@/content/v3";
@@ -12,18 +13,24 @@ function useTheme() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
+    const root = document.documentElement;
+    const sync = () => setDark(root.classList.contains("dark"));
+    sync();
+    // N flips night from anywhere on the page.
+    const onKey = (e: KeyboardEvent) => {
+      if (isPlainKey(e, "n")) toggleNight();
+    };
+    const watch = new MutationObserver(sync);
+    watch.observe(root, { attributes: true, attributeFilter: ["class"] });
+    window.addEventListener("keydown", onKey);
+    return () => {
+      watch.disconnect();
+      window.removeEventListener("keydown", onKey);
+    };
   }, []);
 
   const toggle = useCallback(() => {
-    const next = !document.documentElement.classList.contains("dark");
-    document.documentElement.classList.toggle("dark", next);
-    try {
-      localStorage.setItem("v3-theme", next ? "dark" : "light");
-    } catch {
-      /* private mode: the choice just doesn't persist */
-    }
-    setDark(next);
+    toggleNight();
   }, []);
 
   return { dark, toggle };
@@ -125,7 +132,7 @@ export function NavBar() {
 
           <button
             onClick={toggle}
-            aria-label="Toggle light and dark"
+            aria-label="Toggle day and night (N)"
             className="rounded-lg p-2 text-muted transition-colors hover:bg-accent-050 hover:text-accent-600"
           >
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}

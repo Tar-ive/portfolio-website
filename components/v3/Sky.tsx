@@ -48,6 +48,9 @@ export function Sky() {
         />
       ))}
 
+      {/* Passing through dusk while day and night swap. */}
+      <div className="dusk absolute inset-0" />
+
       {/* A vermillion warmth low on the horizon, so the page keeps its accent. */}
       <div
         className="wash wash-b bottom-[-18%] left-[14%] h-[44vw] w-[44vw] opacity-40"

@@ -9,7 +9,7 @@ import {
   FlaskConical,
   MapPin,
   Users,
-} from "lucide-react";
+} from "@/components/v3/icons";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { experience, sections, type ExperienceEntry } from "@/content/v3";

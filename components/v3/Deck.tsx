@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Code2, ExternalLink, Trophy } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code2, ExternalLink, Trophy } from "@/components/v3/icons";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Reveal, Section, SectionHead } from "@/components/v3/Section";

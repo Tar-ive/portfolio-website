@@ -21,7 +21,8 @@ export const hero = {
   status: "head down grinding",
   tagline:
     "Hi, Saksham here. I care about building AI that is reliable, measurable, and useful in the real world—from the model and mathematics underneath it to the infrastructure that makes it run.",
-  interactionHint: "the kites follow your cursor",
+  // {K} and {N} become keycaps.
+  interactionHint: "the kites follow your cursor. press {K} to make them fight, {N} for night",
   cta: {
     primary: { text: "Get in touch", href: "#contact" },
     secondary: { text: "Read my Substack", href: "https://adhsaksham.substack.com" },

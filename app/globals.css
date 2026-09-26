@@ -3,6 +3,34 @@
 /* Theme is toggled by a class on <html>, not only by the OS. */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Sky colours are registered so they can animate: switching day and night
+   fades the sky rather than cutting it. */
+@property --sky-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #a8d4f0;
+}
+@property --sky-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #cfe6f6;
+}
+@property --sky-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #eef1ee;
+}
+@property --sky-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fbf3e8;
+}
+@property --cloud {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.92);
+}
+
 /* ============================================================
  * Tokens — the same warm paper + sindoor vermillion the stream
  * uses (_ds/tokens/colors.css), restated here for Tailwind v4.
@@ -140,6 +168,49 @@
 }
 
 @layer components {
+  /* A keycap in sindoor: pressable, sits down 2px when hit. */
+  .kbd-pill {
+    display: inline-flex;
+    min-width: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.45rem;
+    border: 1px solid var(--accent-700);
+    background: var(--accent-500);
+    padding: 0.2rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: var(--paper-0);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 2px 0 var(--accent-700),
+      0 6px 14px rgba(116, 49, 20, 0.28);
+    transition:
+      transform 90ms ease,
+      box-shadow 90ms ease;
+    cursor: pointer;
+  }
+
+  .kbd-pill:hover {
+    background: var(--accent-600);
+  }
+
+  .kbd-pill[data-pressed="true"],
+  .kbd-pill:active {
+    transform: translateY(2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 0 0 var(--accent-700),
+      0 2px 6px rgba(116, 49, 20, 0.24);
+  }
+
+  .kbd-pill:focus-visible {
+    outline: 2px solid var(--accent-300);
+    outline-offset: 2px;
+  }
+
   /* ------------------------------------------------------------
    * Glass — the reference's frosted panel, in paper and ink
    * ---------------------------------------------------------- */
@@ -292,6 +363,50 @@
 
   .wash-b {
     animation: drift-b 28s ease-in-out infinite;
+  }
+
+  /* ------------------------------------------------------------
+   * Day ↔ night. Only while switching (html.theme-shift): the sky
+   * colours fade, the page's colours follow, and a dusk glow rises
+   * and falls across the sky on the way through.
+   * ---------------------------------------------------------- */
+  html.theme-shift {
+    transition:
+      --sky-0 1.6s ease,
+      --sky-1 1.6s ease,
+      --sky-2 1.6s ease,
+      --sky-3 1.6s ease,
+      --cloud 1.6s ease;
+  }
+
+  html.theme-shift body,
+  html.theme-shift body * {
+    transition:
+      background-color 0.9s ease,
+      color 0.9s ease,
+      border-color 0.9s ease,
+      fill 0.9s ease;
+  }
+
+  @keyframes dusk-pass {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 0.85;
+    }
+  }
+
+  .dusk {
+    opacity: 0;
+    background:
+      radial-gradient(120% 70% at 50% 100%, rgba(236, 128, 70, 0.75), transparent 70%),
+      linear-gradient(180deg, rgba(92, 60, 110, 0.45) 0%, rgba(214, 110, 84, 0.35) 60%, rgba(245, 170, 100, 0.5) 100%);
+  }
+
+  html.theme-shift .dusk {
+    animation: dusk-pass 1.6s ease-in-out;
   }
 
   /* Cloud banks crossing the sky, each at its own pace */

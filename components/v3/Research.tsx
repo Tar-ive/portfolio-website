@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight, FileText } from "@/components/v3/icons";
 
 import { publications, sections } from "@/content/v3";
 import { Reveal, Section, SectionHead } from "@/components/v3/Section";

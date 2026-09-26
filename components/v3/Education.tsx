@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, MapPin } from "lucide-react";
+import { GraduationCap, MapPin } from "@/components/v3/icons";
 
 import { education, sections } from "@/content/v3";
 import { Reveal, Section, SectionHead } from "@/components/v3/Section";
